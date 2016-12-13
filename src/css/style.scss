@@ -15,8 +15,18 @@ body {
 
 
 svg {
-	width: 300px;
-	display: inline-block;
+	width: 500px;
+	
+	> g {
+		transform: translateX(25px) translateY(25px) scale(0.75);
+	}
+	#thin {
+		opacity: 1;
+		transition: .3s;
+	}
+	#thin.destroyed {
+		opacity: 0;
+	}
 }
 
 #fat, #exploded {

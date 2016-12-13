@@ -1,17 +1,32 @@
 
+var s = Snap("#client");
 
-//var s = Snap("#thin");
-
-
-var s = Snap("#svg");
-
-var man = Snap.load("man5.svg", function (f) {
+var man = Snap.load("man6.svg", function (f) {
 	var g = f.select("svg");
 	s.append(g);
-	fatAnim();
-	explosionAnim();
-} );
+});
 
+var duration = 1000;
+var maxClicks = 5;
+
+var step = duration / maxClicks;
+var anims = [];
+var clicks = 0;
+
+document.querySelector("#client").addEventListener("mousedown", function(){
+	if(clicks >= maxClicks){
+		explosionAnim();
+	}
+	else{
+		fatAnim();
+		setTimeout(function(){
+			for(var i in anims){
+				anims[i].stop();
+			}
+		}, step);
+		clicks++;
+	}
+});
 
 function fatAnim(){
 	var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right"];
@@ -19,23 +34,25 @@ function fatAnim(){
 	for(var i in parts){
 		var thin = s.select( parts[i] + "_thin");
 		var fat = document.querySelector(parts[i] + "_fat").getAttribute("d");
-		//	thin.node.style.visibility = "visible";
-		thin.animate({ d: fat }, 3000, mina.backout);
+		var anim = thin.animate({ d: fat }, duration);
+		anims.push(anim);
 	}
+	duration -= step;
 }
 
 
 function explosionAnim(){
+	var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right", "#navel", "#shoe_top_left", "#sole_left", "#shoe_top_right", "#sole_right", "#eyebow_left", "#eyebow_right"];
+
+	for(var i in parts){
+		var fat = s.select( parts[i] + "_thin");
+		var exploded = document.querySelector(parts[i] + "_exploded").getAttribute("d");
+		fat.animate({ d: exploded }, 400, mina.easeout);
+	}
 	setTimeout(function(){
-		var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right", "#navel", "#shoe_top_left", "#sole_left", "#shoe_top_right", "#sole_right", "#eyebow_left", "#eyebow_right"];
+		document.querySelector("#thin").classList.add("destroyed");
+	}, 100);
 
-		for(var i in parts){
-			var fat = s.select( parts[i] + "_thin");
-			var exploded = document.querySelector(parts[i] + "_exploded").getAttribute("d");
-			fat.animate({ d: exploded }, 300, mina.easeout);
-		}
-
-	}, 3000);
 }
 
 /*function animation(parts, el, initFlag, modif, modifFlag, callback){
@@ -58,28 +75,22 @@ function eatingAnim(){
 				animation(parts, eating, "_eating", open, "_open", function(){});
 			});*/
 
-	function doSetTimeout(open, openPath){
+	function triggerAnim(open, path, delay){
 		setTimeout(function(){
 			open.animate(
-				{ d: openPath }, 
+				{ d: path }, 
 				750, 
 				mina.easeinout
 			);
-		}, 750);
+		}, delay);
 	}
 
 	for(var i in parts){
-
 		var eatingPath = document.querySelector(parts[i] + "_eating").getAttribute("d");
 		var openPath = document.querySelector(parts[i] + "_open").getAttribute("d");
-
 		var open = s.select( parts[i] + "_open");
-		open.animate(
-			{ d: eatingPath }, 
-			750, 
-			mina.easeinout
-		);
-		doSetTimeout(open, openPath);
+		triggerAnim(open, eatingPath, 0);
+		triggerAnim(open, openPath, 750);
 	}
 }
 setInterval(function(){ eatingAnim(); }, 1500);

@@ -58,8 +58,14 @@ body {
   clear: both; }
 
 svg {
-  width: 300px;
-  display: inline-block; }
+  width: 500px; }
+  svg > g {
+    transform: translateX(25px) translateY(25px) scale(0.75); }
+  svg #thin {
+    opacity: 1;
+    transition: .3s; }
+  svg #thin.destroyed {
+    opacity: 0; }
 
 #fat, #exploded {
   visibility: hidden; }
