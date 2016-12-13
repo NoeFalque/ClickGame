@@ -1,0 +1,80 @@
+@import 'variables';
+
+// RESPONSIVE 1024 > 768 px
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
+    
+    #header { 
+        .leftPart {
+            width: 100%;
+            height: $header-height/2;
+            line-height: $header-height/2;
+            .nameLogo {
+                display: none;
+            }
+            .rightQueries {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 10px;
+                .coins, .blueprints{
+                    font-size: 20px;
+                    line-height: $header-height/2 - 10px;
+                }
+            }
+        }
+        .rightPart {
+            float: none;
+            width: 100%;
+            height: $header-height/2;
+            background: $grey-header;
+            
+            .coins, .blueprints {
+                display: none;
+            }
+            .leftQueries {
+                display: block;
+                line-height: $header-height/2;
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+// RESPONSIVE 768 > 425 px
+@media screen and (min-width: $screen-s) and (max-width: $screen-md) {
+    
+    #header { 
+        .leftPart {
+            width: 100%;
+            height: $header-height/2;
+            line-height: $header-height/2;
+            .nameLogo {
+                display: none;
+            }
+            .rightQueries {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 10px;
+                .coins, .blueprints{
+                    font-size: 20px;
+                    line-height: $header-height/2 - 10px;
+                }
+            }
+        }
+        .rightPart {
+            float: none;
+            width: 100%;
+            height: $header-height/2;
+            background: $grey-header;
+            
+            .coins, .blueprints {
+                display: none;
+            }
+            .leftQueries {
+                display: block;
+                line-height: $header-height/2;
+                font-size: 20px;
+            }
+        }
+    }
+
+}

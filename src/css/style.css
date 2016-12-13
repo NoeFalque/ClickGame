@@ -1,42 +1,135 @@
-body {
-    font-family: arial;
-}
-
-.clickBtn {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: #ff0000;
-    color: #fff;
-    text-align: center;
-    line-height: 300px;
-    margin-bottom: 100px;
-    cursor: pointer;
-
-}
-
-.hpCurr {
-    width: 4px;
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #header .leftPart {
+    width: 100%;
     height: 50px;
-    background: #000;
-    margin: auto;
-    transform-origin: 50% 90%;
-    transform: rotate(1deg);
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0, 3, .5, 1.5);
-    transition-duration: 0.2s;
-}
+    line-height: 50px; }
+    #header .leftPart .nameLogo {
+      display: none; }
+    #header .leftPart .rightQueries {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px; }
+      #header .leftPart .rightQueries .coins, #header .leftPart .rightQueries .blueprints {
+        font-size: 20px;
+        line-height: 40px; }
+  #header .rightPart {
+    float: none;
+    width: 100%;
+    height: 50px;
+    background: #d0cfcf; }
+    #header .rightPart .coins, #header .rightPart .blueprints {
+      display: none; }
+    #header .rightPart .leftQueries {
+      display: block;
+      line-height: 50px;
+      font-size: 20px; } }
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  #header .leftPart {
+    width: 100%;
+    height: 50px;
+    line-height: 50px; }
+    #header .leftPart .nameLogo {
+      display: none; }
+    #header .leftPart .rightQueries {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px; }
+      #header .leftPart .rightQueries .coins, #header .leftPart .rightQueries .blueprints {
+        font-size: 20px;
+        line-height: 40px; }
+  #header .rightPart {
+    float: none;
+    width: 100%;
+    height: 50px;
+    background: #d0cfcf; }
+    #header .rightPart .coins, #header .rightPart .blueprints {
+      display: none; }
+    #header .rightPart .leftQueries {
+      display: block;
+      line-height: 50px;
+      font-size: 20px; } }
+/* -----------> DEFAULT <------------ */
+body {
+  font-family: 'arial', sans-serif;
+  font-size: 12px;
+  background: #ececec; }
 
-.hp, .coins, .upgrade1, .upgrade10, .upgrade100 {
-    width: 300px;
-    height: 100px;
-    background: #ff0000;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-    border-bottom: 1px solid #fff;
-}
+.clearBoth {
+  clear: both; }
 
-.upgrade1, .upgrade10, .upgrade100 {
-    cursor: pointer;
-}
+.header {
+  height: 100px;
+  display: inline-block; }
+
+#header {
+  width: 100%;
+  height: 100px;
+  background: #d0cfcf;
+  font-size: 0; }
+  #header .leftPart {
+    width: 35%;
+    min-width: 408px;
+    font-size: 0;
+    vertical-align: middle;
+    line-height: 100px; }
+    #header .leftPart .logo {
+      width: 35%;
+      min-width: 152px;
+      position: relative;
+      cursor: default; }
+      #header .leftPart .logo img {
+        width: auto;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -40px;
+        margin-left: -50px;
+        cursor: pointer; }
+    #header .leftPart .nameLogo {
+      width: 60%;
+      min-width: 256px;
+      float: right;
+      margin: 0;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 100px;
+      text-align: center; }
+    #header .leftPart .rightQueries {
+      display: none;
+      width: 50%; }
+      #header .leftPart .rightQueries .coins, #header .leftPart .rightQueries .blueprints {
+        width: 50%;
+        height: 60px;
+        font-size: 40px;
+        font-weight: bold;
+        line-height: 60px;
+        text-align: center; }
+      #header .leftPart .rightQueries .coins {
+        border-right: 2px solid #000; }
+      #header .leftPart .rightQueries .blueprints {
+        border-left: 2px solid #000; }
+  #header .rightPart {
+    width: 60%;
+    min-width: 616px;
+    float: right; }
+    #header .rightPart .coins, #header .rightPart .blueprints {
+      width: 50%;
+      height: 60px;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 60px;
+      text-align: center;
+      margin-top: 20px; }
+    #header .rightPart .coins {
+      border-right: 2px solid #000; }
+    #header .rightPart .blueprints {
+      border-left: 2px solid #000; }
+    #header .rightPart .leftQueries {
+      display: none;
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 100px;
+      text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 // Character CONSTRUCTOR
-var Character = function(cost, zbeb) {
+var Character = function() {
     this.phys = {};
     this.phys.hair = rdm(0,4);
     this.phys.skin = rdm(0,4);
@@ -170,17 +170,16 @@ function giveFood(value) {
         var dataRestore = JSON.parse(localStorage.getItem('data'));
         console.log('datas restored !');
     }
-
+//
 // Init of the upgrades 
 //for (var i = 0; i < dataRestore.upgrades.length; i++) {
-////   for (var j = 0; j < dataRestore.upgrades[i]; j++) {
-////       
-////       case ()
-////       
-////       
-////   }
-////}
-
+//   for (var j = 0; j < dataRestore.upgrades[i]; j++) {
+//       
+//       case ()
+//       
+//       
+//   }
+//}
 
 for (var prop in dataRestore.upgrades) {
     if ( prop == 'serveur')
@@ -193,13 +192,7 @@ for (var prop in dataRestore.upgrades) {
         for (var i = 0; i < dataRestore.upgrades[prop]; i++)
            addManager();
 }
-
-
-//
-//obj[prop] // valeur de la prop
-//prop // nom de la prop
-    
-    
+ 
 // function RANDOM 
 function rdm(rMin, rMax) {
     return ~~((Math.random()*(rMax-rMin+1))+rMin);

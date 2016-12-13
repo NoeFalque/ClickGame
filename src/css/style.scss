@@ -1,0 +1,119 @@
+@import 'variables';
+@import 'queries';
+
+/* -----------> DEFAULT <------------ */
+
+body {
+    font-family: 'arial', sans-serif;
+    font-size: 12px;
+    background: $grey-bg;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+.header {
+    height: $header-height;
+    display: inline-block;
+}
+
+
+// HEADER
+#header {
+    width: 100%;
+    height: $header-height;
+    background: $grey-header;
+    font-size: 0;
+    // Left Part
+    .leftPart {
+        width: 35%;
+        min-width: 408px;
+        font-size: 0;  
+        vertical-align: middle;
+        line-height: $header-height;
+        .logo {
+            width: 35%;
+            min-width: 152px;
+            position: relative;
+            cursor: default;
+            img {
+                width: auto;
+                height: 80px;
+                position: absolute;
+	            top: 50%;
+	            left: 50%;
+                margin-top: -40px;
+                margin-left: -($header-height)/2;
+                cursor: pointer;
+            }
+        }
+        .nameLogo{
+            width: 60%;
+            min-width: 256px;
+            float: right;
+            margin: 0;
+            font-size: $header-title;
+            font-weight: bold;
+            line-height: $header-height;
+            text-align: center;
+        }
+        // Média queries
+        .rightQueries {
+            display: none;
+            width: 50%; 
+            .coins, .blueprints {
+                width: 50%;
+                height: $header-height - 40px;
+                font-size: $header-title;
+                font-weight: bold;
+                line-height: $header-height - 40px;
+                text-align: center;
+            }
+            .coins {
+                border-right: 2px solid #000;
+            }
+            .blueprints {
+                border-left: 2px solid #000;
+            }
+        }
+    }
+    // Right Part
+    .rightPart {
+        width: 60%;
+        min-width: 616px; 
+        float: right;
+        .coins, .blueprints {
+            width: 50%;
+            height: $header-height - 40px;
+            font-size: $header-title;
+            font-weight: bold;
+            line-height: $header-height - 40px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .coins {
+            border-right: 2px solid #000;
+        }
+        .blueprints {
+            border-left: 2px solid #000;
+        }
+        .leftQueries {
+            display: none;
+            font-size: $header-title;
+            font-weight: bold;
+            line-height: $header-height;
+            text-align: center;
+        }
+    }
+}
+
+// Left MENU
+.leftMenu {
+    
+}
+
+// Right MENU
+.rightMenu {
+    
+}
