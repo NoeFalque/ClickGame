@@ -13,6 +13,17 @@ body {
     clear: both;
 }
 
+
+svg {
+	width: 300px;
+	display: inline-block;
+}
+
+#fat {
+	visibility: hidden;
+}
+
+
 .header {
     height: $header-height;
     display: inline-block;
