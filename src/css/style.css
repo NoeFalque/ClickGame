@@ -61,7 +61,7 @@ svg {
   width: 300px;
   display: inline-block; }
 
-#fat {
+#fat, #exploded {
   visibility: hidden; }
 
 .header {
