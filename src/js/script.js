@@ -1,12 +1,12 @@
 // Character CONSTRUCTOR
-var Character = function() {
+var Character = function(cost, zbeb) {
     this.phys = {};
     this.phys.hair = rdm(0,4);
     this.phys.skin = rdm(0,4);
     this.phys.body = rdm(0,4);
     this.phys.legs = rdm(0,4);
     
-    this.totalLife = rdm(100,500);
+    this.totalLife = rdm(10,50);
     this.currentLife = this.totalLife; 
     
     this.eaten = {};
@@ -50,7 +50,6 @@ function Manager() {
 }
 Manager.prototype = Object.create(Upgrade.prototype);
 
-
     // VARIABLES
 // Constructor
 var character = new Character();
@@ -77,20 +76,56 @@ $clickBtn.addEventListener('click', function() {
 
 // New upgrades ONCLICK
 $upgrade1.addEventListener('click', function() {
-   _serveur = new Serveur();
-   dataRestore.coins -= _serveur.cost;
-   upgrades.push(_serveur); 
+    addServeur();
 });
 $upgrade10.addEventListener('click', function() {
-   _cuisinier = new Cuisinier();
-   dataRestore.coins -= _cuisinier.cost;
-   upgrades.push(_cuisinier); 
+    addCuisinier();
 });
 $upgrade100.addEventListener('click', function() {
-   _manager = new Manager();
-   dataRestore.coins -= _manager.cost;
-   upgrades.push(_manager); 
+    addManager();
 });
+
+// function to add a Serveur
+function addServeur() {
+   _serveur = new Serveur();
+   if (dataRestore.coins >= _serveur.cost) {
+       dataRestore.coins -= _serveur.cost;
+       upgrades.push(_serveur); 
+       dataRestore.upgrades.serveur += 1;
+    }
+    else {
+        _serveur = null;
+        console.log('Vous n\'avez pas asssez pour votre Serveur de merde !');
+    }    
+}
+
+// function to add a Cuisinier
+function addCuisinier() {
+    _cuisinier = new Cuisinier();
+    if (dataRestore.coins >= _cuisinier.cost) {   
+        dataRestore.coins -= _cuisinier.cost;
+        upgrades.push(_cuisinier); 
+        dataRestore.upgrades.cuisinier += 1;
+    }
+    else {
+        _cuisinier = null;
+        console.log('Vous n\'avez pas asssez pour votre Cuisinier de merde !');
+    }
+}
+
+// function to add a Manager
+function addManager() {
+    _manager = new Manager();
+    if (dataRestore.coins >= _manager.cost) {    
+        dataRestore.coins -= _manager.cost;
+        upgrades.push(_manager); 
+        dataRestore.upgrades.manager += 1;
+    }
+    else {
+        _manager = null;
+        console.log('Vous n\'avez pas asssez pour votre Manager de merde !');
+    }
+}
 
 // function auto to Give food
 function autoFood() {
@@ -122,7 +157,9 @@ function giveFood(value) {
             coins: 0,
             level: 0,
             upgrades: {
-
+                serveur: 0,
+                cuisinier: 0,
+                manager: 0
             },
             firstGame: new Date(),
         };
@@ -134,6 +171,35 @@ function giveFood(value) {
         console.log('datas restored !');
     }
 
+// Init of the upgrades 
+//for (var i = 0; i < dataRestore.upgrades.length; i++) {
+////   for (var j = 0; j < dataRestore.upgrades[i]; j++) {
+////       
+////       case ()
+////       
+////       
+////   }
+////}
+
+
+for (var prop in dataRestore.upgrades) {
+    if ( prop == 'serveur')
+       for (var i = 0; i < dataRestore.upgrades[prop]; i++)
+           addServeur();
+    else if ( prop == 'cuisinier') 
+       for (var i = 0; i < dataRestore.upgrades[prop]; i++)
+           addCuisinier();
+    else if ( prop == 'manager') 
+        for (var i = 0; i < dataRestore.upgrades[prop]; i++)
+           addManager();
+}
+
+
+//
+//obj[prop] // valeur de la prop
+//prop // nom de la prop
+    
+    
 // function RANDOM 
 function rdm(rMin, rMax) {
     return ~~((Math.random()*(rMax-rMin+1))+rMin);
@@ -142,4 +208,5 @@ function rdm(rMin, rMax) {
 // loop for food income
 var loop = setInterval(function() {
     autoFood();
+    localStorage.setItem('data', JSON.stringify(dataRestore));
 }, 1000);
