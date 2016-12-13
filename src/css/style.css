@@ -57,6 +57,13 @@ body {
 .clearBoth {
   clear: both; }
 
+svg {
+  width: 300px;
+  display: inline-block; }
+
+#fat {
+  visibility: hidden; }
+
 .header {
   height: 100px;
   display: inline-block; }
