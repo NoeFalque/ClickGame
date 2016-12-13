@@ -1,8 +1,8 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #header .leftPart {
     width: 100%;
-    height: 50px;
-    line-height: 50px; }
+    height: 40px;
+    line-height: 40px; }
     #header .leftPart .nameLogo {
       display: none; }
     #header .leftPart .rightQueries {
@@ -11,23 +11,23 @@
       margin-top: 10px; }
       #header .leftPart .rightQueries .coins, #header .leftPart .rightQueries .blueprints {
         font-size: 20px;
-        line-height: 40px; }
+        line-height: 30px; }
   #header .rightPart {
     float: none;
     width: 100%;
-    height: 50px;
+    height: 40px;
     background: #d0cfcf; }
     #header .rightPart .coins, #header .rightPart .blueprints {
       display: none; }
     #header .rightPart .leftQueries {
       display: block;
-      line-height: 50px;
+      line-height: 40px;
       font-size: 20px; } }
 @media screen and (min-width: 425px) and (max-width: 768px) {
   #header .leftPart {
     width: 100%;
-    height: 50px;
-    line-height: 50px; }
+    height: 40px;
+    line-height: 40px; }
     #header .leftPart .nameLogo {
       display: none; }
     #header .leftPart .rightQueries {
@@ -36,17 +36,17 @@
       margin-top: 10px; }
       #header .leftPart .rightQueries .coins, #header .leftPart .rightQueries .blueprints {
         font-size: 20px;
-        line-height: 40px; }
+        line-height: 30px; }
   #header .rightPart {
     float: none;
     width: 100%;
-    height: 50px;
+    height: 40px;
     background: #d0cfcf; }
     #header .rightPart .coins, #header .rightPart .blueprints {
       display: none; }
     #header .rightPart .leftQueries {
       display: block;
-      line-height: 50px;
+      line-height: 40px;
       font-size: 20px; } }
 
 /*# sourceMappingURL=queries.css.map */
