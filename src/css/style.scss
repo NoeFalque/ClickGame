@@ -1,181 +1,406 @@
 @import 'variables';
 @import 'queries';
 
-/* -----------> DEFAULT <------------ */
+/*
+    DEFAULT
+*/
 
 body {
-    font-family: $montserrat;
-    font-size: 12px;
-    background: $grey-bg;
-}
+    font-family: 'Muli', sans-serif;
+    font-weight: $regular;
+    font-size: $text-size;
+    overflow: hidden;
 
-.clearBoth {
-    clear: both;
-}
+/*
+    HEADER
+*/
 
+    header {
+        height: 75px;
+        width: 100vw;
+        position: relative;
+        background-color: $red;
+        font-size: $header-size;
+        color: $white;
 
-svg {
-	width: 300px;
-	display: inline-block;
-}
+        /* Part left, with the logo and the level */
+        .leftPart {
+            height: 100%;
+            width: 45%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
 
-#fat {
-	visibility: hidden;
-}
+            .logo {
+                display: inline-block;
+                margin: 10px 50px;
 
+                img {
+                    height: 50px;
+                    width: auto;
+                }
 
-.header {
-    height: $header-height;
-    display: inline-block;
-}
+            }
 
-
-// HEADER
-#header {
-    width: 100%;
-    height: $header-height;
-    background: $grey-header;
-    font-size: 0;
-    font-family: $montserrat-black;
-    // Left Part
-    .leftPart {
-        width: 35%;
-        min-width: 408px;
-        font-size: 0;  
-        vertical-align: middle;
-        line-height: $header-height;
-        .logo {
-            width: 35%;
-            min-width: 152px;
-            position: relative;
-            cursor: default;
-            img {
-                width: auto;
-                height: 80px;
+            /* Name of the level */
+            .nameLevelContainer {
+                width: 300px;
                 position: absolute;
-	            top: 50%;
-	            left: 50%;
-                margin-top: -40px;
-                margin-left: -($header-height)/2;
-                cursor: pointer;
-            }
-        }
-        .nameLogo{
-            width: 60%;
-            min-width: 256px;
-            float: right;
-            margin: 0;
-            font-size: $header-title;
-            font-weight: bolder;
-            line-height: $header-height;
-            text-align: center;
-        }
-        // Média queries
-        .rightQueries {
-            display: none;
-            width: 50%; 
-            .coins, .blueprints {
-                width: 50%;
-                height: $header-height - 40px;
-                font-size: $header-title;
-                font-weight: bold;
-                line-height: $header-height - 40px;
+                left: calc(50% - 150px + 55px);
+                display: inline-block;
                 text-align: center;
+                line-height: 75px;
+                font-weight: $bold;
+
+                .triangle {
+                    display: inline-block;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 7.5px 13px 7.5px 0;
+                    border-color: transparent $white transparent transparent;
+                }
+
+                .triangleRight {
+                    border-width: 7.5px 0 7.5px 13px;
+                    border-color: transparent transparent transparent $white;
+                }
             }
-            .coins {
-                border-right: 2px solid #000;
+        }
+
+        /* Part right, with the score */
+        .rightPart {
+            height: 100%;
+            width: 55%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: center;
+            display: inline-block;
+            line-height: 75px;
+
+            .icon {
+                height: 20px;
+                width: auto;
+                margin-right: 20px;
             }
-            .blueprints {
-                border-left: 2px solid #000;
+
+            .totalCoins {
+                display: inline-block;
+                margin-right: 150px;
+            }
+
+            .totalBlueprints {
+                display: inline-block;
             }
         }
     }
-    // Right Part
-    .rightPart {
-        width: 60%;
-        min-width: 616px; 
+
+
+    /*
+        GAME SECTION
+    */
+
+    .gameSection {
+        height: calc(100vh - 75px);
+        width: 45%;
+        background: $white;
+        position: relative;
+        display: inline-block;
+
+        .cashRegister {
+            .squareExterior {
+                height: 75px;
+                width: 200px;
+                position: absolute;
+                bottom: 110px;
+                border-radius: 10px;
+                background-color: $black;
+            }
+
+            .squareInterior {
+
+            }
+
+            .squareBottom {
+
+            }
+
+            .clientCoins {
+
+            }
+        }
+
+        /* Menu to select the food */
+        .menuFood {
+            height: 75px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: $yellow;
+            font-size: 0;
+
+            .containerFoodButton {
+                height: 100%;
+                width: 25%;
+                display: inline-block;
+                padding: 10px 25px;
+                box-sizing: border-box;
+                position: relative;
+
+                .foodButton {
+                    height: 50px;
+                    width: 50px;
+                    position: absolute;
+                    left: calc(50% - 25px);
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 10px;
+                    background: $cream;
+
+                    img {
+                        height: 45px;
+                        width: 45px;
+                    }
+                }
+            }
+
+            .active {
+                background-color: $dark-yellow;
+            }
+        }
+    }
+
+    /*
+        QUEST SECTION
+    */
+
+    .questSection {
+        height: calc(50vh - 75px);
+        width: 55%;
+        display: inline-block;
         float: right;
-        .coins, .blueprints {
-            width: 50%;
-            height: $header-height - 40px;
-            font-size: $header-title;
-            font-weight: bold;
-            line-height: $header-height - 40px;
-            text-align: center;
-            margin-top: 20px;
+        background-color: $cream;
+        position: relative;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+
+        h2 {
+            color: $black;
+            font-weight: $bold;
+            font-size: $title-size;
+            margin-bottom: 20px;
         }
-        .coins {
-            border-right: 2px solid #000;
-        }
-        .blueprints {
-            border-left: 2px solid #000;
-        }
-        .leftQueries {
-            display: none;
-            font-size: $header-title;
-            font-weight: bold;
-            line-height: $header-height;
-            text-align: center;
+
+        ul {
+
+            li {
+                height: 45px;
+                line-height: 45px;
+
+                /* Checkbox for the quest */
+                .checkboxContainer {
+                    height: 20px;
+                    width: 20px;
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: text-top;
+
+                    .checkbox {
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border: 2px solid $red;
+                    }
+
+                    .checkboxFill {
+                        height: 70%;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $red;
+                    }
+                }
+
+                /* Explanation of the quest */
+                .nameQuest {
+                    margin-left: 5%;
+                }
+
+                .reward {
+                    float: right;
+
+                    .numberReward {
+                        font-weight: $bold;
+                        margin-right: 20px;
+                    }
+
+                    .icon {
+                        height: 20px;
+                        width: auto;
+                        margin-right: 20px;
+                        vertical-align: text-top;
+                    }
+                }
+            }
         }
     }
-}
 
-// MAIN
-.main {
-	font-size: 0;
-}
+    /*
+        AMELIORATIONS & STATISTICS SECTION
+    */
 
+    .ameliorationsSection {
+        height: 50vh;
+        width: 55%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: $light-yellow;
 
-// Left MENU
-.leftMenu {
-  background: #ff0000;
-	width: 45%;
-	height: calc(100vh - 100px);
-	display: inline-block;
-}
+        .ameliorationContainer {
+            height: 100%;
+            width: 100%;
+            position: relative;
 
-// Right MENU
-.rightMenu {
-  background: #ffaaaa;
-	width: 55%; 
-	height: calc(100vh - 100px);
-	display: inline-block;
-    vertical-align: top;
-	.quest {
-		width: 100%;
-		height: 250px;
-		background: $white-quest;
-        padding: 30px 50px;
-        h1 {
-            font-size: 20px;
-            font-family: $montserrat-black;
+            /* Menu of the ameliorations */
+            .menuAmelioration {
+                height: 75px;
+                width: 100%;
+                background-color: $yellow;
+
+                ul {
+                    height: 100%;
+                    width: 100%;
+                    font-size: 0;
+
+                    li {
+                        height: 100%;
+                        width: 33.33%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 75px;
+                        cursor: pointer;
+
+                        span {
+                            font-weight: $bold;
+                            font-size: $title-size;
+                            color: $white;
+                        }
+                    }
+
+                    .current {
+                        background-color: $dark-yellow;
+                    }
+                }
+            }
+
+            /* List of the ameliorations */
+            .listFood {
+                z-index: 10;
+                overflow-y: scroll;
+
+                .upgradeContainer  {
+                    height: 80px;
+                    position: relative;
+
+                    .currentFood {
+                        height: 50px;
+                        width: 50px;
+                        display: inline-block;
+                        text-align: center;
+                        border-radius: 10px;
+                        margin: 15px;
+                        margin-left: 25px;
+                        background: $cream;
+                        line-height: 50px;
+
+                        img {
+                            max-height: 40px;
+                            max-width: 40px;
+                        }
+                    }
+
+                    .title {
+                        display: inline-block;
+                        width: 80px;
+                        position: absolute;
+                        top: 20px;
+                        left: 15%;
+
+                        .nameFood {
+                            color: $red;
+                            font-size: $title-size;
+                        }
+                    }
+
+                    /* Design of the amelioration's list */
+                    .listAmelioration {
+                        width: 250px;
+                        text-align: center;
+                        display: inline-block;
+                        position: absolute;
+                        top: 20px;
+                        left: 35%;
+
+                        li {
+                            display: inline-block;
+
+                            a {
+                                height: 40px;
+                                width: 40px;
+                                display: inline-block;
+                                border-radius: 10px;
+                                background-color: $cream;
+
+                                img {
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    /* Button for increase the level of the food */
+                    .levelButton {
+                        height: 55px;
+                        width: 100px;
+                        display: inline-block;
+                        margin: 12px;
+                        margin-right: 25px;
+                        float: right;
+                        border-radius: 10px;
+                        border-bottom: 4px solid $dark-red;
+                        background-color: $red;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 5px;
+                        box-sizing: border-box;
+
+                        span {
+                            color: $white;
+                            text-transform: uppercase;
+                        }
+
+                        span:first-child {
+                            display: inline-block;
+                            margin-top: 5px;
+                            margin-bottom: 2px;
+                        }
+
+                        img {
+                            height: 20px;
+                            width: auto;
+                            vertical-align: text-bottom;
+                        }
+                    }
+                }
+            }
         }
-	}
-	.upgrades {
-		width: 100%;
-		height: 200px;
-        
-		.upgradesNav {
-			background: #ff0000;
-			width: 100%;
-			height: 200px;
-			margin: 0;
-			padding: 0;
-			text-align: center;
-			line-height: 40px;
-			li {
-				font-size: 12px;
-				display: inline-block;
-				width: 33.33%;
-				height: 40px;
-				border: 1px solid #000;
-			}
-			
-			li.current {
-				background: #b90202; 
-			}
-		}
-		
-	}
-
+    }
 }

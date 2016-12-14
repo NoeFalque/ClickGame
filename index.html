@@ -2,57 +2,331 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Fat's Food</title>
-		<link rel="stylesheet" href="src/css/reset.css"/>
-		<link rel="stylesheet" href="src/css/style.css"/>
-		<link rel="stylesheet" href="src/css/queries.css"/>
-		
-		<link rel="stylesheet" href="src/fonts/montserratblack/stylesheet.css">
-		<link rel="stylesheet" href="src/fonts/montserratXbold/stylesheet.css">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-		
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<title>Fat's Food</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Muli:800,900" rel="stylesheet">
+		<link rel="stylesheet" href="src/css/reset.css"/>
+		<link rel="stylesheet" href="src/css/queries.css"/>
+		<link rel="stylesheet" href="src/css/style.css"/>
+
 	</head>
 	<body>
-        
+
         <!-- HEADER -->
-        <header id="header">
-            <div class="header leftPart">
-                   <a class="header logo" href="./index.html">
-                       <img src="./src/images/logoHeader.png" alt="#">
-                   </a>
-                <div class="header nameLogo">Food Truck</div>
-                <div class="header rightQueries">
-                    <div class="header coins">2000 $</div>
-                    <div class="header blueprints">1000 U</div>
-                </div>
+        <header>
+			<!-- Header left part -->
+            <div class="leftPart">
+                <a class="logo" href="./index.html">
+                    <img src="./src/images/logoHeader.png" alt="Logo de Fat's Food">
+                </a>
+                <div class="nameLevelContainer">
+					<a class="triangle triangleLeft" href="#"></a>
+					<span class="nameLevel">Chariot</span>
+					<a class="triangle triangleRight" href="#"></a>
+				</div>
             </div>
-            <div class="header rightPart">
-                <div class="header coins">2000 $</div>
-                <div class="header blueprints">1000 U</div>
-                <div class="header leftQueries">Food Truck</div>
+			<!-- Header right part -->
+            <div class="rightPart">
+				<div class="total totalCoins">
+					<img src="./src/images/coin.png" class="icon" alt="Icone pièce">
+					<span class="currentCoins">0</span>
+					<span class="unityCoins">$</span>
+				</div>
+				<div class="total totalBlueprints">
+					<img src="./src/images/recipe.png" class="icon" alt="Icone recette">
+					<span class="currentBlueprints">1000</span>
+					<span class="unityBlueprints">u</span>
+				</div>
             </div>
         </header>
-        
-        
-        <section class="main">
-            <!-- Game Canvas -->
-            <div class="leftMenu"></div>
-            <!-- Right Menu -->
-            <div class="rightMenu">
-               <div class="quest">
-                   <h1>Quêtes</h1>
-               </div>
-               <div class="upgrades">
-                    <ul class="upgradesNav">
-                        <li class="current">Aliments</li>
-                        <li>Restaurant</li>
-                        <li>Statistiques</li>
-                    </ul>
-                </div>    
+
+		<!-- GAME SECTION -->
+        <section class="gameSection">
+			<!-- Game part -->
+            <div class="game">
+            	<img class="backgroundGame" src="#" alt="Fond du jeu">
             </div>
-		
-        </section>
+			<!-- Cash register design in css -->
+			<div class="cashRegister">
+				<div class="squareExterior"></div>
+				<div class="squareInterior"></div>
+				<div class="squareBottom"></div>
+				<!-- Number of coins won -->
+				<span class="clientCoins">0 $</span>
+			</div>
+			<!-- Food menu -->
+			<div class="menuFood">
+				<div class="containerFoodButton breadButton active">
+					<a href="#" class="foodButton">
+						<img src="./src/images/bread.png" alt="Boutton pain" class="bread">
+					</a>
+				</div>
+				<div class="containerFoodButton chickenButton">
+					<a href="#" class="foodButton">
+						<img src="./src/images/wings.png" alt="Boutton chicken" class="chicken">
+					</a>
+				</div>
+				<div class="containerFoodButton dessertButton">
+					<a href="#" class="foodButton">
+						<img src="./src/images/yogurt.png" alt="Boutton dessert" class="dessert">
+					</a>
+				</div>
+				<div class="containerFoodButton drinkButton">
+					<a href="#" class="foodButton">
+						<img src="./src/images/water.png" alt="Boutton boisson" class="drink">
+					</a>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- QUEST SECTION -->
+		<section class="questSection">
+			<h2 class="title">Quêtes</h2>
+			<!-- List of quests -->
+			<div class="containerQuest">
+				<ul>
+					<li class="quest quest-1">
+						<div class="checkboxContainer">
+							<div class="checkbox"></div>
+							<div class="checkboxFill"></div>
+						</div>
+						<span class="nameQuest">Exploser 10 clients en 3 minutes</span>
+						<div class="reward">
+							<span class="numberReward">10</span>
+							<img class="icon" src="./src/images/recipe.png" alt="Icone de la monnaie recette">
+						</div>
+					</li>
+					<li class="quest quest-2">
+						<div class="checkboxContainer">
+							<div class="checkbox"></div>
+							<div class="checkboxFill"></div>
+						</div>
+						<span class="nameQuest">Exploser 10 clients en 3 minutes</span>
+						<div class="reward">
+							<span class="numberReward">10</span>
+							<img class="icon" src="./src/images/recipe.png" alt="Icone de la monnaie recette">
+						</div>
+					</li>
+					<li class="quest quest-3">
+						<div class="checkboxContainer">
+							<div class="checkbox"></div>
+							<div class="checkboxFill"></div>
+						</div>
+						<span class="nameQuest">Exploser 10 clients en 3 minutes</span>
+						<div class="reward">
+							<span class="numberReward">10</span>
+							<img class="icon" src="./src/images/recipe.png" alt="Icone de la monnaie recette">
+						</div>
+					</li>
+					<li class="quest quest-4">
+						<div class="checkboxContainer">
+							<div class="checkbox"></div>
+							<div class="checkboxFill"></div>
+						</div>
+						<span class="nameQuest">Exploser 10 clients en 3 minutes</span>
+						<div class="reward">
+							<span class="numberReward">10</span>
+							<img class="icon" src="./src/images/recipe.png" alt="Icone de la monnaie recette">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+
+		<!-- AMELIORATIONS & STATISTICS SECTION -->
+		<section class="ameliorationsSection">
+			<div class="ameliorationContainer">
+				<!-- Menu for the amelioration and the statistic -->
+				<nav class="menuAmelioration">
+					<ul>
+						<li class="current">
+							<span>Aliments</span>
+						</li>
+						<li>
+							<span>Restaurant</span>
+						</li>
+						<li>
+							<span>Statistiques</span>
+						</li>
+					</ul>
+				</nav>
+				<!-- List of the food's ameliorations -->
+				<ul class="listFood">
+					<!-- Bread and ameliorations -->
+					<li class="upgradeContainer bread">
+						<div class="currentFood currentBread">
+							<img src="./src/images/bread.png" alt="Icone pain">
+						</div>
+						<div class="title">
+							<span class="nameFood">Pain</span>
+							<span class="lvlFood">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationBread" href="#">
+									<img src="./src/images/sliceBread.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationBread" href="#">
+									<img src="./src/images/sandwich.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationBread" href="#">
+									<img src="./src/images/hotDog.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationBread" href="#">
+									<img src="./src/images/burger.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationBread" href="#">
+									<img src="./src/images/doubleBurger.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costRecipe">10</span>
+							<img src="./src/images/recipe.png" alt="Icone de la recette">
+						</a>
+					</li>
+					<!-- Chicken and ameliorations -->
+					<li class="upgradeContainer chicken">
+						<div class="currentFood currentChicken">
+							<img src="./src/images/wings.png" alt="Icone poulet">
+						</div>
+						<div class="title">
+							<span class="nameFood">Poulet</span>
+							<span class="lvlFood">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationBread" href="#">
+									<img src="./src/images/wings.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationBread" href="#">
+									<img src="./src/images/thigh.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationBread" href="#">
+									<img src="./src/images/thighMustard.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationBread" href="#">
+									<img src="./src/images/bucket.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationBread" href="#">
+									<img src="./src/images/chicken.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costRecipe">10</span>
+							<img src="./src/images/recipe.png" alt="Icone de la recette">
+						</a>
+					</li>
+					<!-- Dessert and ameliorations -->
+					<li class="upgradeContainer dessert">
+						<div class="currentFood currentDessert">
+							<img src="./src/images/yogurt.png" alt="Icone pain">
+						</div>
+						<div class="title">
+							<span class="nameFood">Dessert</span>
+							<span class="lvlFood">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationBread" href="#">
+									<img src="./src/images/custard.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationBread" href="#">
+									<img src="./src/images/eclair.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationBread" href="#">
+									<img src="./src/images/muffin.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationBread" href="#">
+									<img src="./src/images/cupcake.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationBread" href="#">
+									<img src="./src/images/iceCream.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costRecipe">10</span>
+							<img src="./src/images/recipe.png" alt="Icone de la recette">
+						</a>
+					</li>
+					<!-- Drink and ameliorations -->
+					<li class="upgradeContainer drink">
+						<div class="currentFood currentDrink">
+							<img src="./src/images/water.png" alt="Icone de la boisson">
+						</div>
+						<div class="title">
+							<span class="nameFood">Boisson</span>
+							<span class="lvlFood">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationBread" href="#">
+									<img src="./src/images/waterBubble.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationBread" href="#">
+									<img src="./src/images/juice.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationBread" href="#">
+									<img src="./src/images/soda.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationBread" href="#">
+									<img src="./src/images/energyDrink.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationBread" href="#">
+									<img src="./src/images/alcohol.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costRecipe">10</span>
+							<img src="./src/images/recipe.png" alt="Icone de la recette">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</section>
+
 
 
 
@@ -92,11 +366,11 @@
 		    <div class="hpCurr"></div>
 		</div>
 		<div class="coins">0</div>
-		
+
 		<div class="upgrade1">Upgrade 1</div>
 		<div class="upgrade10">Upgrade 10</div>
 		<div class="upgrade100">Upgrade 100</div>-->
-		
+
 <!--
 		//body {
 //    font-family: arial;
@@ -141,4 +415,3 @@
 //    cursor: pointer;
 //}
 -->
-
