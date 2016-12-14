@@ -1,22 +1,27 @@
 var $client = document.querySelector("#client");
+var $svg = document.querySelector("svg");
 
 var s = Snap("#client");
 
 var man = Snap.load("man7.svg", function (f) {
 	var g = f.select("svg");
 	s.append(g);
+	eatingAnim();
 });
 
 var duration = 1000;
-var maxClicks = 1;
+var maxClicks = 10;
 
 var step = duration / maxClicks;
 var anims = [];
 var clicks = 0;
-var nbCoins = 3;
+var nbCoins = 15;
 
-document.querySelector("#client").addEventListener("mousedown", function(){
+var disabled = false;
+document.querySelector("#client").addEventListener("click", function(){
+	if(disabled) return;
 	if(clicks >= maxClicks-1){
+		disabled = true;
 		explosionAnim();
 	}
 	else{
@@ -52,55 +57,117 @@ function explosionAnim(){
 		fat.animate({ d: exploded }, 400, mina.easeout);
 	}
 	setTimeout(function(){
-		document.querySelector("#thin").classList.add("destroyed");
+		var $group = document.querySelector("#thin");
+		$group.classList.add("destroyed");
+		setTimeout(function(){ $group.style.display = "none"; }, 100);
 	}, 100);
 
 	coinsAnim();
 
 }
-
-function coinsAnim(){
+/*
+function coinsAnim1(){
 	var coins = [];
 
 	for(var i=0; i< nbCoins; i++){
-		
+
 		var coin = {};
 		var $navel = document.querySelector("#navel_thin");
 		coin.x = $navel.getBoundingClientRect().left;
 		coin.y = $navel.getBoundingClientRect().top;
 		coin.direction = (Math.random()*Math.PI*2)-Math.PI;
 		coins.push(coin);
-		
+
 		coins[i].el = document.createElement("img");
 		$client.appendChild(coins[i].el);
 		coins[i].el.classList.add("coin");
 		coins[i].el.setAttribute("src", "src/images/coin.png");
-		
+
 	}
-	
+
 	function step(){
 		for(var i in coins){
-			if( coins[i].x > $client.getBoundingClientRect().right ||
-					coins[i].y > $client.getBoundingClientRect().bottom ||
-				  coins[i].x < $client.getBoundingClientRect().left ||
-					coins[i].y < $client.getBoundingClientRect().top ) {
-				console.log(coins[i].el.parentElement);
+			if( coins[i].x > limit.right 	+ 100 ||
+				  coins[i].y > limit.bottom + 100 ||
+				  coins[i].x < limit.left 	- 100 ||
+				  coins[i].y < limit.top		- 100  ) {
 				coins[i].el.parentElement.removeChild(coins[i].el);
-				console.log(coins);
+				coins.splice(i, 1);
 			}
-			coins[i].x += Math.cos(coins[i].direction) * 10;  
-			coins[i].y += Math.sin(coins[i].direction) * 10;  
-			coins[i].el.style.left 	= coins[i].x + "px";  
-			coins[i].el.style.top = coins[i].y + "px";
+			if(coins[i]){
+				coins[i].x += Math.cos(coins[i].direction) * 10;  
+				coins[i].y += Math.sin(coins[i].direction) * 10;  
+				coins[i].el.style.left 	= coins[i].x + "px";  
+				coins[i].el.style.top = coins[i].y + "px";
+			}
 		}
-		
-		requestAnimationFrame(step);
-		
-	}
-	requestAnimationFrame(step);
-	
-}
+		if(coins.length > 0) {
+			raf = requestAnimationFrame(step);
+		}
+	}//end step
+	var limit = $client.getBoundingClientRect();
+	var raf = requestAnimationFrame(step);
 
+}*/
+
+
+function coinsAnim(){
+	var coins = [];
+
+	for(var i=0; i< nbCoins; i++){
+
+		var coin = {};
+		var $navel = document.querySelector("#navel_thin");
+		coin.x = $navel.getBoundingClientRect().left;
+		coin.y = $navel.getBoundingClientRect().top;
+		coin.direction = (Math.random()*Math.PI*2)-Math.PI;
+		coin.speed = 90+ 10*i/nbCoins;
+		coins.push(coin);
+
+		coins[i].el = document.createElement("img");
+		$client.appendChild(coins[i].el);
+		coins[i].el.classList.add("coin");
+		coins[i].el.setAttribute("src", "src/images/coin.png");
+
+	}
+
+	var limit = $navel.getBoundingClientRect();
+	var $box = document.querySelector("#coinBox")
+	setTimeout(function(){ var raf = requestAnimationFrame(step) }, 200);
+
+	function step(time){
+		for(var i in coins){
+			if(	//coins go to the box
+				coins[i].x > limit.right 	+ 200 ||
+				coins[i].y > limit.bottom + 200 ||
+				coins[i].x < limit.left 	- 200 ||
+				coins[i].y < limit.top		- 200  
+			) {
+				coins[i].el.style.transition = ".8s";
+//				coins[i].x	= (coins[i].x + $box.offsetLeft) / 2;
+//				coins[i].y	= (coins[i].y + $box.offsetTop) / 2;
+				coins[i].x	= $box.offsetLeft;
+				coins[i].y	= $box.offsetTop;
+				coins[i].el.style.transform	= 	"translateX("+ coins[i].x +"px) ";
+				coins[i].el.style.transform	+= 	"translateY("+ coins[i].y +"px) ";
+			}
+			else { // coins explode
+				coins[i].x += Math.cos(coins[i].direction) * time/(coins[i].speed)+1;  
+				coins[i].y += Math.sin(coins[i].direction) * time/(coins[i].speed)+1; 
+				coins[i].el.style.transform	= 	"translateX("+ coins[i].x +"px) ";
+				coins[i].el.style.transform	+= 	"translateY("+ coins[i].y +"px) ";
+			}
+			if( time > 5000 ) { // delete hidden
+				coins[i].el.parentElement.removeChild(coins[i].el);
+				coins.splice(i, 1);
+			}
+		}
+		if(coins.length > 0) {
+			raf = requestAnimationFrame(step);
+		}
+	}//end step
+
+}
 
 /*function animation(parts, el, initFlag, modif, modifFlag, callback){
 	for(var i in parts){
@@ -139,6 +206,6 @@ function eatingAnim(){
 		triggerAnim(open, eatingPath, 0);
 		triggerAnim(open, openPath, 750);
 	}
+	setInterval(function(){ eatingAnim(); }, 1500);
 }
-setInterval(function(){ eatingAnim(); }, 1500);
 

@@ -14,9 +14,16 @@ svg {
 
 .coin {
   position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100px) translateY(-100px);
   width: 50px; }
 
 #fat, #exploded {
   visibility: hidden; }
+
+#coinBox {
+  display: inline-block;
+  margin-left: 600px; }
 
 /*# sourceMappingURL=anim.css.map */
