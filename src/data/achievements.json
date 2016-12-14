@@ -1,326 +1,82 @@
-var achievement = [
- {
-   "category": "clique",
-   "name": "petit creux",
-   "info": "Avoir clique 100 fois pour nourrir les xx",
-   "cond": 100,
-   "xp": "100",
-   "icon": "curseur blanc",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "miam",
-   "info": "Avoir clique 1.000 fois pour nourrir les xx",
-   "cond": 1000,
-   "xp": "1000",
-   "icon": "curseur jaune",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "faim",
-   "info": "Avoir clique 10.000 fois pour nourrir les xx",
-   "cond": 10000,
-   "xp": "10000",
-   "icon": "curseur rouge",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "meurt de faim",
-   "info": "Avoir clique 50.000 fois pour nourir les xx",
-   "cond": 50000,
-   "xp": "50000",
-   "icon": "curseur vert",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "affame",
-   "info": "Avoir clique 100.000 fois pour nourir les xx",
-   "cond": 100000,
-   "xp": "100000",
-   "icon": "curseur bleu",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "creve-la-faim",
-   "info": "Avoir clique 250.000 fois pour nourir les xx",
-   "cond": 250000,
-   "xp": "250000",
-   "icon": "curseur violet",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "servi",
-   "info": "Avoir clique 500.000 fois pour nourir les xx",
-   "cond": 500000,
-   "xp": "500000",
-   "icon": "curseur rose",
-   "unlocked": false
- },
- {
-   "category": "clique",
-   "name": "rassasie",
-   "info": "Avoir clique 1.000.000 fois pour nourir les xx",
-   "cond": 1000000,
-   "xp": "1000000",
-   "icon": "curseur or",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Paincompetent",
-   "info": "Avoir nourri 100 fois les xx avec les aliments pain",
-   "cond": 100,
-   "xp": "100",
-   "icon": "pain ",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Paincomplet",
-   "info": "Avoir nourri 10.000 fois les xx avec les aliments pain",
-   "cond": 10000,
-   "xp": "10000",
-   "icon": "pain jaune",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Paindustriel",
-   "info": "Avoir nourri 100.000 fois les xx avec les aliments pain",
-   "cond": 100000,
-   "xp": "100000",
-   "icon": "pain rouge",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Painconsevable",
-   "info": "Avoir nourri 250.000 fois les xx avec les aliments pain",
-   "cond": 250000,
-   "xp": "250000",
-   "icon": "pain vert",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Paintrepide",
-   "info": "Avoir nourri 500.000 fois les xx avec les aliments pain",
-   "cond": 500000,
-   "xp": "500000",
-   "icon": "pain bleu",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Painvraisemblable",
-   "info": "Avoir nourri 1.000.000 fois les xx avec les aliments pain",
-   "cond": 1000000,
-   "xp": "1000000",
-   "icon": "pain violet",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Painconscient",
-   "info": "Avoir nourri 2.500.000 fois les xx avec les aliments pain",
-   "cond": 2500000,
-   "xp": "2500000",
-   "icon": "pain rose",
-   "unlocked": false
- },
- {
-   "category": "pain",
-   "name": "Paincomptable",
-   "info": "Avoir nourri 5.000.000 fois les xx avec les aliments pain",
-   "cond": 5000000,
-   "xp": "5000000",
-   "icon": "pain or",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Poussin",
-   "info": "Avoir nourri 100 fois les xx avec les aliments poulet",
-   "cond": 100,
-   "xp": "100",
-   "icon": "Poulet ",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Poule",
-   "info": "Avoir nourri 1.000 fois les xx avec les aliments poulet",
-   "cond": 1000,
-   "xp": "1000",
-   "icon": "Poulet jaune",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Coq",
-   "info": "Avoir nourri 10.000 fois les xx avec les aliments poulet",
-   "cond": 10000,
-   "xp": "10000",
-   "icon": "Poulet rouge",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Chair de poule",
-   "info": "Avoir nourri 100.000 fois les xx avec les aliments poulet",
-   "cond": 100000,
-   "xp": "100000",
-   "icon": "Poulet vert",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Fou aile",
-   "info": "Avoir nourri 250.000 fois les xx avec les aliments poulet",
-   "cond": 250000,
-   "xp": "250000",
-   "icon": "Poulet bleu",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Coq en pate",
-   "info": "Avoir nourri 500.000 fois les xx avec les aliments poulet",
-   "cond": 500000,
-   "xp": "500000",
-   "icon": "Poulet violet",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Roi de la basse cour",
-   "info": "Avoir nourri 1.000.000 fois les xx avec les aliments poulet",
-   "cond": 1000000,
-   "xp": "1000000",
-   "icon": "Poulet rose",
-   "unlocked": false
- },
- {
-   "category": "poulet",
-   "name": "Poule aux oeufs d'or",
-   "info": "Avoir nourri 2.500.000 fois les xx avec les aliments poulet",
-   "cond": 2500000,
-   "xp": "2500000",
-   "icon": "Poulet or",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Poussin",
-   "info": "Avoir nourri 100 fois les xx avec les aliments dessert",
-   "cond": 100,
-   "xp": "100",
-   "icon": "lait ",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Poule",
-   "info": "Avoir nourri 1.000 fois les xx avec les aliments dessert",
-   "cond": 1000,
-   "xp": "1000",
-   "icon": "lait bleu",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Coq",
-   "info": "Avoir nourri 10.000 fois les xx avec les aliments dessert",
-   "cond": 10000,
-   "xp": "10000",
-   "icon": "lait or",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Chair de poule",
-   "info": "Avoir nourri 100.000 fois les xx avec les aliments dessert",
-   "cond": 100000,
-   "xp": "100000",
-   "icon": "lait vert",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Fou aile",
-   "info": "Avoir nourri 250.000 fois les xx avec les aliments dessert",
-   "cond": 250000,
-   "xp": "250000",
-   "icon": "lait bleu",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Coq en pate",
-   "info": "Avoir nourri 500.000 fois les xx avec les aliments dessert",
-   "cond": 500000,
-   "xp": "500000",
-   "icon": "lait violet",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Roi de la basse cour",
-   "info": "Avoir nourri 1.000.000 fois les xx avec les aliments dessert",
-   "cond": 1000000,
-   "xp": "1000000",
-   "icon": "lait rose",
-   "unlocked": false
- },
- {
-   "category": "dessert",
-   "name": "Poule aux oeufs d'or",
-   "info": "Avoir nourri 2.500.000 fois les xx avec les aliments dessert",
-   "cond": 2500000,
-   "xp": "2500000",
-   "icon": "lait or",
-   "unlocked": false
- },
- {
-   "category": "secret",
-   "name": "Sherlock",
-   "info": "Trouver l'achievement cache en cliquant dessus",
-   "cond": false,
-   "xp": "FALSE",
-   "icon": "!",
-   "unlocked": false
- },
- {
-   "category": "secret",
-   "name": "Dalleux",
-   "info": "Cliquer 50 fois sur la caisse",
-   "cond": false,
-   "xp": "50",
-   "icon": "Caisse enregistreuse",
-   "unlocked": false
- },
- {
-   "category": "secret",
-   "name": "Fou furieux",
-   "info": "Faire exploser 1000 xx sans aucune amelioration",
-   "cond": fals,
-   "xp": "1000",
-   "icon": "Tete de mort",
-   "unlocked": false
- },
- {
-   "category": "secret",
-   "name": "Chef etoile",
-   "info": "Debloquer tout les aliments",
-   "cond": false,
-   "xp": "FALSE",
-   "icon": "Toque Cuisinier",
-   "unlocked": false
- }
-];
+var achievements = [
+  {
+     "category": "clique",
+     "name": ["petit creux", "miam", "faim", "meurt de faim", "affamé", "crève la faim", "servi", "rassasié"],
+     "info": "Avoir cliqué 100 fois pour nourrir les xx",
+     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "icon": ["curseur blanc", "curseur jaune", "curseur rouge", "curseur vert", "curseur bleu", "curseur violet", "curseur rose", "curseur or"],
+     "unlocked": [false, false, false, false, false, false, false, false]
+  },
+  {
+     "category": "pain",
+     "name": ["Paincompétent", "Paincomplet", "Paindustriel", "Painconsevable", "Paintrépide", "Painvraisemblable", "Painconscient", "Paincomptable"],
+     "info": "Avoir nourri 10.000 fois les xx avec les aliments pain",
+     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "icon": ["pain blanc", "pain jaune", "pain rouge", "pain vert", "pain bleu", "pain violet", "pain rose", "pain or"],
+     "unlocked": [false, false, false, false, false, false, false, false]
+  },
+  {
+     "category": "poulet",
+     "name": ["Poussin", "Poule", "Coq", "Chair de poule", "Fou ailé", "Coq en pâte", "Roi de la basse-cour", "Poule aux oeufs d'or"],
+     "info": "Avoir nourri 100 fois les xx avec les aliments poulet",
+     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "icon": ["poulet blanc", "poulet jaune", "poulet rouge", "poulet vert", "poulet bleu", "poulet violet", "poulet rose", "poulet or"],
+     "unlocked": [false, false, false, false, false, false, false, false]
+  },
+  {
+     "category": "dessert",
+     "name": ["Poussin", "Poule", "Coq", "Chair de poule", "Fou ailé", "Coq en pâte", "Roi de la basse-cour", "Poule aux oeufs d'or"],
+     "info": "Avoir nourri 100 fois les xx avec les aliments dessert",
+     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "icon": ["lait blanc", "lait jaune", "lait rouge", "lait vert", "lait bleu", "lait violet", "lait rose", "lait or"],
+     "unlocked": [false, false, false, false, false, false, false, false]
+  },
+  {
+     "category": "secret",
+     "name": "Sherlock",
+     "info": "Trouver l'achievement caché en cliquant dessus",
+     "cond": true,
+     "xp": 1000,
+     "icon": "Loupe",
+     "unlocked": false
+  },
+  {
+     "category": "secret",
+     "name": "Dalleux",
+     "info": "Cliquer 50 fois sur la caisse",
+     "cond": 50,
+     "xp": 500,
+     "icon": "Caisse enregistreuse",
+     "unlocked": true
+  },
+  {
+     "category": "secret",
+     "name": "Fou furieux",
+     "info": "Faire exploser 1000 xx sans aucune amélioration",
+     "cond": 1000,
+     "xp": 10000,
+     "icon": "Tête de mort",
+     "unlocked": false
+  },
+  {
+     "category": "secret",
+     "name": "Chef étoilé",
+     "info": "Débloquer tout les aliments",
+     "cond": true,
+     "xp": 100000,
+     "icon": "Toque cuisinier",
+     "unlocked": false
+  },
+  {
+     "category": "boisson",
+     "name": ["Poussin", "Poule", "Coq", "Chair de poule", "Fou ailé", "Coq en pate", "Roi de la basse-cour", "Poule aux oeufs d'or"],
+     "info": "Avoir nourri 100 fois les xx avec les aliments boisson",
+     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "icon": ["bouteille blanc", "bouteille jaune", "bouteille rouge", "bouteille vert", "bouteille bleu", "bouteille violet", "bouteille rose", "bouteille or"],
+     "unlocked": [false, false, false, false, false, false, false, false]
+  }]
