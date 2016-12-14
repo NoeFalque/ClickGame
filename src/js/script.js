@@ -1,6 +1,6 @@
 // Character CONSTRUCTOR
 var Character = function() {
-    this.phys = {};
+    this.phys      = {};
     this.phys.hair = rdm(0,4);
     this.phys.skin = rdm(0,4);
     this.phys.body = rdm(0,4);
@@ -15,35 +15,58 @@ var Character = function() {
 }
  
 // Food CONSTRUCTOR
-var Food = function() {
-    this.type = rdm(0,4);
-    this.level = rdm(0,4);
-    this.cost = rdm(0,4);
-    console.log('Food Ready !');
+var Food = function(type, cost, value) {
+    this.type   = type;
+    this.level  = 1;
+    this.cost   = cost
+    this.value  = value*this.level;
+    this.ofType = this.ofType+1 || 0;
+    console.log(this.type+' Ready !');
 }
+
+// Bread CONSTRUCTOR
+function Bread() {
+    Food.call(this, 'Bread', 0, click);
+}
+Bread.prototype = Object.create(Food.prototype);
+// Chicken CONSTRUCTOR
+function Chicken() {
+    Food.call(this, 'Chicken', 0, click*2);
+}
+Chicken.prototype = Object.create(Food.prototype);
+// Dessert CONSTRUCTOR
+function Dessert() {
+    Food.call(this, 'Dessert', 0, click*2);
+}
+Dessert.prototype = Object.create(Food.prototype);
+// Drink CONSTRUCTOR
+function Drink() {
+    Food.call(this, 'Drink', 0, click*2);
+}
+Drink.prototype = Object.create(Food.prototype);
+
  
 // Upgrade CONSTRUCTOR
 var Upgrade = function(type, cost, prod) {
     this.type = type;
     this.cost = cost;
-    this.prod = prod; // ( in seconds )
+    this.prod = prod*(this.level); // ( in seconds )
     this.sell = cost/1.5;
     this.level = 1;
-    console.log(this.type+' Ready !');
+    this.ofType = this.ofType+1 || 0;
+    console.log(this.type+'n°'+this.ofType+' Ready !');
 }
  
 // Waiter CONSTRUCTOR
 function Waiter() {
-    Upgrade.call(this, 'Waiter', 100, 1);
+    Upgrade.call(this, 'Waiter', 100, 0.1);
 }
 Waiter.prototype = Object.create(Upgrade.prototype);
- 
 // Cooker CONSTRUCTOR
 function Cooker() {
     Upgrade.call(this, 'Cooker', 1000, 10);
 }
 Cooker.prototype = Object.create(Upgrade.prototype);
- 
 // Manager CONSTRUCTOR
 function Manager() {
     Upgrade.call(this, 'manager', 3000, 100);
@@ -53,7 +76,7 @@ Manager.prototype = Object.create(Upgrade.prototype);
     // VARIABLES
 // Constructor
 var character = new Character();
-var food = new Food();
+var food = new Food('GodBread', 0);
 var upgrade = new Upgrade('god', 0,0);
 // Constructor's tables
 var upgrades = [];
@@ -212,3 +235,5 @@ var loop = setInterval(function() {
     autoFood();
     localStorage.setItem('data', JSON.stringify(dataRestore));
 }, 1000)
+
+    // DOM INTEGRATION
