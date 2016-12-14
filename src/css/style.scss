@@ -15,6 +15,7 @@ body {
     HEADER
 */
 
+<<<<<<< HEAD
     header {
         height: 75px;
         width: 100vw;
@@ -31,6 +32,26 @@ body {
             top: 0;
             left: 0;
             display: inline-block;
+=======
+svg {
+	width: 500px;
+	
+	> g {
+		transform: translateX(25px) translateY(25px) scale(0.75);
+	}
+	#thin {
+		opacity: 1;
+		transition: .3s;
+	}
+	#thin.destroyed {
+		opacity: 0;
+	}
+}
+
+#fat, #exploded {
+	visibility: hidden;
+}
+>>>>>>> origin/master
 
             .logo {
                 display: inline-block;
