@@ -85,12 +85,36 @@ body {
     display: inline-block;
     /* Menu to select the food */ }
     body .gameSection .cashRegister .squareExterior {
-      height: 75px;
-      width: 200px;
+      height: 70px;
+      width: 180px;
       position: absolute;
-      bottom: 110px;
+      bottom: 95px;
+      left: calc(50% - 90px);
       border-radius: 10px;
       background-color: #1d1d1d; }
+    body .gameSection .cashRegister .squareInterior {
+      height: 30px;
+      width: 140px;
+      position: absolute;
+      bottom: 115px;
+      left: calc(50% - 70px);
+      background-color: #f1f1f1; }
+    body .gameSection .cashRegister .squareBottom {
+      height: 20px;
+      width: 50px;
+      background-color: #1d1d1d;
+      position: absolute;
+      bottom: 75px;
+      left: calc(50% - 25px); }
+    body .gameSection .cashRegister .clientCoins {
+      height: 30px;
+      width: 140px;
+      position: absolute;
+      bottom: 115px;
+      left: calc(50% - 70px);
+      text-align: center;
+      line-height: 30px;
+      color: #f35a4e; }
     body .gameSection .menuFood {
       height: 75px;
       width: 100%;
@@ -184,7 +208,9 @@ body {
       width: 100%;
       position: relative;
       /* Menu of the ameliorations */
-      /* List of the ameliorations */ }
+      /* List of the ameliorations */
+      /* List of the ameliorations */
+      /* Z index of the sections */ }
       body .ameliorationsSection .ameliorationContainer .menuAmelioration {
         height: 75px;
         width: 100%;
@@ -206,15 +232,15 @@ body {
               color: #f1f1f1; }
           body .ameliorationsSection .ameliorationContainer .menuAmelioration ul .current {
             background-color: #f7db63; }
-      body .ameliorationsSection .ameliorationContainer .listFood {
-        z-index: 10;
-        overflow-y: scroll; }
-        body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer {
+      body .ameliorationsSection .ameliorationContainer .listUpgrade {
+        height: calc(50vh - 75px);
+        overflow: scroll; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer {
           height: 80px;
           position: relative;
           /* Design of the amelioration's list */
           /* Button for increase the level of the food */ }
-          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .currentFood {
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade {
             height: 50px;
             width: 50px;
             display: inline-block;
@@ -224,36 +250,37 @@ body {
             margin-left: 25px;
             background: #fff7ee;
             line-height: 50px; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .currentFood img {
-              max-height: 40px;
-              max-width: 40px; }
-          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .title {
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade img {
+              height: 50px;
+              width: 50px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title {
             display: inline-block;
             width: 80px;
             position: absolute;
             top: 20px;
             left: 15%; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .title .nameFood {
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title .name {
               color: #f35a4e;
               font-size: 24px; }
-          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration {
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration {
             width: 250px;
             text-align: center;
             display: inline-block;
             position: absolute;
             top: 20px;
             left: 35%; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li {
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration li {
               display: inline-block; }
-              body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li a {
+              body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration li a {
                 height: 40px;
                 width: 40px;
                 display: inline-block;
                 border-radius: 10px;
                 background-color: #fff7ee; }
-                body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li a img {
-                  height: 30px; }
-          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton {
+                body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration li a img {
+                  height: 40px;
+                  width: 40px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton {
             height: 55px;
             width: 100px;
             display: inline-block;
@@ -267,16 +294,41 @@ body {
             text-align: center;
             padding: 5px;
             box-sizing: border-box; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton span {
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton span {
               color: #f1f1f1;
               text-transform: uppercase; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton span:first-child {
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton span:first-child {
               display: inline-block;
               margin-top: 5px;
               margin-bottom: 2px; }
-            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton img {
-              height: 20px;
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton img {
+              height: 15px;
               width: auto;
-              vertical-align: text-bottom; }
+              vertical-align: middle; }
+      body .ameliorationsSection .ameliorationContainer .listStatistic {
+        height: calc(50vh - 75px);
+        overflow: scroll; }
+        body .ameliorationsSection .ameliorationContainer .listStatistic h3 {
+          color: #f35a4e;
+          font-weight: 900;
+          margin: 20px 40px; }
+        body .ameliorationsSection .ameliorationContainer .listStatistic ul {
+          margin: 20px 40px; }
+          body .ameliorationsSection .ameliorationContainer .listStatistic ul li {
+            height: 50px;
+            width: 50px;
+            position: relative;
+            display: inline-block;
+            border-radius: 10px;
+            background-color: #fff7ee; }
+            body .ameliorationsSection .ameliorationContainer .listStatistic ul li img {
+              height: 50px;
+              width: 50px; }
+      body .ameliorationsSection .ameliorationContainer .listFood {
+        display: none; }
+      body .ameliorationsSection .ameliorationContainer .listRestaurant {
+        display: none; }
+      body .ameliorationsSection .ameliorationContainer .listStatistic {
+        z-index: 1; }
 
 /*# sourceMappingURL=style.css.map */

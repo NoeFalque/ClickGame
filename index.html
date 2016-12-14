@@ -142,27 +142,27 @@
 				<!-- Menu for the amelioration and the statistic -->
 				<nav class="menuAmelioration">
 					<ul>
-						<li class="current">
+						<li class="menuFood current">
 							<span>Aliments</span>
 						</li>
-						<li>
+						<li class="menuRestaurant">
 							<span>Restaurant</span>
 						</li>
-						<li>
+						<li class="menuStatistic">
 							<span>Statistiques</span>
 						</li>
 					</ul>
 				</nav>
-				<!-- List of the food's ameliorations -->
-				<ul class="listFood">
+				<!-- List of the food's ameliorations when menuFood is active-->
+				<ul class="listUpgrade listFood">
 					<!-- Bread and ameliorations -->
 					<li class="upgradeContainer bread">
-						<div class="currentFood currentBread">
+						<div class="currentUpgrade currentBread">
 							<img src="./src/images/bread.png" alt="Icone pain">
 						</div>
 						<div class="title">
-							<span class="nameFood">Pain</span>
-							<span class="lvlFood">Niveau 1</span>
+							<span class="name">Pain</span>
+							<span class="lvl">Niveau 1</span>
 						</div>
 						<ul class="listAmelioration">
 							<li>
@@ -199,12 +199,12 @@
 					</li>
 					<!-- Chicken and ameliorations -->
 					<li class="upgradeContainer chicken">
-						<div class="currentFood currentChicken">
+						<div class="currentUpgrade currentChicken">
 							<img src="./src/images/wings.png" alt="Icone poulet">
 						</div>
 						<div class="title">
-							<span class="nameFood">Poulet</span>
-							<span class="lvlFood">Niveau 1</span>
+							<span class="name">Poulet</span>
+							<span class="lvl">Niveau 1</span>
 						</div>
 						<ul class="listAmelioration">
 							<li>
@@ -241,12 +241,12 @@
 					</li>
 					<!-- Dessert and ameliorations -->
 					<li class="upgradeContainer dessert">
-						<div class="currentFood currentDessert">
+						<div class="currentUpgrade currentDessert">
 							<img src="./src/images/yogurt.png" alt="Icone pain">
 						</div>
 						<div class="title">
-							<span class="nameFood">Dessert</span>
-							<span class="lvlFood">Niveau 1</span>
+							<span class="name">Dessert</span>
+							<span class="lvl">Niveau 1</span>
 						</div>
 						<ul class="listAmelioration">
 							<li>
@@ -283,12 +283,12 @@
 					</li>
 					<!-- Drink and ameliorations -->
 					<li class="upgradeContainer drink">
-						<div class="currentFood currentDrink">
+						<div class="currentUpgrade currentDrink">
 							<img src="./src/images/water.png" alt="Icone de la boisson">
 						</div>
 						<div class="title">
-							<span class="nameFood">Boisson</span>
-							<span class="lvlFood">Niveau 1</span>
+							<span class="name">Boisson</span>
+							<span class="lvl">Niveau 1</span>
 						</div>
 						<ul class="listAmelioration">
 							<li>
@@ -324,30 +324,183 @@
 						</a>
 					</li>
 				</ul>
+				<!-- List of the restaurant's ameliorations when menuRestaurant is active -->
+				<ul class="listUpgrade listRestaurant">
+					<!-- Restaurant and ameliorations -->
+					<li class="upgradeContainer restaurant">
+						<div class="currentUpgrade currentRestaurant">
+							<img src="./src/images/wings.png" alt="Icone poulet">
+						</div>
+						<div class="title">
+							<span class="name">Restaurant</span>
+							<span class="lvl">Chariot</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationRestaurant" href="#">
+									<img src="./src/images/wings.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationRestaurant" href="#">
+									<img src="./src/images/thigh.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationRestaurant" href="#">
+									<img src="./src/images/thighMustard.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationRestaurant" href="#">
+									<img src="./src/images/bucket.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationRestaurant" href="#">
+									<img src="./src/images/chicken.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costCoin">10</span>
+							<img src="./src/images/coin.png" alt="Icone de la recette">
+						</a>
+					</li>
+					<!-- Cook and ameliorations -->
+					<li class="upgradeContainer cooker">
+						<div class="currentUpgrade currentCook">
+							<img src="./src/images/cookLvl1.png" alt="Icone du cuisinier actuel">
+						</div>
+						<div class="title">
+							<span class="name">Cuisinier</span>
+							<span class="lvl">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationCook" href="#">
+									<img src="./src/images/cookUpgrade1.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationCook" href="#">
+									<img src="./src/images/cookUpgrade2.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationCook" href="#">
+									<img src="./src/images/cookUpgrade3.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationCook" href="#">
+									<img src="./src/images/cookUpgrade4.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationCook" href="#">
+									<img src="./src/images/cookUpgrade5.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costCoin">10</span>
+							<img src="./src/images/coin.png" alt="Icone de la recette">
+						</a>
+					</li>
+					<!-- Waiter and ameliorations -->
+					<li class="upgradeContainer waiter">
+						<div class="currentUpgrade currentWaiter">
+							<img src="./src/images/waiterLvl1.png" alt="Icone pain">
+						</div>
+						<div class="title">
+							<span class="name">Serveur</span>
+							<span class="lvl">Niveau 1</span>
+						</div>
+						<ul class="listAmelioration">
+							<li>
+								<a class="firstAmeliorationWaiter" href="#">
+									<img src="./src/images/waiterUpgrade1.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="secondAmeliorationWaiter" href="#">
+									<img src="./src/images/waiterUpgrade2.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="thirdAmeliorationWaiter" href="#">
+									<img src="./src/images/waiterUpgrade3.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fourthAmeliorationWaiter" href="#">
+									<img src="./src/images/waiterUpgrade4.png" alt="Icone amélioration">
+								</a>
+							</li>
+							<li>
+								<a class="fifthAmeliorationWaiter" href="#">
+									<img src="./src/images/waiterUpgrade5.png" alt="Icone amélioration">
+								</a>
+							</li>
+						</ul>
+						<a class="levelButton" href="#">
+							<span>Nv sup</span>
+							<span class="costCoin">10</span>
+							<img src="./src/images/coin.png" alt="Icone de la recette">
+						</a>
+					</li>
+				</ul>
+				<!-- Waiter and ameliorations -->
+				<div class="listStatistic">
+					<h3>Achievements</h3>
+					<ul>
+						<li><img src="./src/images/cursor1.png" alt=""></li>
+						<li><img src="./src/images/cursor2.png" alt=""></li>
+						<li><img src="./src/images/cursor3.png" alt=""></li>
+						<li><img src="./src/images/cursor4.png" alt=""></li>
+						<li><img src="./src/images/cursor5.png" alt=""></li>
+						<li><img src="./src/images/cursor6.png" alt=""></li>
+						<li><img src="./src/images/cursor7.png" alt=""></li>
+						<li><img src="./src/images/cursor8.png" alt=""></li>
+						<li><img src="./src/images/bread1.png" alt=""></li>
+						<li><img src="./src/images/bread2.png" alt=""></li>
+						<li><img src="./src/images/bread3.png" alt=""></li>
+						<li><img src="./src/images/bread4.png" alt=""></li>
+						<li><img src="./src/images/bread5.png" alt=""></li>
+						<li><img src="./src/images/bread6.png" alt=""></li>
+						<li><img src="./src/images/bread7.png" alt=""></li>
+						<li><img src="./src/images/bread8.png" alt=""></li>
+						<li><img src="./src/images/chicken1.png" alt=""></li>
+						<li><img src="./src/images/chicken2.png" alt=""></li>
+						<li><img src="./src/images/chicken3.png" alt=""></li>
+						<li><img src="./src/images/chicken4.png" alt=""></li>
+						<li><img src="./src/images/chicken5.png" alt=""></li>
+						<li><img src="./src/images/chicken6.png" alt=""></li>
+						<li><img src="./src/images/chicken7.png" alt=""></li>
+						<li><img src="./src/images/chicken8.png" alt=""></li>
+						<li><img src="./src/images/milk1.png" alt=""></li>
+						<li><img src="./src/images/milk2.png" alt=""></li>
+						<li><img src="./src/images/milk3.png" alt=""></li>
+						<li><img src="./src/images/milk4.png" alt=""></li>
+						<li><img src="./src/images/milk5.png" alt=""></li>
+						<li><img src="./src/images/milk6.png" alt=""></li>
+						<li><img src="./src/images/milk7.png" alt=""></li>
+						<li><img src="./src/images/milk8.png" alt=""></li>
+						<li><img src="./src/images/glass1.png" alt=""></li>
+						<li><img src="./src/images/glass2.png" alt=""></li>
+						<li><img src="./src/images/glass3.png" alt=""></li>
+						<li><img src="./src/images/glass4.png" alt=""></li>
+						<li><img src="./src/images/glass5.png" alt=""></li>
+						<li><img src="./src/images/glass6.png" alt=""></li>
+						<li><img src="./src/images/glass7.png" alt=""></li>
+						<li><img src="./src/images/glass8.png" alt=""></li>
+					</ul>
+				</div>
 			</div>
 		</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		<script src="src/js/snap.svg-min.js"></script>

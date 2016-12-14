@@ -31,6 +31,7 @@ body {
             top: 0;
             left: 0;
             display: inline-block;
+
             .logo {
                 display: inline-block;
                 margin: 10px 50px;
@@ -110,24 +111,42 @@ body {
 
         .cashRegister {
             .squareExterior {
-                height: 75px;
-                width: 200px;
+                height: 70px;
+                width: 180px;
                 position: absolute;
-                bottom: 110px;
+                bottom: 95px;
+                left: calc(50% - 90px);
                 border-radius: 10px;
                 background-color: $black;
             }
 
             .squareInterior {
-
+                height: 30px;
+                width: 140px;
+                position: absolute;
+                bottom: 115px;
+                left: calc(50% - 70px);
+                background-color: $white;
             }
 
             .squareBottom {
-
+                height: 20px;
+                width: 50px;
+                background-color: $black;
+                position: absolute;
+                bottom: 75px;
+                left: calc(50% - 25px);
             }
 
             .clientCoins {
-
+                height: 30px;
+                width: 140px;
+                position: absolute;
+                bottom: 115px;
+                left: calc(50% - 70px);
+                text-align: center;
+                line-height: 30px;
+                color: $red;
             }
         }
 
@@ -223,7 +242,7 @@ body {
                         position: absolute;
                         bottom: 0;
                         left: 0;
-                        background-color: $red;
+                        background-color: $red;;
                     }
                 }
 
@@ -301,15 +320,15 @@ body {
             }
 
             /* List of the ameliorations */
-            .listFood {
-                z-index: 10;
-                overflow-y: scroll;
+            .listUpgrade {
+                height: calc(50vh - 75px);
+                overflow: scroll;
 
                 .upgradeContainer  {
                     height: 80px;
                     position: relative;
 
-                    .currentFood {
+                    .currentUpgrade {
                         height: 50px;
                         width: 50px;
                         display: inline-block;
@@ -321,8 +340,8 @@ body {
                         line-height: 50px;
 
                         img {
-                            max-height: 40px;
-                            max-width: 40px;
+                            height: 50px;
+                            width: 50px;
                         }
                     }
 
@@ -333,7 +352,7 @@ body {
                         top: 20px;
                         left: 15%;
 
-                        .nameFood {
+                        .name {
                             color: $red;
                             font-size: $title-size;
                         }
@@ -359,7 +378,8 @@ body {
                                 background-color: $cream;
 
                                 img {
-                                    height: 30px;
+                                    height: 40px;
+                                    width: 40px;
                                 }
                             }
                         }
@@ -393,12 +413,55 @@ body {
                         }
 
                         img {
-                            height: 20px;
+                            height: 15px;
                             width: auto;
-                            vertical-align: text-bottom;
+                            vertical-align: middle;
                         }
                     }
                 }
+            }
+
+            /* List of the ameliorations */
+            .listStatistic {
+                height: calc(50vh - 75px);
+                overflow: scroll;
+
+                h3 {
+                    color: $red;
+                    font-weight: $bold;
+                    margin: 20px 40px;
+                }
+
+                ul {
+                    margin: 20px 40px;
+
+                    li {
+                        height: 50px;
+                        width: 50px;
+                        position: relative;
+                        display: inline-block;
+                        border-radius: 10px;
+                        background-color: $cream;
+
+                        img {
+                            height: 50px;
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+
+            /* Z index of the sections */
+            .listFood {
+                display: none;
+            }
+
+            .listRestaurant {
+                display: none;
+            }
+
+            .listStatistic {
+                z-index: 1;
             }
         }
     }
