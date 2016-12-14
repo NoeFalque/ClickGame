@@ -1,67 +1,282 @@
 /*
-Error: Invalid CSS after "": expected selector, was "<<<<<<< HEAD"
-        on line 18 of /Users/EvieBauland/Documents/HETIC/H2/Semaine intensive/ClickGame/src/css/style.scss
-
-13: 
-14: /*
-15:     HEADER
-16: *\/
-17: 
-18: <<<<<<< HEAD
-19:     header {
-20:         height: 75px;
-21:         width: 100vw;
-22:         position: relative;
-23:         background-color: $red;
-
-Backtrace:
-/Users/EvieBauland/Documents/HETIC/H2/Semaine intensive/ClickGame/src/css/style.scss:18
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1081:in `expr!'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/static_parser.rb:20:in `parse_selector'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:414:in `visit_rule'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `map'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:18:in `load'
-/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:18:in `<main>'
+    DEFAULT
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"\": expected selector, was \"<<<<<<< HEAD\"\A         on line 18 of /Users/EvieBauland/Documents/HETIC/H2/Semaine intensive/ClickGame/src/css/style.scss\A \A 13: \A 14: /*\A 15:     HEADER\A 16: */\A 17: \A 18: <<<<<<< HEAD\A 19:     header {\A 20:         height: 75px;\A 21:         width: 100vw;\A 22:         position: relative;\A 23:         background-color: $red;"; }
+body {
+  font-family: 'Muli', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  overflow: hidden;
+  /*
+      HEADER
+  */
+  /*
+      GAME SECTION
+  */
+  /*
+      QUEST SECTION
+  */
+  /*
+      AMELIORATIONS & STATISTICS SECTION
+  */ }
+  body header {
+    height: 75px;
+    width: 100vw;
+    position: relative;
+    background-color: #f35a4e;
+    font-size: 30px;
+    color: #f1f1f1;
+    /* Part left, with the logo and the level */
+    /* Part right, with the score */ }
+    body header .leftPart {
+      height: 100%;
+      width: 45%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      /* Name of the level */ }
+      body header .leftPart .logo {
+        display: inline-block;
+        margin: 10px 50px; }
+        body header .leftPart .logo img {
+          height: 50px;
+          width: auto; }
+      body header .leftPart .nameLevelContainer {
+        width: 300px;
+        position: absolute;
+        left: calc(50% - 150px + 55px);
+        display: inline-block;
+        text-align: center;
+        line-height: 75px;
+        font-weight: 900; }
+        body header .leftPart .nameLevelContainer .triangle {
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 7.5px 13px 7.5px 0;
+          border-color: transparent #f1f1f1 transparent transparent; }
+        body header .leftPart .nameLevelContainer .triangleRight {
+          border-width: 7.5px 0 7.5px 13px;
+          border-color: transparent transparent transparent #f1f1f1; }
+    body header .rightPart {
+      height: 100%;
+      width: 55%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      display: inline-block;
+      line-height: 75px; }
+      body header .rightPart .icon {
+        height: 20px;
+        width: auto;
+        margin-right: 20px; }
+      body header .rightPart .totalCoins {
+        display: inline-block;
+        margin-right: 150px; }
+      body header .rightPart .totalBlueprints {
+        display: inline-block; }
+  body .gameSection {
+    height: calc(100vh - 75px);
+    width: 45%;
+    background: #f1f1f1;
+    position: relative;
+    display: inline-block;
+    /* Menu to select the food */ }
+    body .gameSection .cashRegister .squareExterior {
+      height: 75px;
+      width: 200px;
+      position: absolute;
+      bottom: 110px;
+      border-radius: 10px;
+      background-color: #1d1d1d; }
+    body .gameSection .menuFood {
+      height: 75px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: #f6e188;
+      font-size: 0; }
+      body .gameSection .menuFood .containerFoodButton {
+        height: 100%;
+        width: 25%;
+        display: inline-block;
+        padding: 10px 25px;
+        box-sizing: border-box;
+        position: relative; }
+        body .gameSection .menuFood .containerFoodButton .foodButton {
+          height: 50px;
+          width: 50px;
+          position: absolute;
+          left: calc(50% - 25px);
+          display: inline-block;
+          text-align: center;
+          border-radius: 10px;
+          background: #fff7ee; }
+          body .gameSection .menuFood .containerFoodButton .foodButton img {
+            height: 45px;
+            width: 45px; }
+      body .gameSection .menuFood .active {
+        background-color: #f7db63; }
+  body .questSection {
+    height: calc(50vh - 75px);
+    width: 55%;
+    display: inline-block;
+    float: right;
+    background-color: #fff7ee;
+    position: relative;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    overflow-y: scroll; }
+    body .questSection h2 {
+      color: #1d1d1d;
+      font-weight: 900;
+      font-size: 24px;
+      margin-bottom: 20px; }
+    body .questSection ul li {
+      height: 45px;
+      line-height: 45px;
+      /* Checkbox for the quest */
+      /* Explanation of the quest */ }
+      body .questSection ul li .checkboxContainer {
+        height: 20px;
+        width: 20px;
+        position: relative;
+        display: inline-block;
+        vertical-align: text-top; }
+        body .questSection ul li .checkboxContainer .checkbox {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 2px solid #f35a4e; }
+        body .questSection ul li .checkboxContainer .checkboxFill {
+          height: 70%;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #f35a4e; }
+      body .questSection ul li .nameQuest {
+        margin-left: 5%; }
+      body .questSection ul li .reward {
+        float: right; }
+        body .questSection ul li .reward .numberReward {
+          font-weight: 900;
+          margin-right: 20px; }
+        body .questSection ul li .reward .icon {
+          height: 20px;
+          width: auto;
+          margin-right: 20px;
+          vertical-align: text-top; }
+  body .ameliorationsSection {
+    height: 50vh;
+    width: 55%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fdf4cb; }
+    body .ameliorationsSection .ameliorationContainer {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      /* Menu of the ameliorations */
+      /* List of the ameliorations */ }
+      body .ameliorationsSection .ameliorationContainer .menuAmelioration {
+        height: 75px;
+        width: 100%;
+        background-color: #f6e188; }
+        body .ameliorationsSection .ameliorationContainer .menuAmelioration ul {
+          height: 100%;
+          width: 100%;
+          font-size: 0; }
+          body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li {
+            height: 100%;
+            width: 33.33%;
+            display: inline-block;
+            text-align: center;
+            line-height: 75px;
+            cursor: pointer; }
+            body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li span {
+              font-weight: 900;
+              font-size: 24px;
+              color: #f1f1f1; }
+          body .ameliorationsSection .ameliorationContainer .menuAmelioration ul .current {
+            background-color: #f7db63; }
+      body .ameliorationsSection .ameliorationContainer .listFood {
+        z-index: 10;
+        overflow-y: scroll; }
+        body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer {
+          height: 80px;
+          position: relative;
+          /* Design of the amelioration's list */
+          /* Button for increase the level of the food */ }
+          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .currentFood {
+            height: 50px;
+            width: 50px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            margin: 15px;
+            margin-left: 25px;
+            background: #fff7ee;
+            line-height: 50px; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .currentFood img {
+              max-height: 40px;
+              max-width: 40px; }
+          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .title {
+            display: inline-block;
+            width: 80px;
+            position: absolute;
+            top: 20px;
+            left: 15%; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .title .nameFood {
+              color: #f35a4e;
+              font-size: 24px; }
+          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration {
+            width: 250px;
+            text-align: center;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: 35%; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li {
+              display: inline-block; }
+              body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li a {
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                border-radius: 10px;
+                background-color: #fff7ee; }
+                body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .listAmelioration li a img {
+                  height: 30px; }
+          body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton {
+            height: 55px;
+            width: 100px;
+            display: inline-block;
+            margin: 12px;
+            margin-right: 25px;
+            float: right;
+            border-radius: 10px;
+            border-bottom: 4px solid #d74438;
+            background-color: #f35a4e;
+            text-decoration: none;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton span {
+              color: #f1f1f1;
+              text-transform: uppercase; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton span:first-child {
+              display: inline-block;
+              margin-top: 5px;
+              margin-bottom: 2px; }
+            body .ameliorationsSection .ameliorationContainer .listFood .upgradeContainer .levelButton img {
+              height: 20px;
+              width: auto;
+              vertical-align: text-bottom; }
+
+/*# sourceMappingURL=style.css.map */
