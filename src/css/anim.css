@@ -1,0 +1,22 @@
+svg {
+  width: 500px; }
+  svg > g {
+    transform: translateX(25px) translateY(25px) scale(0.75); }
+  svg #thin {
+    opacity: 1;
+    transition: .3s; }
+  svg #thin.destroyed {
+    opacity: 0; }
+
+#client {
+  position: relative;
+  overflow: hidden; }
+
+.coin {
+  position: absolute;
+  width: 50px; }
+
+#fat, #exploded {
+  visibility: hidden; }
+
+/*# sourceMappingURL=anim.css.map */

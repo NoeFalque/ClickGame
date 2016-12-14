@@ -1,20 +1,22 @@
+var $client = document.querySelector("#client");
 
 var s = Snap("#client");
 
-var man = Snap.load("man6.svg", function (f) {
+var man = Snap.load("man7.svg", function (f) {
 	var g = f.select("svg");
 	s.append(g);
 });
 
 var duration = 1000;
-var maxClicks = 5;
+var maxClicks = 1;
 
 var step = duration / maxClicks;
 var anims = [];
 var clicks = 0;
+var nbCoins = 3;
 
 document.querySelector("#client").addEventListener("mousedown", function(){
-	if(clicks >= maxClicks){
+	if(clicks >= maxClicks-1){
 		explosionAnim();
 	}
 	else{
@@ -53,7 +55,52 @@ function explosionAnim(){
 		document.querySelector("#thin").classList.add("destroyed");
 	}, 100);
 
+	coinsAnim();
+
 }
+
+function coinsAnim(){
+	var coins = [];
+
+	for(var i=0; i< nbCoins; i++){
+		
+		var coin = {};
+		var $navel = document.querySelector("#navel_thin");
+		coin.x = $navel.getBoundingClientRect().left;
+		coin.y = $navel.getBoundingClientRect().top;
+		coin.direction = (Math.random()*Math.PI*2)-Math.PI;
+		coins.push(coin);
+		
+		coins[i].el = document.createElement("img");
+		$client.appendChild(coins[i].el);
+		coins[i].el.classList.add("coin");
+		coins[i].el.setAttribute("src", "src/images/coin.png");
+		
+	}
+	
+	function step(){
+		for(var i in coins){
+			if( coins[i].x > $client.getBoundingClientRect().right ||
+					coins[i].y > $client.getBoundingClientRect().bottom ||
+				  coins[i].x < $client.getBoundingClientRect().left ||
+					coins[i].y < $client.getBoundingClientRect().top ) {
+				console.log(coins[i].el.parentElement);
+				coins[i].el.parentElement.removeChild(coins[i].el);
+				console.log(coins);
+			}
+			coins[i].x += Math.cos(coins[i].direction) * 10;  
+			coins[i].y += Math.sin(coins[i].direction) * 10;  
+			coins[i].el.style.left 	= coins[i].x + "px";  
+			coins[i].el.style.top = coins[i].y + "px";
+		}
+		
+		requestAnimationFrame(step);
+		
+	}
+	requestAnimationFrame(step);
+	
+}
+
 
 /*function animation(parts, el, initFlag, modif, modifFlag, callback){
 	for(var i in parts){
