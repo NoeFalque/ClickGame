@@ -45,7 +45,11 @@
         <section class="gameSection">
 			<!-- Game part -->
             <div class="game">
-            	<img class="backgroundGame" src="#" alt="Fond du jeu">
+                <div class="clickBtn">CLICK</div>
+                <div class="hp">
+                    <div class="hpCurr"></div>
+                </div>
+<!--                <img class="backgroundGame" src="#" alt="Fond du jeu">-->
             </div>
 			<!-- Cash register design in css -->
 			<div class="cashRegister">
@@ -154,7 +158,7 @@
 					</ul>
 				</nav>
 				<!-- List of the food's ameliorations when menuFood is active-->
-				<ul class="listUpgrade listFood">
+				<ul class="listUpgrade listFood listUpgrades">
 					<!-- Bread and ameliorations -->
 					<li class="upgradeContainer bread">
 						<div class="currentUpgrade currentBread">
@@ -325,7 +329,7 @@
 					</li>
 				</ul>
 				<!-- List of the restaurant's ameliorations when menuRestaurant is active -->
-				<ul class="listUpgrade listRestaurant">
+				<ul class="listUpgrade listRestaurant listUpgrades">
 					<!-- Restaurant and ameliorations -->
 					<li class="upgradeContainer restaurant">
 						<div class="currentUpgrade currentRestaurant">
@@ -454,7 +458,7 @@
 					</li>
 				</ul>
 				<!-- Waiter and ameliorations -->
-				<div class="listStatistic">
+				<div class="listStatistic listUpgrades">
 					<h3>Achievements</h3>
 					<ul>
 						<li><img src="./src/images/cursor1.png" alt=""></li>
@@ -502,7 +506,8 @@
 			</div>
 		</section>
 
-
+        <script src="./src/data/achievements.json"></script>
+		<script src="./src/data/food.json"></script>
 		<script src="src/js/snap.svg-min.js"></script>
 		<script src="src/js/script.js"></script>
 	</body>
@@ -525,9 +530,7 @@
 		<div class="upgrade100">Upgrade 100</div>-->
 
 <!--
-		//body {
-//    font-family: arial;
-//}
+
 //
 //.clickBtn {
 //    width: 300px;
