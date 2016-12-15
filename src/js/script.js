@@ -86,11 +86,12 @@ var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
 var $clickBtn = document.querySelector('.clickBtn');
-var $hp       = document.querySelector('.hp');
-var $hpBar    = $hp.querySelector('.hpCurr');
-var $coins    = document.querySelector('.currentCoins');
-var $recipes  = document.querySelector('.currentBlueprints');
-var clickDmg     = 1;
+    $hp       = document.querySelector('.hp'),
+    $hpBar    = $hp.querySelector('.hpCurr'),
+    $coins    = document.querySelector('.currentCoins'),
+    $recipes  = document.querySelector('.currentBlueprints'),
+    clickDmg  = 1,
+    $gameScreen   = document.querySelector('.gameSection .game');
 // Variables Menu
 var $menu               = {};
     // 3 Titles
@@ -110,6 +111,12 @@ var $foodChoice = {};
     $foodChoice.dessert = document.querySelector('.dessertButton'),
     $foodChoice.drink   = document.querySelector('.drinkButton'),
     $foodChoice.foods   = document.querySelectorAll('.containerFoodButton');
+var $menuHamb               = {};            
+    $menuHamb.button        = document.querySelector('.menuHamb'),
+    $menuHamb.quest         = document.querySelector('.questSection'),
+    $menuHamb.ameliorations = document.querySelector('.ameliorationsSection');
+// Mouse
+var $cursorImg              = document.getElementById("foodImg");
 // Variable Upgrades
 var $food                  = document.querySelectorAll('.listFood .upgradeContainer');
 var $resto            = document.querySelectorAll('.listRestaurant .upgradeContainer');
@@ -177,7 +184,7 @@ $upgrades.resto[2].addEventListener('click', function(){
     // FOOD UPGRADES
 // Upgrade the bread's lvl
 function upBread() {
-    if ( (dataRestore.level.food.bread < 9) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread+1] ) ) {  
+    if ( (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread+1] ) ) {  
         dataRestore.level.food.bread += 1;
         dataRestore.recipes -= dataFood[0].cost[dataRestore.level.food.bread]; 
         for (var i = 0; i < foods.length; i++) {
@@ -194,7 +201,7 @@ function upBread() {
 
 // Upgrade the chicken's lvl
 function upChicken() {
-    if ( (dataRestore.level.food.chicken < 9) && (dataRestore.recipes >= dataFood[1].cost[dataRestore.level.food.chicken+1] ) ) {
+    if ( (dataRestore.level.food.chicken < 9 && dataRestore.level.food.chicken < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[1].cost[dataRestore.level.food.chicken+1] ) ) {
         dataRestore.level.food.chicken += 1;
         dataRestore.recipes -= dataFood[1].cost[dataRestore.level.food.chicken]; 
         for (var i = 0; i < foods.length; i++) {
@@ -211,7 +218,7 @@ function upChicken() {
 
 // Upgrade the dessert's lvl
 function upDessert() {
-    if ( (dataRestore.level.food.dessert < 9) && (dataRestore.recipes >= dataFood[2].cost[dataRestore.level.food.dessert+1] ) ) {
+    if ( (dataRestore.level.food.dessert < 9 && dataRestore.level.food.dessert < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[2].cost[dataRestore.level.food.dessert+1] ) ) {
         dataRestore.level.food.dessert += 1;
         dataRestore.recipes -= dataFood[2].cost[dataRestore.level.food.dessert]; 
         for (var i = 0; i < foods.length; i++) {
@@ -228,7 +235,7 @@ function upDessert() {
 
 // Upgrade the drink's lvl
 function upDrink() {
-    if ( (dataRestore.level.food.drink < 9) && (dataRestore.recipes >= dataFood[3].cost[dataRestore.level.food.drink+1] ) ) {
+    if ( (dataRestore.level.food.drink < 9 && dataRestore.level.food.drink < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[3].cost[dataRestore.level.food.drink+1] ) ) {
         dataRestore.level.food.drink += 1;
         dataRestore.recipes -= dataFood[3].cost[dataRestore.level.food.drink];
         for (var i = 0; i < foods.length; i++) {
@@ -252,7 +259,7 @@ function newBread() {
     // Resto UPGRADES
 // Upgrade the waitor's lvl
 function upWaiter() {
-    if ( (dataRestore.level.resto.waiter < 9) && (dataRestore.coins >= dataResto[2].cost[dataRestore.level.resto.waiter+1] ) ) { 
+    if ( (dataRestore.level.resto.waiter < 9 && dataRestore.level.resto.waiter < dataRestore.level.resto.resto) && (dataRestore.coins >= dataResto[2].cost[dataRestore.level.resto.waiter+1] ) ) { 
         dataRestore.level.resto.waiter += 1;
         dataRestore.coins -= dataResto[2].cost[dataRestore.level.resto.waiter];
         for (var i = 0; i < upgrades.length; i++) {
@@ -268,7 +275,7 @@ function upWaiter() {
 }
 // Upgrade the cooker's lvl
 function upCooker() {
-    if ( (dataRestore.level.resto.cooker < 9) && (dataRestore.coins >= dataResto[1].cost[dataRestore.level.resto.cooker+1] ) ) { 
+    if ( (dataRestore.level.resto.cooker < 9 && dataRestore.level.resto.cooker < dataRestore.level.resto.resto) && (dataRestore.coins >= dataResto[1].cost[dataRestore.level.resto.cooker+1] ) ) { 
         dataRestore.level.resto.cooker += 1;
         dataRestore.coins -= dataResto[1].cost[dataRestore.level.resto.cooker];
         for (var i = 0; i < upgrades.length; i++) {
@@ -329,12 +336,12 @@ $clickBtn.addEventListener('click', function() {
 });
 
 // 5th A ONCLICK
-$caisseDalleux.addEventListener('click', function(){
-   dataAchievement.dalleuxCpt++;
-   if (dataAchievement.dalleuxCpt >= 50) {
-        achievements[5].unlocked++;
-   }
-});
+//$caisseDalleux.addEventListener('click', function(){
+//   dataAchievement.dalleuxCpt++;
+//   if (dataAchievement.dalleuxCpt >= 50) {
+//        achievements[5].unlocked++;
+//   }
+//});
  
     // ADDS
 // function to add a Waiter
@@ -440,18 +447,18 @@ newCooker();
 //}
 */
 // Init of the food with JSON
-function foodInit() {
+function foodInit(unlock) {
     // Prices + Levels
     for (var i = 0; i < $food.length; i++) {
         for (var j = 0; j < dataFood.length; j++) {
-            if ( $food[i].querySelector('.title .name').innerHTML == dataFood[j].name ) {
+            if ( $food[i].querySelector('.title .name').innerHTML == dataFood[j].name) {
                 for (var prop in dataRestore.food[1]) {
                     if ( dataRestore.food[1][prop] == dataFood[j].name ) {   
                         $food[i].querySelector('.levelButton .costRecipe').innerHTML = '<br>'+dataFood[j].cost[dataRestore.level.food[prop]+1];
                         $food[i].querySelector('.title .lvl').innerHTML = 'Niveau '+(dataRestore.level.food[prop]+1);
                     }
                 }
-            }
+            }   
         }
     }
 }
@@ -469,6 +476,8 @@ function upgradeInit() {
             }
         }
     } 
+       
+//       (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread+1] )
 }
 //restoreUpgrade();
 
@@ -614,12 +623,9 @@ $foodChoice.bread.addEventListener('click', function() {
         for (var i = 0; i < $foodChoice.foods.length; i++) {
            $foodChoice.foods[i].classList.remove('active');
         }
-        console.log(dataFood[0].value[dataRestore.level.food.bread]);
         $foodChoice.bread.classList.add('active');
         clickDmg = bread.value;
-        console.log(dataFood[0].value[dataRestore.level.food.bread]);
-        console.log(bread.value);
-        
+        $cursorImg.setAttribute('src', '../src/images/upgradeFood/bread.png');
     } 
 });
 $foodChoice.chicken.addEventListener('click', function() {
@@ -628,8 +634,8 @@ $foodChoice.chicken.addEventListener('click', function() {
            $foodChoice.foods[i].classList.remove('active');
         }
         $foodChoice.chicken.classList.add('active'); 
-        
         clickDmg = chicken.value;
+        $cursorImg.setAttribute('src', '../src/images/upgradeFood/wings.png');
     } 
 });
 $foodChoice.dessert.addEventListener('click', function() {
@@ -639,6 +645,7 @@ $foodChoice.dessert.addEventListener('click', function() {
         }
         $foodChoice.dessert.classList.add('active'); 
         clickDmg = dessert.value;
+        $cursorImg.setAttribute('src', '../src/images/upgradeFood/yogurt.png');
     } 
 });
 $foodChoice.drink.addEventListener('click', function() {
@@ -648,10 +655,56 @@ $foodChoice.drink.addEventListener('click', function() {
         }
         $foodChoice.drink.classList.add('active');
         clickDmg = drink.value;
+        $cursorImg.setAttribute('src', '../src/images/upgradeFood/water.png');
     } 
 });
+
+    // Responsive
+// Switch Burger ONCLICK
+$menuHamb.button.addEventListener('click', function() {
+    menuSwitch();
+});
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 955) {
+       menuSwitch(); 
+    }
+    
+});
+// Switch du MENU BURGER
+function menuSwitch() {
+     if ( !$menuHamb.button.classList.contains('opened') ) {
+       $menuHamb.button.classList.add('opened');
+       $menuHamb.quest.style.marginLeft = '0';
+       $menuHamb.ameliorations.style.marginLeft = '0';
+    } else if (window.innerWidth < 955) {
+       $menuHamb.button.classList.remove('opened');
+       $menuHamb.quest.style.marginLeft = '100%';
+       $menuHamb.ameliorations.style.marginLeft = '100%';
+    }
+}
+
+
+    // MOUSE
+// Mouse Cursor Follow
+$gameScreen.addEventListener('mousemove', function(e) {
+    if(navigator.appName=="Microsoft Internet Explorer") {
+         var x = event.x+document.body.scrollLeft;
+         var y = event.y+document.body.scrollTop;
+    }
+    else {
+         var x =  e.pageX;
+         var y =  e.pageY;
+    }
+    $cursorImg.style.left = (x+1)+'px';
+    $cursorImg.style.top  = (y+1)+'px';
+});
+// Disabling / Active Cursor Follow
+$gameScreen.addEventListener('mouseout', function() { 
+        $cursorImg.style.display = 'none';
+});
+$gameScreen.addEventListener('mouseover', function() {
+    $cursorImg.style.display = 'block';
+});
+
 /* ----------------> Achievements Part <---------------- */
-
-
-
 
