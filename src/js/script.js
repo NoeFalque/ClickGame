@@ -377,7 +377,13 @@ function autoDirect() {
 function giveFood(value) {
     character.currentLife -= value;
     eatingStep();
+    // if DEAD
     if(character.currentLife <= 0) {
+        clearInterval(loop);
+        timer = 4;
+        loopBlock = setInterval( function() {
+            scriptBlock();
+        }, 1000);
         dataRestore.coins += character.value;
         $character.screenValue.innerHTML = character.value+' $';
         $coins.innerHTML = dataRestore.coins;
@@ -562,7 +568,14 @@ function init(){
 
 function scriptBlock () {
     timer --;
-    if (timer == 0) clearInterval(timerCmd);
+    if (timer == 0) {
+        clearInterval(timerCmd);              
+        loop = setInterval(function() {
+            autoFood();
+            autoDirect();
+            save();
+        }, 1000);
+    }
 }
 
 //timer = 4;
