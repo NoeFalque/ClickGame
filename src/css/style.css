@@ -221,7 +221,7 @@
           body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton {
             top: 50px; } }
 /*
-    DEFAULT
+DEFAULT
 */
 body {
   font-family: 'Muli', sans-serif;
@@ -229,16 +229,19 @@ body {
   font-size: 18px;
   overflow: hidden;
   /*
-      HEADER
+  HEADER
   */
   /*
-      GAME SECTION
+  GAME SECTION
   */
   /*
-      QUEST SECTION
+  QUEST SECTION
   */
   /*
-      AMELIORATIONS & STATISTICS SECTION
+  AMELIORATIONS & STATISTICS SECTION
+  */
+  /*
+  PLAYER
   */ }
   body header {
     height: 75px;
@@ -574,6 +577,23 @@ body {
             body .ameliorationsSection .ameliorationContainer .listStatistic ul li img {
               height: 50px;
               width: 50px; }
+  body .player {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px; }
+    body .player .controls img {
+      height: 30px;
+      width: auto; }
+    body .player .controls .play {
+      display: block; }
+    body .player .controls .pause {
+      display: none; }
+  body .player.playing .play {
+    display: none; }
+  body .player.playing .pause {
+    display: block; }
 
 .clickBtn {
   width: 300px;

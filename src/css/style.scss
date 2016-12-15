@@ -2,527 +2,570 @@
 @import 'queries';
 
 /*
-    DEFAULT
+DEFAULT
 */
 
 body {
-    font-family: 'Muli', sans-serif;
-    font-weight: $regular;
-    font-size: $text-size;
-    overflow: hidden;
-
-/*
-    HEADER
-*/
-
-    header {
-        height: 75px;
-        width: 100vw;
-        position: relative;
-        background-color: $red;
-        font-size: $header-size;
-        color: $white;
-
-        /* Part left, with the logo and the level */
-        .leftPart {
-            height: 100%;
-            width: 45%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: inline-block;
-
-            .logo {
-                display: inline-block;
-                margin: 10px 50px;
-
-                img {
-                    height: 50px;
-                    width: auto;
-                }
-
-            }
-
-            /* Name of the level */
-            .nameLevelContainer {
-                width: 300px;
-                position: absolute;
-                left: calc(50% - 150px + 55px);
-                display: inline-block;
-                text-align: center;
-                line-height: 75px;
-                font-weight: $bold;
-
-                .triangle {
-                    display: inline-block;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 7.5px 13px 7.5px 0;
-                    border-color: transparent $white transparent transparent;
-                }
-
-                .triangleRight {
-                    border-width: 7.5px 0 7.5px 13px;
-                    border-color: transparent transparent transparent $white;
-                }
-            }
-            .menuHamb {
-                width: 50px;
-                height: 40px;
-                background: #ff0000;
-                display: none;
-                position: absolute;
-                right: 30px;
-                top: 10px;
-            }
-        }
-
-        /* Part right, with the score */
-        .rightPart {
-            height: 100%;
-            width: 55%;
-            position: absolute;
-            top: 0;
-            right: 0;
-            text-align: center;
-            display: inline-block;
-            line-height: 75px;
-
-            .icon {
-                height: 20px;
-                width: auto;
-                margin-right: 20px;
-            }
-
-            .totalCoins {
-                display: inline-block;
-                margin-right: 150px;
-            }
-
-            .totalBlueprints {
-                display: inline-block;
-            }
-        }
-    }
-
-
-    /*
-        GAME SECTION
-    */
-
-    .gameSection {
-        height: calc(100vh - 75px);
-        width: 45%;
-        background: $white;
-        position: relative;
-        display: inline-block;
-        //cursor: pointer;
-
-        .game {
-            height: calc(100% - 75px);
-            width: 100%;
-            background-color: $cream;
-            z-index: 10; // NOE MODIF
-            cursor: pointer;
-
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
-
-        .cashRegister {
-            .squareExterior {
-                height: 70px;
-                width: 180px;
-                position: absolute;
-                bottom: 95px;
-                left: calc(50% - 90px);
-                border-radius: 10px;
-                background-color: $black;
-            }
-
-            .squareInterior {
-                height: 30px;
-                width: 140px;
-                position: absolute;
-                bottom: 115px;
-                left: calc(50% - 70px);
-                background-color: $white;
-            }
-
-            .squareBottom {
-                height: 20px;
-                width: 50px;
-                background-color: $black;
-                position: absolute;
-                bottom: 75px;
-                left: calc(50% - 25px);
-            }
-
-            .clientCoins {
-                height: 30px;
-                width: 140px;
-                position: absolute;
-                bottom: 115px;
-                left: calc(50% - 70px);
-                text-align: center;
-                line-height: 30px;
-                color: $red;
-            }
-        }
-
-        /* Menu to select the food */
-        .menuFood {
-            height: 75px;
-            width: 100%;
-            position: absolute;
-						z-index: 2;
-            left: 0;
-            bottom: 0;
-            background-color: $yellow;
-            font-size: 0;
-
-            .containerFoodButton {
-                height: 100%;
-                width: 25%;
-                display: inline-block;
-                padding: 10px 25px;
-                box-sizing: border-box;
-                position: relative;
-
-                .foodButton {
-                    height: 50px;
-                    width: 50px;
-                    position: absolute;
-                    left: calc(50% - 25px);
-                    display: inline-block;
-                    text-align: center;
-                    border-radius: 10px;
-                    background: $cream;
-
-                    img {
-                        height: 45px;
-                        width: 45px;
-                    }
-                }
-            }
-
-            .active {
-                background-color: $dark-yellow;
-            }
-        }
-    }
-
-    /*
-        QUEST SECTION
-    */
-
-    .questSection {
-        height: calc(50vh - 75px);
-        width: 55%;
-        display: inline-block;
-        float: right;
-        background-color: $cream;
-        position: relative;
-        padding: 20px 40px;
-        box-sizing: border-box;
-        overflow-y: scroll;
-        transition: 1s; 
-        h2 {
-            color: $black;
-            font-weight: $bold;
-            font-size: $title-size;
-            margin-bottom: 20px;
-        }
-
-        ul {
-
-            li {
-                height: auto;
-                line-height: 20px;
-                padding: 10px 0;
-                position: relative;
-
-                /* Checkbox for the quest */
-                .checkboxContainer {
-                    height: 20px;
-                    width: 20px;
-                    position: absolute;
-                    top: 10px;
-                    left: 0;
-                    display: inline-block;
-
-                    .checkbox {
-                        height: 100%;
-                        width: 100%;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        border: 2px solid $red;
-                    }
-
-                    .checkboxFill {
-                        height: 70%;
-                        width: 100%;
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        background-color: $red;;
-                    }
-                }
-
-                /* Explanation of the quest */
-                .nameQuest {
-                    display: inline-block;
-                    width: 70%;
-                    margin-left: 10%;
-                }
-
-                .reward {
-                    position: absolute;
-                    right: 0;
-                    top: 10px;
-
-                    .numberReward {
-                        font-weight: $bold;
-                        margin-right: 20px;
-                    }
-
-                    .icon {
-                        height: 20px;
-                        width: auto;
-                        vertical-align: text-top;
-                    }
-                }
-            }
-        }
-    }
-
-    /*
-        AMELIORATIONS & STATISTICS SECTION
-    */
-
-    .ameliorationsSection {
-        height: 50vh;
-        width: 55%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-color: $light-yellow;
-        transition: 1s; 
-        .ameliorationContainer {
-            height: 100%;
-            width: 100%;
-            position: relative;
-
-            /* Menu of the ameliorations */
-            .menuAmelioration {
-                height: 75px;
-                width: 100%;
-                background-color: $yellow;
-
-                ul {
-                    height: 100%;
-                    width: 100%;
-                    font-size: 0;
-
-                    li {
-                        height: 100%;
-                        width: 33.33%;
-                        display: inline-block;
-                        text-align: center;
-                        line-height: 75px;
-                        cursor: pointer;
-
-                        span {
-                            font-weight: $bold;
-                            font-size: $title-size;
-                            color: $white;
-                        }
-                    }
-
-                    .current {
-                        background-color: $dark-yellow;
-                    }
-                }
-            }
-
-            /* List of the ameliorations */
-            .listUpgrade {
-                height: calc(50vh - 75px);
-                overflow: scroll;
-
-                .upgradeContainer  {
-                    height: 80px;
-                    position: relative;
-                    border-bottom: 1px solid $dark-yellow;
-
-                    .currentUpgrade {
-                        height: 50px;
-                        width: 50px;
-                        display: inline-block;
-                        text-align: center;
-                        border-radius: 10px;
-                        position: absolute;
-                        bottom: 15px;
-                        left: 25px;
-                        background: $cream;
-                        line-height: 50px;
-
-                        img {
-                            height: 50px;
-                            width: 50px;
-                        }
-                    }
-
-                    .title {
-                        display: inline-block;
-                        width: 80px;
-                        position: absolute;
-                        top: 20px;
-                        left: 15%;
-
-                        .name {
-                            color: $red;
-                            font-size: $title-size;
-                        }
-                    }
-
-                    /* Design of the amelioration's list */
-                    .listAmelioration {
-                        width: 250px;
-                        text-align: center;
-                        display: inline-block;
-                        position: absolute;
-                        bottom: 20px;
-                        left: 35%;
-
-                        li {
-                            display: inline-block;
-
-                            a {
-                                height: 40px;
-                                width: 40px;
-                                display: inline-block;
-                                border-radius: 10px;
-                                background-color: $cream;
-
-                                img {
-                                    height: 40px;
-                                    width: 40px;
-                                }
-                            }
-                        }
-                    }
-
-                    /* Button for increase the level of the food */
-                    .levelButton {
-                        height: 50px;
-                        width: 80px;
-                        display: inline-block;
-                        position: absolute;
-                        top: 12px;
-                        right: 25px;
-                        border-radius: 10px;
-                        border-bottom: 4px solid $dark-red;
-                        background-color: $red;
-                        text-decoration: none;
-                        text-align: center;
-                        padding: 5px;
-                        box-sizing: border-box;
-
-                        span {
-                            color: $white;
-                            text-transform: uppercase;
-                        }
-
-                        span:first-child {
-                            display: inline-block;
-                            margin-bottom: 2px;
-                        }
-
-                        img {
-                            height: 15px;
-                            width: auto;
-                            vertical-align: middle;
-                        }
-                    }
-                    
-                    .levelButton:hover {
-                        background-color: $dark-red;
-                    }
-                }
-            }
-
-            /* List of the ameliorations */
-            .listStatistic {
-                height: calc(50vh - 75px);
-                overflow: scroll;
-
-                h3 {
-                    color: $red;
-                    font-weight: $bold;
-                    margin: 20px 40px;
-                }
-
-                ul {
-                    margin: 20px 40px;
-
-                    li {
-                        height: 50px;
-                        width: 50px;
-                        position: relative;
-                        display: inline-block;
-                        border-radius: 10px;
-                        background-color: $cream;
-
-                        img {
-                            height: 50px;
-                            width: 50px;
-                        }
-                    }
-                }
-            }
-        }
-    }
+	font-family: 'Muli', sans-serif;
+	font-weight: $regular;
+	font-size: $text-size;
+	overflow: hidden;
+
+	/*
+	HEADER
+	*/
+
+	header {
+		height: 75px;
+		width: 100vw;
+		position: relative;
+		background-color: $red;
+		font-size: $header-size;
+		color: $white;
+
+		/* Part left, with the logo and the level */
+		.leftPart {
+			height: 100%;
+			width: 45%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+
+			.logo {
+				display: inline-block;
+				margin: 10px 50px;
+
+				img {
+					height: 50px;
+					width: auto;
+				}
+
+			}
+
+			/* Name of the level */
+			.nameLevelContainer {
+				width: 300px;
+				position: absolute;
+				left: calc(50% - 150px + 55px);
+				display: inline-block;
+				text-align: center;
+				line-height: 75px;
+				font-weight: $bold;
+
+				.triangle {
+					display: inline-block;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 7.5px 13px 7.5px 0;
+					border-color: transparent $white transparent transparent;
+				}
+
+				.triangleRight {
+					border-width: 7.5px 0 7.5px 13px;
+					border-color: transparent transparent transparent $white;
+				}
+			}
+			.menuHamb {
+				width: 50px;
+				height: 40px;
+				background: #ff0000;
+				display: none;
+				position: absolute;
+				right: 30px;
+				top: 10px;
+			}
+		}
+
+		/* Part right, with the score */
+		.rightPart {
+			height: 100%;
+			width: 55%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-align: center;
+			display: inline-block;
+			line-height: 75px;
+
+			.icon {
+				height: 20px;
+				width: auto;
+				margin-right: 20px;
+			}
+
+			.totalCoins {
+				display: inline-block;
+				margin-right: 150px;
+			}
+
+			.totalBlueprints {
+				display: inline-block;
+			}
+		}
+	}
+
+
+	/*
+	GAME SECTION
+	*/
+
+	.gameSection {
+		height: calc(100vh - 75px);
+		width: 45%;
+		background: $white;
+		position: relative;
+		display: inline-block;
+		//cursor: pointer;
+
+		.game {
+			height: calc(100% - 75px);
+			width: 100%;
+			background-color: $cream;
+			z-index: 10; // NOE MODIF
+			cursor: pointer;
+
+			img {
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.cashRegister {
+			.squareExterior {
+				height: 70px;
+				width: 180px;
+				position: absolute;
+				bottom: 95px;
+				left: calc(50% - 90px);
+				border-radius: 10px;
+				background-color: $black;
+			}
+
+			.squareInterior {
+				height: 30px;
+				width: 140px;
+				position: absolute;
+				bottom: 115px;
+				left: calc(50% - 70px);
+				background-color: $white;
+			}
+
+			.squareBottom {
+				height: 20px;
+				width: 50px;
+				background-color: $black;
+				position: absolute;
+				bottom: 75px;
+				left: calc(50% - 25px);
+			}
+
+			.clientCoins {
+				height: 30px;
+				width: 140px;
+				position: absolute;
+				bottom: 115px;
+				left: calc(50% - 70px);
+				text-align: center;
+				line-height: 30px;
+				color: $red;
+			}
+		}
+
+		/* Menu to select the food */
+		.menuFood {
+			height: 75px;
+			width: 100%;
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			bottom: 0;
+			background-color: $yellow;
+			font-size: 0;
+
+			.containerFoodButton {
+				height: 100%;
+				width: 25%;
+				display: inline-block;
+				padding: 10px 25px;
+				box-sizing: border-box;
+				position: relative;
+
+				.foodButton {
+					height: 50px;
+					width: 50px;
+					position: absolute;
+					left: calc(50% - 25px);
+					display: inline-block;
+					text-align: center;
+					border-radius: 10px;
+					background: $cream;
+
+					img {
+						height: 45px;
+						width: 45px;
+					}
+				}
+			}
+
+			.active {
+				background-color: $dark-yellow;
+			}
+		}
+	}
+
+	/*
+	QUEST SECTION
+	*/
+
+	.questSection {
+		height: calc(50vh - 75px);
+		width: 55%;
+		display: inline-block;
+		float: right;
+		background-color: $cream;
+		position: relative;
+		padding: 20px 40px;
+		box-sizing: border-box;
+		overflow-y: scroll;
+		transition: 1s; 
+		h2 {
+			color: $black;
+			font-weight: $bold;
+			font-size: $title-size;
+			margin-bottom: 20px;
+		}
+
+		ul {
+
+			li {
+				height: auto;
+				line-height: 20px;
+				padding: 10px 0;
+				position: relative;
+
+				/* Checkbox for the quest */
+				.checkboxContainer {
+					height: 20px;
+					width: 20px;
+					position: absolute;
+					top: 10px;
+					left: 0;
+					display: inline-block;
+
+					.checkbox {
+						height: 100%;
+						width: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						border: 2px solid $red;
+					}
+
+					.checkboxFill {
+						height: 70%;
+						width: 100%;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background-color: $red;;
+					}
+				}
+
+				/* Explanation of the quest */
+				.nameQuest {
+					display: inline-block;
+					width: 70%;
+					margin-left: 10%;
+				}
+
+				.reward {
+					position: absolute;
+					right: 0;
+					top: 10px;
+
+					.numberReward {
+						font-weight: $bold;
+						margin-right: 20px;
+					}
+
+					.icon {
+						height: 20px;
+						width: auto;
+						vertical-align: text-top;
+					}
+				}
+			}
+		}
+	}
+
+	/*
+	AMELIORATIONS & STATISTICS SECTION
+	*/
+
+	.ameliorationsSection {
+		height: 50vh;
+		width: 55%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: $light-yellow;
+		transition: 1s; 
+		.ameliorationContainer {
+			height: 100%;
+			width: 100%;
+			position: relative;
+
+			/* Menu of the ameliorations */
+			.menuAmelioration {
+				height: 75px;
+				width: 100%;
+				background-color: $yellow;
+
+				ul {
+					height: 100%;
+					width: 100%;
+					font-size: 0;
+
+					li {
+						height: 100%;
+						width: 33.33%;
+						display: inline-block;
+						text-align: center;
+						line-height: 75px;
+						cursor: pointer;
+
+						span {
+							font-weight: $bold;
+							font-size: $title-size;
+							color: $white;
+						}
+					}
+
+					.current {
+						background-color: $dark-yellow;
+					}
+				}
+			}
+
+			/* List of the ameliorations */
+			.listUpgrade {
+				height: calc(50vh - 75px);
+				overflow: scroll;
+
+				.upgradeContainer  {
+					height: 80px;
+					position: relative;
+					border-bottom: 1px solid $dark-yellow;
+
+					.currentUpgrade {
+						height: 50px;
+						width: 50px;
+						display: inline-block;
+						text-align: center;
+						border-radius: 10px;
+						position: absolute;
+						bottom: 15px;
+						left: 25px;
+						background: $cream;
+						line-height: 50px;
+
+						img {
+							height: 50px;
+							width: 50px;
+						}
+					}
+
+					.title {
+						display: inline-block;
+						width: 80px;
+						position: absolute;
+						top: 20px;
+						left: 15%;
+
+						.name {
+							color: $red;
+							font-size: $title-size;
+						}
+					}
+
+					/* Design of the amelioration's list */
+					.listAmelioration {
+						width: 250px;
+						text-align: center;
+						display: inline-block;
+						position: absolute;
+						bottom: 20px;
+						left: 35%;
+
+						li {
+							display: inline-block;
+
+							a {
+								height: 40px;
+								width: 40px;
+								display: inline-block;
+								border-radius: 10px;
+								background-color: $cream;
+
+								img {
+									height: 40px;
+									width: 40px;
+								}
+							}
+						}
+					}
+
+					/* Button for increase the level of the food */
+					.levelButton {
+						height: 50px;
+						width: 80px;
+						display: inline-block;
+						position: absolute;
+						top: 12px;
+						right: 25px;
+						border-radius: 10px;
+						border-bottom: 4px solid $dark-red;
+						background-color: $red;
+						text-decoration: none;
+						text-align: center;
+						padding: 5px;
+						box-sizing: border-box;
+
+						span {
+							color: $white;
+							text-transform: uppercase;
+						}
+
+						span:first-child {
+							display: inline-block;
+							margin-bottom: 2px;
+						}
+
+						img {
+							height: 15px;
+							width: auto;
+							vertical-align: middle;
+						}
+					}
+
+					.levelButton:hover {
+						background-color: $dark-red;
+					}
+				}
+			}
+
+			/* List of the ameliorations */
+			.listStatistic {
+				height: calc(50vh - 75px);
+				overflow: scroll;
+
+				h3 {
+					color: $red;
+					font-weight: $bold;
+					margin: 20px 40px;
+				}
+
+				ul {
+					margin: 20px 40px;
+
+					li {
+						height: 50px;
+						width: 50px;
+						position: relative;
+						display: inline-block;
+						border-radius: 10px;
+						background-color: $cream;
+
+						img {
+							height: 50px;
+							width: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*
+	PLAYER
+	*/
+
+	.player {
+		height: 30px;
+		width: 30px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		.controls {
+
+			img {
+				height: 30px;
+				width: auto;
+			}
+
+			.play
+			{
+				display: block;
+			}
+
+			.pause
+			{
+				display: none;
+			}
+		}
+	}
+
+	.player.playing {
+		.play
+		{
+			display: none;
+		}
+
+		.pause
+		{
+			display: block;
+		}
+	}
+
 }
 
 
 .clickBtn {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: #ff0000;
-    color: #fff;
-    text-align: center;
-    line-height: 300px;
-    cursor: pointer;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 10px;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	background: #ff0000;
+	color: #fff;
+	text-align: center;
+	line-height: 300px;
+	cursor: pointer;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 10px;
 }
 
 .hpCurr {
-    width: 4px;
-    height: 50px;
-    background: #000;
-    margin: auto;
-    transform-origin: 50% 90%;
-    transform: rotate(1deg);
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0, 3, .5, 1.5);
-    transition-duration: 0.2s;
+	width: 4px;
+	height: 50px;
+	background: #000;
+	margin: auto;
+	transform-origin: 50% 90%;
+	transform: rotate(1deg);
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0, 3, .5, 1.5);
+	transition-duration: 0.2s;
 }
 
 .hp {
-    width: 300px;
-    height: 100px;
-    background: #ff0000;
-    color: #fff;
-    text-align: center;
-    line-height: 100px;
-    border-bottom: 1px solid #fff;
-    margin: auto;
+	width: 300px;
+	height: 100px;
+	background: #ff0000;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+	border-bottom: 1px solid #fff;
+	margin: auto;
 }

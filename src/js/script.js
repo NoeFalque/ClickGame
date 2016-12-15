@@ -697,3 +697,53 @@ $gameScreen.addEventListener('mouseover', function() {
 
 /* ----------------> Achievements Part <---------------- */
 
+
+
+
+
+
+
+
+
+
+
+// player
+		
+var player = {};
+
+// Create every needed variables
+player.el               = {};
+player.el.container     = document.querySelector( '.player' );
+player.el.audio         = player.el.container.querySelector( 'audio' );
+player.el.controls      = player.el.container.querySelector( '.controls' );
+player.el.toggle_play   = player.el.controls.querySelector( 'a.toggle-play' );
+
+console.log(player);
+
+player.el.toggle_play.addEventListener( 'click', function( event ){
+console.log('click');
+	// Toggle play
+	if( player.el.audio.paused )
+		player.el.audio.play();
+	else
+		player.el.audio.pause();
+
+	// Prevent default event
+	event.preventDefault();
+} );
+
+// Listen to play event on video
+player.el.audio.addEventListener( 'play', function() {
+
+	// Update class
+	player.el.container.classList.add( 'playing' );
+
+} );
+
+// Listen to pause event on video
+player.el.audio.addEventListener( 'pause', function() {
+
+	// Update class
+	player.el.container.classList.remove( 'playing' );
+
+} );
