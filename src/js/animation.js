@@ -14,11 +14,10 @@ var Character = function() {
 
 	this.totalLife = rdm(10,50);
 	this.currentLife = this.totalLife;
-
-	this.eaten = {};
 	this.likes = rdm(1,3);
+    this.value = rdm(10,20)+(this.totalLife/2);
 }
-
+var character;
 function createClient(){
 
 	// initialize Snap SVG
@@ -32,7 +31,6 @@ function createClient(){
 		var $svg = document.querySelector("svg");
 
 		initClient();
-
 		//eatingAnim();
 	});
 
@@ -41,11 +39,12 @@ function createClient(){
 	var nbCoins = 20;
 
 	var duration = 1000;
+    
 	var maxClicks = 5;
 
 	function initClient(){
 
-		var character = new Character();
+        character = new Character();
 
 		// set hair shapes on svg :
 		var hairs = $client.querySelectorAll("path[id^=hair]");
@@ -89,7 +88,7 @@ function createClient(){
 			}
 
 		}//end for color parts
-
+maxClicks = character.totalLife;
 	}//end initClient
 
 	// detect click
