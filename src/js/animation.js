@@ -21,7 +21,6 @@ var character;
 function createClient(){
 
 	// initialize Snap SVG
-
 	var $client = document.querySelector("#client");
 	var s = Snap("#client");
 
@@ -29,7 +28,6 @@ function createClient(){
 		var g = f.select("svg");
 		s.append(g);
 		var $svg = document.querySelector("svg");
-
 		initClient();
 		//eatingAnim();
 	});
@@ -202,10 +200,10 @@ maxClicks = character.totalLife;
 			for(var i in coins){
 
 				if(	//coins go to the box
-					coins[i].x > limit.right 	+ 150 ||
-					coins[i].y > limit.bottom + 150 ||
-					coins[i].x < limit.left 	- 150 ||
-					coins[i].y < limit.top		- 150  
+					coins[i].x > limit.right 	+ 200 ||
+					coins[i].y > limit.bottom + 200 ||
+					coins[i].x < limit.left 	- 200 ||
+					coins[i].y < limit.top		- 200  
 				) {
 					coins[i].el.style.transition = "1s";
 					coins[i].x = $box.offsetLeft;
