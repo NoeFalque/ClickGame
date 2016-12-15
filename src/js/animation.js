@@ -10,7 +10,7 @@ var Character = function() {
 	this.colors.hair	= rdm(0,3);
 	this.colors.top		= rdm(0,3);
 	this.colors.skin	= rdm(0,3);
-	this.colors.legs	= rdm(0,2);
+	this.colors.legs	= rdm(0,3);
 
 	this.totalLife = rdm(10,50);
 	this.currentLife = this.totalLife;
@@ -58,7 +58,7 @@ function createClient(){
 		var colors = {
 			hair : {
 				els: ["#hair1", "#hair2", "#hair3"],
-				cols: ["#ef763a", "#fcd73d", "#8d4d2a"]
+				cols: ["#ef763a", "#fcd73d", "#8d4d2a", "#190c05"]
 			},
 			top : {
 				els: [ "#shirt_thin", "#arm_left_thin", "#arm_right_thin"	],
@@ -72,7 +72,7 @@ function createClient(){
 				els: [	
 					["#jean_thin"]
 				],
-				cols: ["#3d342d", "#9cbdef", "#4a94ff"]
+				cols: ["#3d342d", "#9cbdef", "#4a94ff", "#211607"]
 			}
 		}
 

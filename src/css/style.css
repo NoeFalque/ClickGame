@@ -358,6 +358,7 @@ body {
       height: 75px;
       width: 100%;
       position: absolute;
+      z-index: 2;
       left: 0;
       bottom: 0;
       background-color: #f5dc72;

@@ -7,28 +7,29 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Muli:800,900" rel="stylesheet">
 		<link rel="stylesheet" href="src/css/reset.css"/>
+		<link rel="stylesheet" href="src/css/anim.css"/>
 		<link rel="stylesheet" href="src/css/style.css"/>
 		<link rel="stylesheet" href="src/css/queries.css"/>
 
 	</head>
 	<body>
 
-        <!-- HEADER -->
-        <header>
+		<!-- HEADER -->
+		<header>
 			<!-- Header left part -->
-            <div class="leftPart">
-                <a class="logo" href="./index.html">
-                    <img src="./src/images/logo.png" alt="Logo de Fat's Food">
-                </a>
-                <div class="nameLevelContainer">
+			<div class="leftPart">
+				<a class="logo" href="./index.html">
+					<img src="./src/images/logo.png" alt="Logo de Fat's Food">
+				</a>
+				<div class="nameLevelContainer">
 					<a class="triangle triangleLeft" href="#"></a>
 					<span class="nameLevel">Chariot</span>
 					<a class="triangle triangleRight" href="#"></a>
 				</div>
-           <div class="menuHamb opened"></div>
-            </div>
+				<div class="menuHamb opened"></div>
+			</div>
 			<!-- Header right part -->
-            <div class="rightPart">
+			<div class="rightPart">
 				<div class="total totalCoins">
 					<img src="./src/images/money/coin.png" class="icon" alt="Icone pièce">
 					<span class="currentCoins">0</span>
@@ -39,20 +40,22 @@
 					<span class="currentBlueprints">0</span>
 					<span class="unityBlueprints">recettes</span>
 				</div>
-            </div>
-        </header>
+			</div>
+		</header>
 
 		<!-- GAME SECTION -->
-        <section class="gameSection">
+		<section class="gameSection">
 			<!-- Game part -->
-            <div class="game">
-            <img class="backgroundGame" src="./src/images/bg/bgChariot.png" alt="Fond du jeu">
-            	<div class="clickBtn"></div>
-            	<div class="hp">
-            	    <div class="hpCurr"></div>
-            	</div>
-            	
-            </div>
+			<div class="game">
+				<img class="backgroundGame" src="./src/images/bg/bgChariot.png" alt="Fond du jeu">
+
+				<div id="client"></div>
+				<span id="coinBox">coinbox</span>
+				<audio src="src/sounds/eat.mp3" id="eatSound"></audio>
+				<audio src="src/sounds/crush.mp3" id="explosionSound"></audio>
+				<audio src="src/sounds/coins.mp3" id="coinSound"></audio>
+
+			</div>
 			<!-- Cash register design in css -->
 			<div class="cashRegister">
 				<div class="squareExterior"></div>
@@ -507,10 +510,12 @@
 				</div>
 			</div>
 		</section>
-       <img src="src/images/upgradeFood/bread.png" alt="Image qui suit la souris" id="foodImg" style="position:absolute;display:block;z-index:5;" />
-        <script src="./src/data/achievements.json"></script>
-        <script src="./src/data/food.json"></script>
-        <script src="./src/data/resto.json"></script>
+		<img src="src/images/upgradeFood/bread.png" alt="Image qui suit la souris" id="foodImg" style="position:absolute;display:block;z-index:5;" />
+		<script src="src/js/snap.svg-min.js"></script> <!-- snap svg -->
+		<script src="src/js/animation.js"></script>
+		<script src="./src/data/achievements.json"></script>
+		<script src="./src/data/food.json"></script>
+		<script src="./src/data/resto.json"></script>
 		<script src="src/js/snap.svg-min.js"></script>
 		<script src="src/js/script.js"></script>
 	</body>
@@ -523,17 +528,17 @@
 <!--
 
 <div class="clickBtn">CLICK</div>
-		<div class="hp">
-		    <div class="hpCurr"></div>
-		</div>
-		<div class="coins">0</div>
+<div class="hp">
+<div class="hpCurr"></div>
+</div>
+<div class="coins">0</div>
 
-		<div class="upgrade1">Upgrade 1</div>
-		<div class="upgrade10">Upgrade 10</div>
-		<div class="upgrade100">Upgrade 100</div>-->
+<div class="upgrade1">Upgrade 1</div>
+<div class="upgrade10">Upgrade 10</div>
+<div class="upgrade100">Upgrade 100</div>-->
 
 <!--
-		//body {
+//body {
 //    font-family: arial;
 //}
 //

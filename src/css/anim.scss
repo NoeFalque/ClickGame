@@ -1,4 +1,24 @@
 
+@import 'variables';
+@import 'queries';
+@import 'style';
+
+
+
+.game {
+	position: relative;
+}
+
+#client {
+	width: 100%;
+	height: calc(100% - 50px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	//	overflow: hidden;
+}
+
+
 @keyframes popClient {
 	from{transform: translateY(-2000px);}
 	to{transform: translateY(0px);}
@@ -25,8 +45,12 @@
 }
 
 svg {
-	transition: transform .2s;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	margin-left: -250px;
 	width: 500px;
+	transition: transform .2s;
 	animation: popClient 1s cubic-bezier(0.9, 1.54, 0.54, 0.77);
 
 	&:active {
@@ -35,7 +59,7 @@ svg {
 	}
 
 	> g {
-		transform: translateX(25px) translateY(25px) scale(0.75);
+		transform: translateY(230px) translateX(56px) scale(0.4);
 	}
 
 	#boom {
@@ -57,11 +81,6 @@ svg {
 		}
 	}
 
-}
-
-#client {
-	position: relative;
-	//	overflow: hidden;
 }
 
 .coin {

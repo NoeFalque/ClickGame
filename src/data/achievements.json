@@ -10,7 +10,7 @@ var initAchievements = [
   },
   {
      "category": "pain",
-     "name": ["Paincompétent", "Paincomplet", "Paindustriel", "Painconsevable", "Paintrépide", "Painvraisemblable", "Painconscient", "Paincomptable"],
+     "name": ["Paincompétent", "Paincomplet", "Paindustriel", "Painconcevable", "Paintrépide", "Painvraisemblable", "Painconscient", "Paincomptable"],
      "info": "Avoir nourri 10.000 fois les xx avec les aliments pain",
      "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
