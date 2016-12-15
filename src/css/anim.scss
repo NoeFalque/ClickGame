@@ -15,19 +15,25 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	//	overflow: hidden;
+	overflow: hidden;
 }
 
 
 @keyframes popClient {
-	from{transform: translateY(-2000px);}
+	from{transform: translateY(-800px);}
 	to{transform: translateY(0px);}
 }
 @keyframes boom {
-	from{transform: translateX(120px) translateY(200px) scale(0) rotate(0deg);}
-	30%{transform: translateX(0px) translateY(0px) scale(0.85) rotate(4deg);}
-	80%{transform: translateX(30px) translateY(-20px) scale(0.75) rotate(-3deg); opacity: 1}
-	to{transform: translateX(120px) translateY(200px) scale(0) rotate(0deg); opacity: 0;}
+	from{transform: translateX(120px) translateY(320px) scale(0) rotate(0deg);}
+	30%{transform: translateX(120px) translateY(310px) scale(0.45) rotate(4deg);}
+	80%{transform: translateX(120px) translateY(330px) scale(0.35) rotate(-3deg); opacity: 1}
+	to{transform: translateX(120px) translateY(320px) scale(0) rotate(0deg); opacity: 0;}
+}
+@keyframes boom {
+	from{transform: translateY(90px) scale(0) rotate(0deg);}
+	30%{transform: translateY(80px) scale(0.45) rotate(4deg);}
+	80%{transform: translateY(100px) scale(0.35) rotate(-3deg); opacity: 1}
+	to{transform: translateY(90px) scale(0) rotate(0deg); opacity: 0;}
 }
 
 @keyframes cheekRight {
@@ -59,13 +65,23 @@ svg {
 	}
 
 	> g {
-		transform: translateY(230px) translateX(56px) scale(0.4);
+		transform: translateY(230px) translateX(70px) scale(0.4);
+	}
+	@media (max-height: 500px){
+		> g {
+			transform: translateY(290px) translateX(100px) scale(0.25);
+		}
+	}
+	@media (min-height: 730px){
+		> g {
+			transform: translateY(210px) translateX(100px) scale(0.4);
+		}
 	}
 
 	#boom {
 		animation: boom 1s ease-in-out;
+		transform-origin: center;
 		animation-play-state: paused;
-		transform: translateX(50px) translateY(50px) scale(0) rotate(0deg);
 	}
 
 	#face_thin {
@@ -88,15 +104,19 @@ svg {
 	top: 0;
 	left: 0;
 	transform: translateX(-100px) translateY(-100px);
-	width: 50px;
+	width: 50px !important;
+	height: auto !important;
+	border-left: none !important;
+	border-right: none !important;
 }
 
 #fat, #exploded {
 	visibility: hidden;
 }
 
-#coinBox {
+.cashRegister {
 	position: absolute;
-	top: 500px;right: 0;
-	margin-left: 600px;
+	bottom: 0;
+	left: 50%;
+	z-index: 11;
 }

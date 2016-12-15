@@ -68,7 +68,7 @@
       body .gameSection .game {
         width: 100%;
         text-align: center; }
-        body .gameSection .game img {
+        body .gameSection .game .backgroundGame {
           width: auto;
           border-left: 2px solid #f4d038;
           border-right: 2px solid #f4d038; }
