@@ -1,16 +1,16 @@
+@keyframes popClient {
+  from {
+    transform: translateY(-2000px); }
+  to {
+    transform: translateY(0px); } }
 svg {
-  width: 500px; }
+  width: 500px;
+  animation: popClient 1s cubic-bezier(0.9, 1.54, 0.54, 0.77); }
   svg > g {
     transform: translateX(25px) translateY(25px) scale(0.75); }
-  svg #thin {
-    opacity: 1;
-    transition: .3s; }
-  svg #thin.destroyed {
-    opacity: 0; }
 
 #client {
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
 
 .coin {
   position: absolute;
@@ -23,7 +23,9 @@ svg {
   visibility: hidden; }
 
 #coinBox {
-  display: inline-block;
+  position: absolute;
+  top: 500px;
+  right: 0;
   margin-left: 600px; }
 
 /*# sourceMappingURL=anim.css.map */

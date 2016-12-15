@@ -1,22 +1,21 @@
 
+@keyframes popClient {
+	from{transform: translateY(-2000px);}
+	to{transform: translateY(0px);}
+}
+
 svg {
 	width: 500px;
+	animation: popClient 1s cubic-bezier(0.9, 1.54, 0.54, 0.77);
 
 	> g {
 		transform: translateX(25px) translateY(25px) scale(0.75);
-	}
-	#thin {
-		opacity: 1;
-		transition: .3s;
-	}
-	#thin.destroyed {
-		opacity: 0;
 	}
 }
 
 #client {
 	position: relative;
-	overflow: hidden;
+	//	overflow: hidden;
 }
 
 .coin {
@@ -32,6 +31,7 @@ svg {
 }
 
 #coinBox {
-	display: inline-block;
+	position: absolute;
+	top: 500px;right: 0;
 	margin-left: 600px;
 }
