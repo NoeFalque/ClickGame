@@ -1,12 +1,12 @@
-var achievements = [
+var initAchievements = [
   {
      "category": "clique",
      "name": ["petit creux", "miam", "faim", "meurt de faim", "affamé", "crève la faim", "servi", "rassasié"],
      "info": "Avoir cliqué 100 fois pour nourrir les xx",
-     "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
+     "cond": [10, 13, 15, 17, 19, 22, 25, 30],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "icon": ["curseur blanc", "curseur jaune", "curseur rouge", "curseur vert", "curseur bleu", "curseur violet", "curseur rose", "curseur or"],
-     "unlocked": [false, false, false, false, false, false, false, false]
+     "unlocked": [0]
   },
   {
      "category": "pain",
@@ -15,7 +15,7 @@ var achievements = [
      "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "icon": ["pain blanc", "pain jaune", "pain rouge", "pain vert", "pain bleu", "pain violet", "pain rose", "pain or"],
-     "unlocked": [false, false, false, false, false, false, false, false]
+     "unlocked": [0]
   },
   {
      "category": "poulet",
@@ -24,7 +24,7 @@ var achievements = [
      "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "icon": ["poulet blanc", "poulet jaune", "poulet rouge", "poulet vert", "poulet bleu", "poulet violet", "poulet rose", "poulet or"],
-     "unlocked": [false, false, false, false, false, false, false, false]
+     "unlocked": [0]
   },
   {
      "category": "dessert",
@@ -33,7 +33,7 @@ var achievements = [
      "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "icon": ["lait blanc", "lait jaune", "lait rouge", "lait vert", "lait bleu", "lait violet", "lait rose", "lait or"],
-     "unlocked": [false, false, false, false, false, false, false, false]
+     "unlocked": [0]
   },
   {
      "category": "secret",
@@ -51,7 +51,7 @@ var achievements = [
      "cond": 50,
      "xp": 500,
      "icon": "Caisse enregistreuse",
-     "unlocked": true
+     "unlocked": false
   },
   {
      "category": "secret",
@@ -78,5 +78,5 @@ var achievements = [
      "cond": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "xp": [100, 1000, 10000, 50000, 100000, 250000, 500000, 1000000],
      "icon": ["bouteille blanc", "bouteille jaune", "bouteille rouge", "bouteille vert", "bouteille bleu", "bouteille violet", "bouteille rose", "bouteille or"],
-     "unlocked": [false, false, false, false, false, false, false, false]
+     "unlocked": [0]
   }]

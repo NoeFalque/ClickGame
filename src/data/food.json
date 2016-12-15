@@ -1,7 +1,7 @@
-var dataFood = [
+var initFood = [
  {
    "name": "Pain",
-   "value": [1, 1*2, 1*4, 1*8],
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
    "infos": "Du bon pain sorti du four ",
    "cost": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
    "icon": null,
@@ -10,7 +10,7 @@ var dataFood = [
  },
  {
    "name": "Poulet",
-   "value": [1, 1*2, 1*4, 1*8],
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
    "infos": "Du bon poulet elevé en plein air respiré à travers les barreaux de sa cage",
    "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
    "icon": null,
@@ -19,7 +19,7 @@ var dataFood = [
  },
  {
    "name": "Dessert",
-   "value": [1, 1*2, 1*4, 1*8],
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
    "infos": "Gardez un peu de place pour le meilleur !",
    "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
    "icon": null,
@@ -28,7 +28,7 @@ var dataFood = [
  },
  {
    "name": "Boisson",
-   "value": [1, 1*2, 1*4, 1*8],
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
    "infos": "Pour une pateuse",
    "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
    "icon": null,

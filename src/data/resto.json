@@ -1,0 +1,29 @@
+var initResto = [
+    {
+   "name": "Restaurant",
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "infos": "Le genre de grec de ma terre que vous rachetez en gagnant au Loto",
+   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "icon": null,
+   "valueInfo": null,
+   "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
+ },
+ {
+   "name": "Cuisinier",
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "infos": "Il aime quand c'est cuisiné, il aime quand c'est congelé, il aime quand ça sort du four !",
+   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "icon": null,
+   "valueInfo": null,
+   "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
+ },
+ {
+   "name": "Serveur",
+   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "infos": "Le meilleur serveur du conté",
+   "cost": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+   "icon": null,
+   "valueInfo": null,
+   "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
+ }
+];
