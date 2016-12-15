@@ -69,13 +69,8 @@ var upgrades = [];
 var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
-<<<<<<< HEAD
-var $clickBtn = document.querySelector("#client");
-=======
 var $clickBtn = document.querySelector('#client');
-    $hp       = document.querySelector('.hp'),
 //    $hpBar    = $hp.querySelector('.hpCurr'),
->>>>>>> origin/master
     $coins    = document.querySelector('.currentCoins'),
     $recipes  = document.querySelector('.currentBlueprints'),
     clickDmg  = 1,
@@ -382,12 +377,6 @@ function autoDirect() {
 // function that giveFood
 function giveFood(value) {
     character.currentLife -= value;
-<<<<<<< HEAD
-=======
-    var ratio = character.currentLife/character.totalLife;
-//    $hpBar.style.transform = 'rotate('+(-ratio*360)+'deg)';
->>>>>>> origin/master
-   
     if(character.currentLife <= 0) {
         dataRestore.coins += character.value;
         $character.screenValue.innerHTML = character.value+' $';
