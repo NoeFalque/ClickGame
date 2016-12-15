@@ -68,7 +68,7 @@
       body .gameSection .game {
         width: 100%;
         text-align: center; }
-        body .gameSection .game img {
+        body .gameSection .game .backgroundGame {
           width: auto;
           border-left: 2px solid #f4d038;
           border-right: 2px solid #f4d038; }
@@ -318,7 +318,7 @@ body {
       height: calc(100% - 75px);
       width: 100%;
       background-color: #fff7ee;
-      z-index: 1000;
+      z-index: 10;
       cursor: pointer; }
       body .gameSection .game img {
         height: 100%;

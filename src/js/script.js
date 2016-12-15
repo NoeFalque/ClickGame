@@ -1,21 +1,5 @@
 init();
 /* ----------------> CONSTRUCTORS <---------------- */
-// Character CONSTRUCTOR
-var Character = function() {
-    this.phys      = {};
-    this.phys.hair = rdm(0,5);
-    this.phys.skin = rdm(0,4);
-    this.phys.body = rdm(0,4);
-    this.phys.legs = rdm(0,4);
-   
-    this.totalLife   = rdm(10,50);
-    this.currentLife = this.totalLife;
-   
-    this.eaten  = {};
-    this.likes  = rdm(0,3);
-    this.value = rdm(10,20)+(this.totalLife/2);
-    console.log('Character Ready !');
-}
 
     // FOOD CONSTRUCTORS
 // Food CONSTRUCTOR
@@ -85,9 +69,9 @@ var upgrades = [];
 var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
-var $clickBtn = document.querySelector('.clickBtn');
+var $clickBtn = document.querySelector('#client');
     $hp       = document.querySelector('.hp'),
-    $hpBar    = $hp.querySelector('.hpCurr'),
+//    $hpBar    = $hp.querySelector('.hpCurr'),
     $coins    = document.querySelector('.currentCoins'),
     $recipes  = document.querySelector('.currentBlueprints'),
     clickDmg  = 1,
@@ -395,7 +379,7 @@ function autoDirect() {
 function giveFood(value) {
     character.currentLife -= value;
     var ratio = character.currentLife/character.totalLife;
-    $hpBar.style.transform = 'rotate('+(-ratio*360)+'deg)';
+//    $hpBar.style.transform = 'rotate('+(-ratio*360)+'deg)';
    
     if(character.currentLife <= 0) {
         dataRestore.coins += character.value;

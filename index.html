@@ -30,7 +30,7 @@
 			</div>
 			<!-- Header right part -->
 			<div class="rightPart">
-				<div class="total totalCoins">
+				<div class="total totalCoins" id="coinBox">
 					<img src="./src/images/money/coin.png" class="icon" alt="Icone pièce">
 					<span class="currentCoins">0</span>
 					<span class="unityCoins">$</span>
@@ -50,7 +50,6 @@
 				<img class="backgroundGame" src="./src/images/bg/bgChariot.png" alt="Fond du jeu">
 
 				<div id="client"></div>
-				<span id="coinBox">coinbox</span>
 				<audio src="src/sounds/eat.mp3" id="eatSound"></audio>
 				<audio src="src/sounds/crush.mp3" id="explosionSound"></audio>
 				<audio src="src/sounds/coins.mp3" id="coinSound"></audio>
@@ -510,7 +509,7 @@
 				</div>
 			</div>
 		</section>
-		<img src="src/images/upgradeFood/bread.png" alt="Image qui suit la souris" id="foodImg" style="position:absolute;display:block;z-index:5;" />
+		<img src="src/images/upgradeFood/bread.png" alt="Image qui suit la souris" id="foodImg" style="position:absolute;display:block;z-index:20;" />
 		<script src="src/js/snap.svg-min.js"></script> <!-- snap svg -->
 		<script src="src/js/animation.js"></script>
 		<script src="./src/data/achievements.json"></script>
