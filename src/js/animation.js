@@ -19,7 +19,6 @@ var Character = function() {
 }
 var character;
 function createClient(){
-
 	// initialize Snap SVG
 	var $client = document.querySelector("#client");
 	var s = Snap("#client");
@@ -35,15 +34,13 @@ function createClient(){
 
 	// globals & settings
 	var nbCoins = 20;
-
 	var duration = 1000;
-    
 	var maxClicks = 5;
 
 	function initClient(){
 
         character = new Character();
-
+        
 		// set hair shapes on svg :
 		var hairs = $client.querySelectorAll("path[id^=hair]");
 		for(var i=0; i<hairs.length; i++){
@@ -86,11 +83,10 @@ function createClient(){
 			}
 
 		}//end for color parts
-maxClicks = character.totalLife;
+        maxClicks = character.totalLife;
 	}//end initClient
 
 	// detect click
-
 	var step = duration / maxClicks,
 			anims = [],
 			clicks = 0,
@@ -98,10 +94,13 @@ maxClicks = character.totalLife;
 			$eatSound = document.querySelector("#eatSound");
 
 	$client.addEventListener("click", function(){
-		$eatSound.play();
-
+		eatingStep(); 
+	});
+    
+    eatingStep = function eatStep() {
+       $eatSound.play();
 		if(disabled) return;
-		if(clicks >= maxClicks-1){
+		if(clicks >= character.totalLife-1){
 			disabled = true;
 			explosionAnim();
 		}
@@ -113,8 +112,8 @@ maxClicks = character.totalLife;
 				}
 			}, step);
 			clicks++;
-		}
-	});
+		} 
+    }
 
 	function fatAnim(){
 		var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right"];
@@ -200,10 +199,10 @@ maxClicks = character.totalLife;
 			for(var i in coins){
 
 				if(	//coins go to the box
-					coins[i].x > limit.right 	+ 200 ||
-					coins[i].y > limit.bottom + 200 ||
-					coins[i].x < limit.left 	- 200 ||
-					coins[i].y < limit.top		- 200  
+					coins[i].x > limit.right 	+ 150 ||
+					coins[i].y > limit.bottom + 150 ||
+					coins[i].x < limit.left 	- 150 ||
+					coins[i].y < limit.top		- 150  
 				) {
 					coins[i].el.style.transition = "1s";
 					coins[i].x = $box.offsetLeft;

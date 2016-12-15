@@ -70,7 +70,6 @@ var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
 var $clickBtn = document.querySelector('#client');
-//    $hpBar    = $hp.querySelector('.hpCurr'),
     $coins    = document.querySelector('.currentCoins'),
     $recipes  = document.querySelector('.currentBlueprints'),
     clickDmg  = 1,
@@ -377,6 +376,7 @@ function autoDirect() {
 // function that giveFood
 function giveFood(value) {
     character.currentLife -= value;
+    eatingStep();
     if(character.currentLife <= 0) {
         dataRestore.coins += character.value;
         $character.screenValue.innerHTML = character.value+' $';
@@ -560,6 +560,16 @@ function init(){
     }
 }
 
+function scriptBlock () {
+    timer --;
+    if (timer == 0) clearInterval(timerCmd);
+}
+
+//timer = 4;
+//loopBlock = setInterval( function() {
+//    scriptBlock();
+//}, 1000);
+
 /* ----------------> DOM PART <---------------- */
 
 // SWitch Menus
@@ -695,11 +705,9 @@ $gameScreen.addEventListener('mouseover', function() {
 
 
 
-
-// player
-		
+/* ----------------> Player Part <---------------- */
+// Variables player		
 var player = {};
-
 // Create every needed variables
 player.el               = {};
 player.el.container     = document.querySelector( '.player' );
