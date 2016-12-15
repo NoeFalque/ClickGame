@@ -1,3 +1,224 @@
-
+/*
+***
+    SCREEN MAX WIDTH 1100PX
+***
+*/
+@media (max-width: 1100px) {
+  /* Body */
+  body .ameliorationsSection .ameliorationContainer {
+    /* Design of the list for the upgrades */ }
+    body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer {
+      height: 100px; }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade {
+        height: 65px;
+        width: 65px;
+        bottom: 20px;
+        left: 5%; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade img {
+          height: 65px;
+          width: 65px; }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title {
+        width: 300px;
+        top: 10px;
+        left: calc(50% - 150px);
+        text-align: center; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title .name {
+          margin-right: 20px; }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration {
+        bottom: 10px;
+        left: calc(50% - 125px); }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton {
+        top: 25px; } }
+/*
+***
+    SCREEN MAX WIDTH 955PX
+***
+*/
+@media (max-width: 955px) {
+  /* Body */
+  body {
+    /* Header */
+    /* Game section */
+    /* Section with the quests */
+    /* Section with the amelioration */ }
+    body header {
+      font-size: 24px;
+      height: 50px; }
+      body header .leftPart {
+        width: 100%;
+        z-index: 2; }
+        body header .leftPart .logo {
+          margin-left: 5%; }
+        body header .leftPart .nameLevelContainer {
+          left: calc(50% - 150px);
+          line-height: 50px; }
+        body header .leftPart .menuHamb {
+          display: inline-block; }
+      body header .rightPart {
+        width: 100%;
+        top: 50px;
+        background-color: #f35a4e;
+        z-index: 1;
+        line-height: 50px; }
+        body header .rightPart .totalCoins {
+          margin-right: 18%; }
+    body .gameSection {
+      height: calc(100vh - 50px);
+      width: 100%; }
+      body .gameSection .game {
+        width: 100%;
+        text-align: center; }
+        body .gameSection .game img {
+          width: auto;
+          border-left: 2px solid #f4d038;
+          border-right: 2px solid #f4d038; }
+    body .questSection {
+      height: 50vh;
+      width: 100%;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      overflow-y: scroll; }
+      body .questSection ul li {
+        height: auto;
+        line-height: 20px;
+        padding: 10px 0; }
+        body .questSection ul li .nameQuest {
+          display: inline-block;
+          height: 20px;
+          width: 60%; }
+    body .ameliorationsSection {
+      height: 45vh;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      right: inherit; }
+      body .ameliorationsSection .ameliorationContainer .menuAmelioration {
+        height: 50px; }
+        body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li {
+          line-height: 50px; } }
+/*
+***
+    SCREEN MAX WIDTH 500PX
+***
+*/
+@media (max-width: 500px) {
+  /* Body */
+  body {
+    /* Header */
+    /* Section with the quests */
+    /* Section with the amelioration */ }
+    body header .leftPart .logo img {
+      height: 40px; }
+    body .questSection ul li .nameQuest {
+      margin-left: 12%; }
+    body .questSection ul li .reward .numberReward {
+      margin-right: 10px; }
+    body .ameliorationsSection .ameliorationContainer {
+      /* Menu of the amelioration section */
+      /* List of the amelioration section */ }
+      body .ameliorationsSection .ameliorationContainer .menuAmelioration {
+        height: 50px; }
+        body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li {
+          line-height: 50px; }
+          body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li span {
+            font-size: 18px; }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer {
+        height: 140px; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade {
+          height: 50px;
+          width: 50px;
+          left: 39%; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade img {
+            height: 50px;
+            width: 50px; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title {
+          width: 80px;
+          top: 40px;
+          left: 5%; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration {
+          bottom: 83px;
+          left: 35%; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton {
+          top: 70px;
+          right: 10%; } }
+/*
+***
+    SCREEN MAX WIDTH 400PX
+***
+*/
+@media (max-width: 400px) {
+  /* Body */
+  body {
+    font-size: 14px;
+    /* Header */
+    /* Game section */
+    /* Section with the quests */
+    /* Section with the amelioration */ }
+    body header {
+      height: 30px;
+      font-size: 20px; }
+      body header .leftPart .logo {
+        margin-top: 5px; }
+        body header .leftPart .logo img {
+          height: 30px; }
+      body header .leftPart .nameLevelContainer {
+        line-height: 30px; }
+      body header .rightPart {
+        top: 30px;
+        line-height: 30px; }
+        body header .rightPart .icon {
+          height: 15px;
+          margin-right: 10px; }
+        body header .rightPart .totalCoins {
+          margin-right: 10%; }
+    body .gameSection {
+      position: absolute;
+      bottom: 0; }
+    body .questSection {
+      height: 45vh;
+      top: 60px;
+      padding: 15px 30px; }
+      body .questSection h2 {
+        font-size: 16px; }
+    body .ameliorationsSection .ameliorationContainer {
+      /* List of the amelioration section */ }
+      body .ameliorationsSection .ameliorationContainer .menuAmelioration {
+        height: 40px; }
+        body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li {
+          line-height: 40px; }
+          body .ameliorationsSection .ameliorationContainer .menuAmelioration ul li span {
+            font-size: 16px; }
+      body .ameliorationsSection .ameliorationContainer .listUpgrade {
+        overflow-x: hidden; }
+        body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer {
+          height: 115px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade {
+            height: 40px;
+            width: 40px;
+            left: 38%;
+            bottom: 18px;
+            border-radius: 5px; }
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .currentUpgrade img {
+              height: 40px;
+              width: 40px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title {
+            top: 40px; }
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title .name {
+              font-size: 16px; }
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .title .lvl {
+              font-size: 14px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration {
+            bottom: 70px;
+            left: 25%; }
+            body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration li a {
+              height: 30px;
+              width: 30px;
+              border-radius: 5px; }
+              body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .listAmelioration li a img {
+                height: 30px;
+                width: 30px; }
+          body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer .levelButton {
+            top: 50px; } }
 
 /*# sourceMappingURL=queries.css.map */

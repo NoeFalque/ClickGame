@@ -67,6 +67,15 @@ body {
                     border-color: transparent transparent transparent $white;
                 }
             }
+            .menuHamb {
+                width: 50px;
+                height: 40px;
+                background: #ff0000;
+                display: none;
+                position: absolute;
+                right: 30px;
+                top: 10px;
+            }
         }
 
         /* Part right, with the score */
@@ -108,6 +117,20 @@ body {
         background: $white;
         position: relative;
         display: inline-block;
+        //cursor: pointer;
+
+        .game {
+            height: calc(100% - 75px);
+            width: 100%;
+            background-color: $cream;
+            z-index: 1000;
+            cursor: pointer;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
 
         .cashRegister {
             .squareExterior {
@@ -205,7 +228,7 @@ body {
         padding: 20px 40px;
         box-sizing: border-box;
         overflow-y: scroll;
-
+        transition: 1s; 
         h2 {
             color: $black;
             font-weight: $bold;
@@ -216,16 +239,19 @@ body {
         ul {
 
             li {
-                height: 45px;
-                line-height: 45px;
+                height: auto;
+                line-height: 20px;
+                padding: 10px 0;
+                position: relative;
 
                 /* Checkbox for the quest */
                 .checkboxContainer {
                     height: 20px;
                     width: 20px;
-                    position: relative;
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
                     display: inline-block;
-                    vertical-align: text-top;
 
                     .checkbox {
                         height: 100%;
@@ -248,11 +274,15 @@ body {
 
                 /* Explanation of the quest */
                 .nameQuest {
-                    margin-left: 5%;
+                    display: inline-block;
+                    width: 70%;
+                    margin-left: 10%;
                 }
 
                 .reward {
-                    float: right;
+                    position: absolute;
+                    right: 0;
+                    top: 10px;
 
                     .numberReward {
                         font-weight: $bold;
@@ -262,7 +292,6 @@ body {
                     .icon {
                         height: 20px;
                         width: auto;
-                        margin-right: 20px;
                         vertical-align: text-top;
                     }
                 }
@@ -281,7 +310,7 @@ body {
         bottom: 0;
         right: 0;
         background-color: $light-yellow;
-
+        transition: 1s; 
         .ameliorationContainer {
             height: 100%;
             width: 100%;
@@ -327,6 +356,7 @@ body {
                 .upgradeContainer  {
                     height: 80px;
                     position: relative;
+                    border-bottom: 1px solid $dark-yellow;
 
                     .currentUpgrade {
                         height: 50px;
@@ -334,8 +364,9 @@ body {
                         display: inline-block;
                         text-align: center;
                         border-radius: 10px;
-                        margin: 15px;
-                        margin-left: 25px;
+                        position: absolute;
+                        bottom: 15px;
+                        left: 25px;
                         background: $cream;
                         line-height: 50px;
 
@@ -364,7 +395,7 @@ body {
                         text-align: center;
                         display: inline-block;
                         position: absolute;
-                        top: 20px;
+                        bottom: 20px;
                         left: 35%;
 
                         li {
@@ -387,12 +418,12 @@ body {
 
                     /* Button for increase the level of the food */
                     .levelButton {
-                        height: 55px;
-                        width: 100px;
+                        height: 50px;
+                        width: 80px;
                         display: inline-block;
-                        margin: 12px;
-                        margin-right: 25px;
-                        float: right;
+                        position: absolute;
+                        top: 12px;
+                        right: 25px;
                         border-radius: 10px;
                         border-bottom: 4px solid $dark-red;
                         background-color: $red;
@@ -408,7 +439,6 @@ body {
 
                         span:first-child {
                             display: inline-block;
-                            margin-top: 5px;
                             margin-bottom: 2px;
                         }
 
@@ -417,6 +447,10 @@ body {
                             width: auto;
                             vertical-align: middle;
                         }
+                    }
+                    
+                    .levelButton:hover {
+                        background-color: $dark-red;
                     }
                 }
             }
@@ -450,22 +484,10 @@ body {
                     }
                 }
             }
-
-            /* Z index of the sections */
-            .listFood {
-                display: none;
-            }
-
-            .listRestaurant {
-                display: none;
-            }
-
-            .listStatistic {
-                z-index: 1;
-            }
         }
     }
 }
+
 
 .clickBtn {
     width: 300px;

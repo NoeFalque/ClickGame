@@ -1,1 +1,423 @@
 @import 'variables';
+
+/*
+***
+    SCREEN MAX WIDTH 1100PX
+***
+*/
+
+@media (max-width:1100px) {
+
+    /* Body */
+    body {
+
+        .ameliorationsSection {
+
+            .ameliorationContainer {
+
+                /* Design of the list for the upgrades */
+                .listUpgrade {
+
+                    .upgradeContainer {
+                        height: 100px;
+
+                        .currentUpgrade {
+                            height: 65px;
+                            width: 65px;
+                            bottom: 20px;
+                            left: 5%;
+
+                            img {
+                                height: 65px;
+                                width: 65px;
+                            }
+                        }
+
+                        .title {
+                            width: 300px;
+                            top: 10px;
+                            left: calc(50% - 150px);
+                            text-align: center;
+
+                            .name {
+                                margin-right: 20px;
+                            }
+                        }
+
+                        .listAmelioration {
+                            bottom: 10px;
+                            left: calc(50% - 125px)
+                        }
+
+                        .levelButton {
+                            top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+***
+    SCREEN MAX WIDTH 955PX
+***
+*/
+
+@media (max-width:955px) {
+
+    /* Body */
+    body {
+
+        /* Header */
+        header {
+            font-size: $title-size;
+            height: 50px;
+
+            .leftPart {
+                width: 100%;
+                z-index: 2;
+
+                .logo {
+                    margin-left: 5%;
+                }
+
+                .nameLevelContainer {
+                    left: calc(50% - 150px);
+                    line-height: 50px;
+                }
+                .menuHamb {
+                    display: inline-block;
+                }
+            }
+
+            .rightPart {
+                width: 100%;
+                top: 50px;
+                background-color: $red;
+                z-index: 1;
+                line-height: 50px;
+
+                .totalCoins {
+                    margin-right: 18%;
+                }
+            }
+        }
+
+        /* Game section */
+        .gameSection {
+            height: calc(100vh - 50px);
+            width: 100%;
+
+            .game {
+                width: 100%;
+                text-align: center;
+
+                img {
+                    width: auto;
+                    border-left: 2px solid $dark-yellow;
+                    border-right: 2px solid $dark-yellow;
+                }
+            }
+        }
+
+        /* Section with the quests */
+        .questSection {
+            height: 50vh;
+            width: 100%;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            overflow-y: scroll;
+
+            ul {
+
+                li {
+                    height: auto;
+                    line-height: 20px;
+                    padding: 10px 0;
+
+                    .nameQuest {
+                        display: inline-block;
+                        height: 20px;
+                        width: 60%;
+                    }
+                }
+            }
+        }
+
+        /* Section with the amelioration */
+        .ameliorationsSection {
+            height: 45vh;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: inherit;
+            .ameliorationContainer {
+
+                .menuAmelioration {
+                    height: 50px;
+
+                    ul {
+
+                        li {
+                            line-height: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+***
+    SCREEN MAX WIDTH 500PX
+***
+*/
+
+@media (max-width:500px) {
+
+    /* Body */
+    body {
+
+        /* Header */
+        header {
+
+            .leftPart {
+
+                .logo {
+
+                    img {
+                        height: 40px;
+                    }
+                }
+            }
+        }
+
+        /* Section with the quests */
+        .questSection {
+
+            ul {
+
+                li {
+
+                    .nameQuest {
+                        margin-left: 12%;
+                    }
+
+                    .reward {
+
+                        .numberReward {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Section with the amelioration */
+        .ameliorationsSection {
+
+            .ameliorationContainer {
+
+                /* Menu of the amelioration section */
+                .menuAmelioration {
+                    height: 50px;
+
+                    ul {
+
+                        li {
+                            line-height: 50px;
+
+                            span {
+                                font-size: $text-size;
+                            }
+                        }
+                    }
+                }
+
+                /* List of the amelioration section */
+                .listUpgrade {
+
+                    .upgradeContainer {
+                        height: 140px;
+
+                        .currentUpgrade {
+                            height: 50px;
+                            width: 50px;
+                            left: 39%;
+
+                            img {
+                                height: 50px;
+                                width: 50px;
+                            }
+                        }
+
+                        .title {
+                            width: 80px;
+                            top: 40px;
+                            left: 5%;
+                        }
+
+                        .listAmelioration {
+                            bottom: 83px;
+                            left: 35%;
+                        }
+
+                        .levelButton {
+                            top: 70px;
+                            right: 10%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+***
+    SCREEN MAX WIDTH 400PX
+***
+*/
+
+@media (max-width:400px) {
+
+    /* Body */
+    body {
+        font-size: 14px;
+
+        /* Header */
+        header {
+            height: 30px;
+            font-size: 20px;
+
+            .leftPart {
+
+                .logo {
+                    margin-top: 5px;
+
+                    img {
+                        height: 30px;
+                    }
+                }
+
+                .nameLevelContainer {
+                    line-height: 30px;
+                }
+            }
+
+            .rightPart {
+                top: 30px;
+                line-height: 30px;
+
+                .icon {
+                    height: 15px;
+                    margin-right: 10px;
+                }
+
+                .totalCoins {
+                    margin-right: 10%;
+                }
+            }
+        }
+
+        /* Game section */
+        .gameSection {
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* Section with the quests */
+        .questSection {
+            height: 45vh;
+            top: 60px;
+            padding: 15px 30px;
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+
+        /* Section with the amelioration */
+        .ameliorationsSection {
+
+            .ameliorationContainer {
+
+                .menuAmelioration {
+                    height: 40px;
+
+                    ul {
+
+                        li {
+                            line-height: 40px;
+
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                /* List of the amelioration section */
+                .listUpgrade {
+                    overflow-x: hidden;
+
+                    .upgradeContainer {
+                        height: 115px;
+
+                        .currentUpgrade {
+                            height: 40px;
+                            width: 40px;
+                            left: 38%;
+                            bottom: 18px;
+                            border-radius: 5px;
+
+                            img {
+                                height: 40px;
+                                width: 40px;
+                            }
+                        }
+
+                        .title {
+                            top: 40px;
+
+                            .name {
+                                font-size: 16px;
+                            }
+
+                            .lvl {
+                                font-size: 14px;
+                            }
+                        }
+
+                        .listAmelioration {
+                            bottom: 70px;
+                            left: 25%;
+
+                            li {
+
+                                a {
+                                    height: 30px;
+                                    width: 30px;
+                                    border-radius: 5px;
+
+                                    img {
+                                        height: 30px;
+                                        width: 30px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .levelButton {
+                            top: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
