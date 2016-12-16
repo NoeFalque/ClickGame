@@ -17,7 +17,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	overflow: hidden;
+//	overflow: hidden;
 }
 
 
@@ -106,10 +106,10 @@ svg {
 	top: 0;
 	left: 0;
 	transform: translateX(-100px) translateY(-100px);
-	width: 50px !important;
-	height: auto !important;
-	border-left: none !important;
-	border-right: none !important;
+	width: 50px;
+	height: auto;
+	border-left: none;
+	border-right: none;
 }
 
 #fat, #exploded {

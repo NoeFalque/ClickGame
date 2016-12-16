@@ -322,6 +322,7 @@ body {
 				height: 75px;
 				width: 100%;
 				background-color: $yellow;
+				@include prefix(user-select, none, webkit moz ms o);
 
 				ul {
 					height: 100%;
@@ -352,7 +353,8 @@ body {
 			/* List of the ameliorations */
 			.listUpgrade {
 				height: calc(50vh - 75px);
-				overflow: scroll;
+				overflow-y: scroll;
+				overflow-x: hidden;
 
 				.upgradeContainer  {
 					height: 80px;
@@ -535,17 +537,17 @@ body {
 /** Scroll bar **/
 
 ::-webkit-scrollbar {
-    width: 13px;
+	width: 13px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #f4db79;
-    padding: 4px;
-    -webkit-box-shadow: inset 0 0 0px #f2d464;
+	background-color: #f4db79;
+	padding: 4px;
+	-webkit-box-shadow: inset 0 0 0px #f2d464;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #f3cf48;
-  -webkit-box-shadow: inset 0 0 8px rgba(154, 129, 35, 0.49);
-  border-radius: 6px;
+	background-color: #f3cf48;
+	-webkit-box-shadow: inset 0 0 8px rgba(154, 129, 35, 0.49);
+	border-radius: 6px;
 }

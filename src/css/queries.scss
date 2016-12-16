@@ -73,7 +73,7 @@
         /* Header */
         header {
             font-size: $title-size;
-            height: 50px;
+            height: 100px;
 
             .leftPart {
                 width: 100%;
@@ -107,7 +107,7 @@
 
         /* Game section */
         .gameSection {
-            height: calc(100vh - 50px);
+            height: calc(100vh - 100px);
             width: 100%;
 
             .game {
@@ -328,6 +328,10 @@
         .gameSection {
             position: absolute;
             bottom: 0;
+						height: calc(100vh - 60px);
+						.game {
+								height: calc(100vh - 130px);
+						}
         }
 
         /* Section with the quests */

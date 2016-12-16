@@ -43,7 +43,7 @@
     /* Section with the amelioration */ }
     body header {
       font-size: 24px;
-      height: 50px; }
+      height: 100px; }
       body header .leftPart {
         width: 100%;
         z-index: 2; }
@@ -63,7 +63,7 @@
         body header .rightPart .totalCoins {
           margin-right: 18%; }
     body .gameSection {
-      height: calc(100vh - 50px);
+      height: calc(100vh - 100px);
       width: 100%; }
       body .gameSection .game {
         width: 100%;
@@ -174,7 +174,10 @@
           margin-right: 10%; }
     body .gameSection {
       position: absolute;
-      bottom: 0; }
+      bottom: 0;
+      height: calc(100vh - 60px); }
+      body .gameSection .game {
+        height: calc(100vh - 130px); }
     body .questSection {
       height: 45vh;
       top: 60px;
@@ -265,7 +268,7 @@
     /* Section with the amelioration */ }
     body header {
       font-size: 24px;
-      height: 50px; }
+      height: 100px; }
       body header .leftPart {
         width: 100%;
         z-index: 2; }
@@ -285,7 +288,7 @@
         body header .rightPart .totalCoins {
           margin-right: 18%; }
     body .gameSection {
-      height: calc(100vh - 50px);
+      height: calc(100vh - 100px);
       width: 100%; }
       body .gameSection .game {
         width: 100%;
@@ -396,7 +399,10 @@
           margin-right: 10%; }
     body .gameSection {
       position: absolute;
-      bottom: 0; }
+      bottom: 0;
+      height: calc(100vh - 60px); }
+      body .gameSection .game {
+        height: calc(100vh - 130px); }
     body .questSection {
       height: 45vh;
       top: 60px;
@@ -686,7 +692,12 @@ body {
       body .ameliorationsSection .ameliorationContainer .menuAmelioration {
         height: 75px;
         width: 100%;
-        background-color: #f5dc72; }
+        background-color: #f5dc72;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none; }
         body .ameliorationsSection .ameliorationContainer .menuAmelioration ul {
           height: 100%;
           width: 100%;
@@ -706,7 +717,8 @@ body {
             background-color: #f4d038; }
       body .ameliorationsSection .ameliorationContainer .listUpgrade {
         height: calc(50vh - 75px);
-        overflow: scroll; }
+        overflow-y: scroll;
+        overflow-x: hidden; }
         body .ameliorationsSection .ameliorationContainer .listUpgrade .upgradeContainer {
           height: 80px;
           position: relative;
@@ -845,8 +857,7 @@ body {
   height: calc(100% - 50px);
   position: absolute;
   top: 0;
-  left: 0;
-  overflow: hidden; }
+  left: 0; }
 
 @keyframes popClient {
   from {
@@ -928,10 +939,10 @@ svg {
   top: 0;
   left: 0;
   transform: translateX(-100px) translateY(-100px);
-  width: 50px !important;
-  height: auto !important;
-  border-left: none !important;
-  border-right: none !important; }
+  width: 50px;
+  height: auto;
+  border-left: none;
+  border-right: none; }
 
 #fat, #exploded {
   visibility: hidden; }

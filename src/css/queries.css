@@ -43,7 +43,7 @@
     /* Section with the amelioration */ }
     body header {
       font-size: 24px;
-      height: 50px; }
+      height: 100px; }
       body header .leftPart {
         width: 100%;
         z-index: 2; }
@@ -63,7 +63,7 @@
         body header .rightPart .totalCoins {
           margin-right: 18%; }
     body .gameSection {
-      height: calc(100vh - 50px);
+      height: calc(100vh - 100px);
       width: 100%; }
       body .gameSection .game {
         width: 100%;
@@ -174,7 +174,10 @@
           margin-right: 10%; }
     body .gameSection {
       position: absolute;
-      bottom: 0; }
+      bottom: 0;
+      height: calc(100vh - 60px); }
+      body .gameSection .game {
+        height: calc(100vh - 130px); }
     body .questSection {
       height: 45vh;
       top: 60px;

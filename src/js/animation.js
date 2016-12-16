@@ -19,6 +19,7 @@ var Character = function() {
 }
 var character;
 function createClient(){
+	
 	// initialize Snap SVG
 	var $client = document.querySelector("#client");
 	var s = Snap("#client");
@@ -36,7 +37,7 @@ function createClient(){
 	// globals & settings
 	var nbCoins = 20;
 	var duration = 1000;
-	var maxClicks = 5;
+	var maxClicks = 5;// by default
 
 	function initClient(){
 
@@ -87,7 +88,6 @@ function createClient(){
 		maxClicks = character.totalLife;
 	}//end initClient
 
-
 	function bubbleAnim(){
 		var $bb0 = $client.querySelector("#bubble_0");
 		var $bb1 = $client.querySelector("#bubble_1");
@@ -120,7 +120,9 @@ function createClient(){
 		}, 800);
 	}
 
-	// detect click
+	
+	//-------------- detect click --------------------\\
+	
 	var step = duration / maxClicks,
 			anims = [],
 			clicks = 0,
@@ -243,10 +245,10 @@ function createClient(){
 					coins[i].y < limit.top		- 150  
 				) {
 					coins[i].el.style.transition = "1s";
-					coins[i].x = $box.offsetLeft;
-					coins[i].y = $box.offsetTop;
-					coins[i].el.style.transform	= 	"translateX("+ coins[i].x +"px) ";
-					coins[i].el.style.transform	+= 	"translateY("+ coins[i].y +"px) ";
+					coins[i].x = $box.getBoundingClientRect().left -8;
+					coins[i].y = $box.getBoundingClientRect().top -62;
+					coins[i].el.style.transform	= 	"translateX("+ coins[i].x +"px) scale(0.83)";
+					coins[i].el.style.transform	+= 	"translateY("+ coins[i].y +"px) scale(0.83)";
 
 					var timeoutDuration = Math.floor(1000 / nbCoins);
 					setTimeout(function(){ 
