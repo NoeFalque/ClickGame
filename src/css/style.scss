@@ -489,6 +489,7 @@ body {
 						display: inline-block;
 						border-radius: 10px;
 						background-color: $cream;
+						filter: grayscale(100%);
 
 						img {
 							height: 50px;

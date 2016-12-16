@@ -37,7 +37,7 @@ function createClient(){
 	// globals & settings
 	var nbCoins = 20;
 	var duration = 1000;
-	var maxClicks = 5;// by default
+	var maxClicks = 20;// by default
 
 	function initClient(){
 
@@ -239,10 +239,10 @@ function createClient(){
 			for(var i in coins){
 
 				if(	//coins go to the box
-					coins[i].x > limit.right 	+ 150 ||
-					coins[i].y > limit.bottom + 150 ||
-					coins[i].x < limit.left 	- 150 ||
-					coins[i].y < limit.top		- 150  
+					coins[i].x > limit.right 	+ 100 ||
+					coins[i].y > limit.bottom + 100 ||
+					coins[i].x < limit.left 	- 100 ||
+					coins[i].y < limit.top		- 100  
 				) {
 					coins[i].el.style.transition = "1s";
 					coins[i].x = $box.getBoundingClientRect().left -8;

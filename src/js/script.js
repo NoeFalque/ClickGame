@@ -1,11 +1,6 @@
-// fastclick
-window.addEventListener('load', function() {
-    new FastClick(document.body);
-}, false);
-
-
 
 init();
+
 /* ----------------> CONSTRUCTORS <---------------- */
 
     // FOOD CONSTRUCTORS
@@ -15,7 +10,6 @@ var Food = function(name, level, cost, value) {
     this.level  = level;
     this.cost   = cost
     this.value  = value;
-    console.log(this.name+' Ready !');
 }
 
 // Bread CONSTRUCTOR
@@ -39,8 +33,6 @@ function Drink() {
 }
 Drink.prototype = Object.create(Food.prototype);
 
-
-
     // UPGRADES CONSTRUCTOR
 // Upgrade CONSTRUCTOR
 var Upgrade = function(name, level, cost, prod) {
@@ -49,7 +41,6 @@ var Upgrade = function(name, level, cost, prod) {
     this.cost   = cost;
     this.prod   = prod; // ( in seconds )
     this.sell   = cost/1.5;
-    console.log(this.name+' Ready !');
 }
  
 // Waiter CONSTRUCTOR
@@ -76,12 +67,13 @@ var upgrades = [];
 var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
-var $clickBtn   = document.querySelector('#client');
-    $coins      = document.querySelector('.currentCoins'),
-    $recipes    = document.querySelector('.currentBlueprints'),
-    clickDmg    = 1,
-    timer       = 0,
-    $gameScreen = document.querySelector('.gameSection .game');
+var $clickBtn      = document.querySelector('#client');
+    $coins         = document.querySelector('.currentCoins'),
+    $recipes       = document.querySelector('.currentBlueprints'),
+    clickDmg       = 1,
+    timer          = 0,
+    $gameScreen    = document.querySelector('.gameSection .game'),
+    $caisseDalleux = document.querySelector('.squareExterior');
 // Variables Menu
 var $menu               = {};
     // 3 Titles
@@ -123,9 +115,7 @@ $coins.innerHTML = dataRestore.coins;
 $recipes.innerHTML = dataRestore.recipes;
 foodInit();
 upgradeInit();
-
-
-    console.log(dataFood[0].value[dataRestore.level.food.bread]);
+// Creation of the features
     var bread = new Bread();
     var chicken = new Chicken();
     var dessert = new Dessert();
@@ -138,7 +128,6 @@ upgradeInit();
     dataRestore.food[0].chicken++;
     dataRestore.food[0].dessert++;
     dataRestore.food[0].drink++;
-
      // ACHIEVEMENTS
 var clickCpt = 0; // 1st A
 
@@ -174,7 +163,7 @@ $upgrades.resto[2].addEventListener('click', function(){
     // FOOD UPGRADES
 // Upgrade the bread's lvl
 function upBread() {
-    if ( (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto+1 ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread] ) ) {  
+    if ( (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread] ) ) {  
         dataRestore.recipes -= dataFood[0].cost[dataRestore.level.food.bread]; 
         dataRestore.level.food.bread += 1;
         for (var i = 0; i < foods.length; i++) {
@@ -239,12 +228,6 @@ function upDrink() {
         foodInit();
     }
 }
-//function for the cook to add a Bread
-/* 
-function newBread() {
-    foods.push(new Bread());
-    dataRestore.food[0].bread += 1;
-}*/
 
     // Resto UPGRADES
 // Upgrade the waitor's lvl
@@ -303,7 +286,6 @@ $clickBtn.addEventListener('click', function() {
     if (timer == 0){
         giveFood(clickDmg); 
         // 1st Achievement
-        console.log(dataAchievement.clickCpt);
         dataAchievement.clickCpt++;
         if (dataAchievement.clickCpt >= achievements[0].cond[achievements[0].unlocked]) {
            achievements[0].unlocked++; 
@@ -329,38 +311,24 @@ $clickBtn.addEventListener('click', function() {
 });
 
 // 5th A ONCLICK
-//$caisseDalleux.addEventListener('click', function(){
-//   dataAchievement.dalleuxCpt++;
-//   if (dataAchievement.dalleuxCpt >= 50) {
-//        achievements[5].unlocked++;
-//   }
-//});
+$caisseDalleux.addEventListener('click', function(){
+   dataAchievement.dalleuxCpt++;
+   if (dataAchievement.dalleuxCpt >= 50) {
+        achievements[5].unlocked++;
+   }
+});
  
     // ADDS
 // function to add a Waiter
 function newWaiter() {
    _waiter = new Waiter();
-//   if (dataRestore.coins >= _waiter.cost) {
-//       dataRestore.coins -= _waiter.cost;
-       upgrades.push(_waiter);
-       dataRestore.upgrades[0].waiter += 1;
-//    }
-//    else {
-//        _waiter = null;
-//        console.log('Vous n\'avez pas asssez pour votre Serveur de merde !');
-//    }    
+   upgrades.push(_waiter);
+   dataRestore.upgrades[0].waiter += 1; 
 }   
 function newCooker() {
    _cooker = new Cooker();
-//   if (dataRestore.coins >= _waiter.cost) {
-//       dataRestore.coins -= _waiter.cost;
-       upgrades.push(_cooker);
-       dataRestore.upgrades[0].cooker += 1;
-//    }
-//    else {
-//        _waiter = null;
-//        console.log('Vous n\'avez pas asssez pour votre Serveur de merde !');
-//    }    
+   upgrades.push(_cooker);
+   dataRestore.upgrades[0].cooker += 1;   
 }
 
 // function auto to Give food
@@ -393,6 +361,7 @@ function giveFood(value) {
         dataRestore.coins += character.value;
         $character.screenValue.innerHTML = character.value+' $';
         $coins.innerHTML = dataRestore.coins;
+        dataAchievement.explodeCpt++;
         console.log('dead');
         clearInterval(loop);
         timer = 4;
@@ -694,6 +663,7 @@ window.addEventListener('resize', function() {
     }
     
 });
+
 // Switch du MENU BURGER
 function menuSwitch() {
      if ( !$menuHamb.button.classList.contains('opened') ) {
@@ -734,7 +704,6 @@ $gameScreen.addEventListener('mouseover', function() {
 
 //dataRestore.coins
 //dataRestore.recipes
-
 function disableFood() {
     for (var i = 0; i < $food.length; i++){
         if ( (dataRestore.recipes < parseInt($food[i].querySelector('.levelButton .costRecipe').innerText)) ) {
@@ -762,14 +731,69 @@ var disabloop = setInterval(function() {
 }, 500);
 
 
+
+function unlockAchievement() {
+    _achievTab = $menu.listStat.querySelectorAll('ul li');
+    // Cliqueur
+    if (dataAchievement.clickCpt > achievements[0].cond[0]) _achievTab[0].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[1]) _achievTab[1].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[2]) _achievTab[2].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[3]) _achievTab[3].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[4]) _achievTab[4].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[5]) _achievTab[5].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[6]) _achievTab[6].style.filter = 'inherit';
+    if (dataAchievement.clickCpt > achievements[0].cond[7]) _achievTab[7].style.filter = 'inherit';
+    // Pain
+    if (dataAchievement.breadCpt > achievements[1].cond[0]) _achievTab[8].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[1]) _achievTab[9].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[2]) _achievTab[10].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[3]) _achievTab[11].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[4]) _achievTab[12].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[5]) _achievTab[13].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[6]) _achievTab[14].style.filter = 'inherit';
+    if (dataAchievement.breadCpt > achievements[1].cond[7]) _achievTab[15].style.filter = 'inherit';
+    // Poulet
+    if (dataAchievement.chickenCpt > achievements[2].cond[0]) _achievTab[16].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[1]) _achievTab[17].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[2]) _achievTab[18].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[3]) _achievTab[19].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[4]) _achievTab[20].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[5]) _achievTab[21].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[6]) _achievTab[22].style.filter = 'inherit';
+    if (dataAchievement.chickenCpt > achievements[2].cond[7]) _achievTab[23].style.filter = 'inherit';
+    // Dessert
+    if (dataAchievement.dessertCpt > achievements[3].cond[0]) _achievTab[24].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[1]) _achievTab[25].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[2]) _achievTab[26].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[3]) _achievTab[27].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[4]) _achievTab[28].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[5]) _achievTab[29].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[6]) _achievTab[30].style.filter = 'inherit';
+    if (dataAchievement.dessertCpt > achievements[3].cond[7]) _achievTab[31].style.filter = 'inherit';
+    // Drink
+    if (dataAchievement.drinkCpt > achievements[8].cond[0]) _achievTab[32].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[1]) _achievTab[33].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[2]) _achievTab[34].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[3]) _achievTab[35].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[4]) _achievTab[36].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[5]) _achievTab[37].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[6]) _achievTab[38].style.filter = 'inherit';
+    if (dataAchievement.drinkCpt > achievements[8].cond[7]) _achievTab[39].style.filter = 'inherit';
+    // Sherlock
+    if (dataAchievement.sherlock > achievements[4].cond) _achievTab[40].style.filter = 'inherit';
+    // Dalleux
+    if (dataAchievement.dalleuxCpt > achievements[5].cond) _achievTab[41].style.filter = 'inherit';
+    // Fou
+    if (dataAchievement.explodeCpt > achievements[6].cond) _achievTab[42].style.filter = 'inherit';
+    // Chef
+    if (dataRestore.level.food.bread > 0 && dataRestore.level.food.chicken > 0 && dataRestore.level.food.dessert > 0 && dataRestore.level.food.drink > 0) _achievTab[43].style.filter = 'inherit';
+}
+
+var unlockLoop = setInterval(function() {
+    unlockAchievement();
+}, 500);
+
 /* ----------------> Achievements Part <---------------- */
-
-
-
-dataRestore.level.food.chicken < dataRestore.level.resto.resto
-
-
-
 
 
 
@@ -782,8 +806,6 @@ player.el.container     = document.querySelector( '.player' );
 player.el.audio         = player.el.container.querySelector( 'audio' );
 player.el.controls      = player.el.container.querySelector( '.controls' );
 player.el.toggle_play   = player.el.controls.querySelector( 'a.toggle-play' );
-
-console.log(player);
 
 player.el.toggle_play.addEventListener( 'click', function( event ){
 	// Toggle play
@@ -811,3 +833,5 @@ player.el.audio.addEventListener( 'pause', function() {
 	player.el.container.classList.remove( 'playing' );
 
 } );
+
+

@@ -168,6 +168,13 @@
           height: 30px; }
       body header .leftPart .nameLevelContainer {
         line-height: 30px; }
+      body header .leftPart .menuHamb {
+        top: 0;
+        right: -80px; }
+        body header .leftPart .menuHamb img {
+          width: 30px; }
+        body header .leftPart .menuHamb span {
+          font-size: 10px; }
       body header .rightPart {
         top: 30px;
         line-height: 30px; }
@@ -397,6 +404,13 @@
           height: 30px; }
       body header .leftPart .nameLevelContainer {
         line-height: 30px; }
+      body header .leftPart .menuHamb {
+        top: 0;
+        right: -80px; }
+        body header .leftPart .menuHamb img {
+          width: 30px; }
+        body header .leftPart .menuHamb span {
+          font-size: 10px; }
       body header .rightPart {
         top: 30px;
         line-height: 30px; }
@@ -823,7 +837,8 @@ body {
             position: relative;
             display: inline-block;
             border-radius: 10px;
-            background-color: #fff7ee; }
+            background-color: #fff7ee;
+            filter: grayscale(100%); }
             body .ameliorationsSection .ameliorationContainer .listStatistic ul li img {
               height: 50px;
               width: 50px; }
@@ -880,9 +895,9 @@ body {
 
 @keyframes popClient {
   from {
-    transform: translateY(-800px); }
+    transform: translateX(-600px); }
   to {
-    transform: translateY(0px); } }
+    transform: translateX(0px); } }
 @keyframes boom {
   from {
     transform: translateX(120px) translateY(320px) scale(0) rotate(0deg); }
@@ -932,7 +947,7 @@ svg {
   animation: popClient 1s cubic-bezier(0.9, 1.54, 0.54, 0.77); }
   svg:active {
     transform: scale(0.95);
-    transition: transform .1s; }
+    transition: transform .05s; }
   svg > g {
     transform: translateY(230px) translateX(70px) scale(0.4); }
   @media (max-height: 500px) {
@@ -946,12 +961,13 @@ svg {
     transform-origin: center;
     animation-play-state: paused; }
   svg #face_thin #cheek_right_open {
-    animation: cheekRight 1s ease-in-out infinite alternate; }
+    animation: cheekRight .3s ease-in-out infinite alternate; }
   svg #face_thin #cheek_left_open {
-    animation: cheekLeft 1s ease-in-out infinite alternate; }
+    animation: cheekLeft .3s ease-in-out infinite alternate; }
   svg #face_thin #mouth_open, svg #face_thin #mouth_hole_open {
     transform-origin: center;
-    animation: mouth 1s ease-in-out infinite alternate; }
+    animation: mouth .3s ease-in-out infinite alternate;
+    -moz-animation: none; }
 
 .coin {
   position: absolute;

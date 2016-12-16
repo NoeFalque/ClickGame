@@ -313,6 +313,17 @@
                 .nameLevelContainer {
                     line-height: 30px;
                 }
+							
+								.menuHamb {
+									top: 0; 
+									right: -80px;
+									img {
+										width: 30px;
+									}
+									span {
+										font-size: 10px;
+									}
+								}
             }
 
             .rightPart {
@@ -327,6 +338,7 @@
                 .totalCoins {
                     margin-right: 10%;
                 }
+							
             }
         }
 

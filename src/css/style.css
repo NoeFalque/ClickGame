@@ -168,6 +168,13 @@
           height: 30px; }
       body header .leftPart .nameLevelContainer {
         line-height: 30px; }
+      body header .leftPart .menuHamb {
+        top: 0;
+        right: -80px; }
+        body header .leftPart .menuHamb img {
+          width: 30px; }
+        body header .leftPart .menuHamb span {
+          font-size: 10px; }
       body header .rightPart {
         top: 30px;
         line-height: 30px; }
@@ -594,7 +601,8 @@ body {
             position: relative;
             display: inline-block;
             border-radius: 10px;
-            background-color: #fff7ee; }
+            background-color: #fff7ee;
+            filter: grayscale(100%); }
             body .ameliorationsSection .ameliorationContainer .listStatistic ul li img {
               height: 50px;
               width: 50px; }

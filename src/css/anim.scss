@@ -24,8 +24,8 @@
 
 
 @keyframes popClient {
-	from{transform: translateY(-800px);}
-	to{transform: translateY(0px);}
+	from{transform: translateX(-600px);}
+	to{transform: translateX(0px);}
 }
 @keyframes boom {
 	from{transform: translateX(120px) translateY(320px) scale(0) rotate(0deg);}
@@ -65,7 +65,7 @@ svg {
 
 	&:active {
 		transform: scale(.95);
-		transition: transform .1s;
+		transition: transform .05s;
 	}
 
 	> g {
@@ -90,14 +90,15 @@ svg {
 
 	#face_thin {
 		#cheek_right_open {
-			animation: cheekRight 1s ease-in-out infinite alternate;
+			animation: cheekRight .3s ease-in-out infinite alternate;
 		}
 		#cheek_left_open {
-			animation: cheekLeft 1s ease-in-out infinite alternate;
+			animation: cheekLeft .3s ease-in-out infinite alternate;
 		}
 		#mouth_open, #mouth_hole_open {
 			transform-origin: center;
-			animation: mouth 1s ease-in-out infinite alternate;
+			animation: mouth .3s ease-in-out infinite alternate;
+			-moz-animation: none;
 		}
 	}
 
