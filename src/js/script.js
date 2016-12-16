@@ -491,8 +491,8 @@ function load(){
 function init(){
     if (!localStorage.getItem('data')) {
         dataRestore = {
-            coins: 1000,
-            recipes: 1000,
+            coins: 0,
+            recipes: 100,
             upgrades: [ 
             {
                 waiter: 0,
@@ -786,7 +786,7 @@ function unlockAchievement() {
     // Fou
     if (dataAchievement.explodeCpt > achievements[6].cond) _achievTab[42].style.filter = 'inherit';
     // Chef
-    if (dataRestore.level.food.bread > 0 && dataRestore.level.food.chicken > 0 && dataRestore.level.food.dessert > 0 && dataRestore.level.food.drink > 0) _achievTab[43].style.filter = 'inherit';
+//    if (dataRestore.level.food.bread > 0 && dataRestore.level.food.chicken > 0 && dataRestore.level.food.dessert > 0 && dataRestore.level.food.drink > 0) _achievTab[43].style.filter = 'inherit';
 }
 
 var unlockLoop = setInterval(function() {
