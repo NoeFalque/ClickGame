@@ -68,11 +68,14 @@
       body .gameSection .game {
         width: 100%;
         text-align: center; }
+        body .gameSection .game #client {
+          overflow: hidden; }
         body .gameSection .game .backgroundGame {
           width: auto;
           border-left: 2px solid #f4d038;
           border-right: 2px solid #f4d038; }
     body .questSection {
+      z-index: 150;
       height: 50vh;
       width: 100%;
       position: absolute;
@@ -88,6 +91,7 @@
           height: 20px;
           width: 60%; }
     body .ameliorationsSection {
+      z-index: 150;
       height: 45vh;
       width: 100%;
       position: absolute;

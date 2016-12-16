@@ -68,11 +68,14 @@
       body .gameSection .game {
         width: 100%;
         text-align: center; }
+        body .gameSection .game #client {
+          overflow: hidden; }
         body .gameSection .game .backgroundGame {
           width: auto;
           border-left: 2px solid #f4d038;
           border-right: 2px solid #f4d038; }
     body .questSection {
+      z-index: 150;
       height: 50vh;
       width: 100%;
       position: absolute;
@@ -88,6 +91,7 @@
           height: 20px;
           width: 60%; }
     body .ameliorationsSection {
+      z-index: 150;
       height: 45vh;
       width: 100%;
       position: absolute;
@@ -293,11 +297,14 @@
       body .gameSection .game {
         width: 100%;
         text-align: center; }
+        body .gameSection .game #client {
+          overflow: hidden; }
         body .gameSection .game .backgroundGame {
           width: auto;
           border-left: 2px solid #f4d038;
           border-right: 2px solid #f4d038; }
     body .questSection {
+      z-index: 150;
       height: 50vh;
       width: 100%;
       position: absolute;
@@ -313,6 +320,7 @@
           height: 20px;
           width: 60%; }
     body .ameliorationsSection {
+      z-index: 150;
       height: 45vh;
       width: 100%;
       position: absolute;
@@ -513,13 +521,21 @@ body {
           border-width: 7.5px 0 7.5px 13px;
           border-color: transparent transparent transparent #f1f1f1; }
       body header .leftPart .menuHamb {
-        width: 50px;
-        height: 40px;
-        background: #ff0000;
+        z-index: 100;
+        width: 150px;
+        height: 60px;
         display: none;
         position: absolute;
-        right: 30px;
-        top: 10px; }
+        right: 10px;
+        top: 10px;
+        font-size: 20px;
+        line-height: 60px; }
+        body header .leftPart .menuHamb span {
+          position: relative;
+          bottom: 15px;
+          right: 5px; }
+        body header .leftPart .menuHamb img {
+          width: 50px; }
     body header .rightPart {
       height: 100%;
       width: 55%;
@@ -551,7 +567,7 @@ body {
       background-color: #fff7ee;
       z-index: 10;
       cursor: pointer; }
-      body .gameSection .game img {
+      body .gameSection .game .backgroundGame {
         height: 100%;
         width: 100%; }
     body .gameSection .cashRegister .squareExterior {
@@ -812,13 +828,14 @@ body {
               height: 50px;
               width: 50px; }
   body .player {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     position: absolute;
-    top: 20px;
-    right: 20px; }
+    top: 110px;
+    left: 20px;
+    z-index: 100; }
     body .player .controls img {
-      height: 30px;
+      height: 40px;
       width: auto; }
     body .player .controls .play {
       display: block; }
@@ -850,7 +867,9 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  user-select: none; }
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
 #client {
   width: 100%;

@@ -68,13 +68,23 @@ body {
 				}
 			}
 			.menuHamb {
-				width: 50px;
-				height: 40px;
-				background: #ff0000;
+				z-index: 100;
+				width: 150px;
+				height: 60px;
 				display: none;
 				position: absolute;
-				right: 30px;
+				right: 10px;
 				top: 10px;
+				font-size: 20px;
+				line-height: 60px;
+				span {
+					position: relative;
+					bottom: 15px;
+					right: 5px;
+				}
+				img{
+					width: 50px;
+				}
 			}
 		}
 
@@ -126,7 +136,7 @@ body {
 			z-index: 10; // NOE MODIF
 			cursor: pointer;
 
-			img {
+			.backgroundGame {
 				height: 100%;
 				width: 100%;
 			}
@@ -495,16 +505,17 @@ body {
 	*/
 
 	.player {
-		height: 30px;
-		width: 30px;
+		height: 40px;
+		width: 40px;
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 110px;
+		left: 20px;
+		z-index: 100;
 
 		.controls {
 
 			img {
-				height: 30px;
+				height: 40px;
 				width: auto;
 			}
 

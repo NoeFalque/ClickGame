@@ -710,12 +710,12 @@ window.addEventListener('resize', function() {
 function menuSwitch() {
      if ( !$menuHamb.button.classList.contains('opened') ) {
        $menuHamb.button.classList.add('opened');
-       $menuHamb.quest.style.marginLeft = '0';
-       $menuHamb.ameliorations.style.marginLeft = '0';
+       $menuHamb.quest.style.transform = 'translateX(0)';
+       $menuHamb.ameliorations.style.transform = 'translateX(0)';
     } else if (window.innerWidth < 955) {
        $menuHamb.button.classList.remove('opened');
-       $menuHamb.quest.style.marginLeft = '100%';
-       $menuHamb.ameliorations.style.marginLeft = '100%';
+       $menuHamb.quest.style.transform = 'translateX(-1000px)';
+       $menuHamb.ameliorations.style.transform = 'translateX(-1000px)';
     }
 }
 

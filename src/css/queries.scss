@@ -113,6 +113,10 @@
             .game {
                 width: 100%;
                 text-align: center;
+							
+								#client {
+										overflow: hidden;
+								}
 
                 .backgroundGame { // NOE MODIF
                     width: auto;
@@ -124,6 +128,7 @@
 
         /* Section with the quests */
         .questSection {
+						z-index: 150;
             height: 50vh;
             width: 100%;
             position: absolute;
@@ -149,6 +154,7 @@
 
         /* Section with the amelioration */
         .ameliorationsSection {
+						z-index: 150;
             height: 45vh;
             width: 100%;
             position: absolute;
