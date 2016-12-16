@@ -10,7 +10,7 @@ var initFood = [
  },
  {
    "name": "Poulet",
-   "value": [0, 2, 10, 50, 200, 1000, 2000, 10000, 20000, 50000, 100000],
+   "value": [1, 2, 10, 50, 200, 1000, 2000, 10000, 20000, 50000, 100000],
    "infos": "Du bon poulet elevé en plein air respiré à travers les barreaux de sa cage",
    "cost": [250, 1000, 5000, 20000, 100000, 200000, 1000000, 2000000, 5000000, 10000000],
    "icon": null,

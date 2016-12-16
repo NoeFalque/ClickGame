@@ -298,9 +298,23 @@ function upResto() {
     /* --------> INCOME <-------- */
 // Give food ONCLICK
 $clickBtn.addEventListener('click', function() {
-    
+//1 chikn / 2 dessert / 3 
     if (timer == 0){
-        giveFood(clickDmg); 
+        var testLike = ((character.likes-2)+3)%3;
+        if ($foodChoice.foods[testLike+1].classList.contains('active')) giveFood( (clickDmg*2) );
+        else giveFood(clickDmg); 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // 1st Achievement
         console.log(dataAchievement.clickCpt);
         dataAchievement.clickCpt++;
