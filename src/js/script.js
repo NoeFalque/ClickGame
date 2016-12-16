@@ -69,11 +69,12 @@ var upgrades = [];
 var foods    = [];
     //DOM INTEGRATION
 // Variables Coins & Click
-var $clickBtn = document.querySelector('#client');
-    $coins    = document.querySelector('.currentCoins'),
-    $recipes  = document.querySelector('.currentBlueprints'),
-    clickDmg  = 1,
-    $gameScreen   = document.querySelector('.gameSection .game');
+var $clickBtn   = document.querySelector('#client');
+    $coins      = document.querySelector('.currentCoins'),
+    $recipes    = document.querySelector('.currentBlueprints'),
+    clickDmg    = 1,
+    timer       = 0,
+    $gameScreen = document.querySelector('.gameSection .game');
 // Variables Menu
 var $menu               = {};
     // 3 Titles
@@ -116,20 +117,19 @@ foodInit();
 upgradeInit();
 
 
-console.log(dataFood[0].value[dataRestore.level.food.bread]);
-var bread = new Bread();
-var chicken = new Chicken();
-var dessert = new Dessert();
-var drink = new Drink();
-foods.push(bread);
-foods.push(chicken);
-foods.push(dessert);
-foods.push(drink);
-dataRestore.food[0].bread++;
-dataRestore.food[0].chicken++;
-dataRestore.food[0].dessert++;
-dataRestore.food[0].drink++;
-
+    console.log(dataFood[0].value[dataRestore.level.food.bread]);
+    var bread = new Bread();
+    var chicken = new Chicken();
+    var dessert = new Dessert();
+    var drink = new Drink();
+    foods.push(bread);
+    foods.push(chicken);
+    foods.push(dessert);
+    foods.push(drink);
+    dataRestore.food[0].bread++;
+    dataRestore.food[0].chicken++;
+    dataRestore.food[0].dessert++;
+    dataRestore.food[0].drink++;
 
      // ACHIEVEMENTS
 var clickCpt = 0; // 1st A
@@ -166,14 +166,14 @@ $upgrades.resto[2].addEventListener('click', function(){
     // FOOD UPGRADES
 // Upgrade the bread's lvl
 function upBread() {
-    if ( (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread+1] ) ) {  
-        dataRestore.level.food.bread += 1;
+    if ( (dataRestore.level.food.bread < 9 && dataRestore.level.food.bread <= dataRestore.level.resto.resto+1 ) && (dataRestore.recipes >= dataFood[0].cost[dataRestore.level.food.bread] ) ) {  
         dataRestore.recipes -= dataFood[0].cost[dataRestore.level.food.bread]; 
+        dataRestore.level.food.bread += 1;
         for (var i = 0; i < foods.length; i++) {
             if (foods[i].name == 'Bread') {
                 if (foods[i].level < 9) {
                     foods[i].level++;
-                    foods[i].value = dataFood[0].value[dataRestore.level.food.bread+1];
+                    foods[i].value = dataFood[0].value[dataRestore.level.food.bread];
                 }
             }
         }  
@@ -183,14 +183,14 @@ function upBread() {
 
 // Upgrade the chicken's lvl
 function upChicken() {
-    if ( (dataRestore.level.food.chicken < 9 && dataRestore.level.food.chicken < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[1].cost[dataRestore.level.food.chicken+1] ) ) {
+    if ( (dataRestore.level.food.chicken < 9 && dataRestore.level.food.chicken < dataRestore.level.resto.resto+1) && (dataRestore.recipes >= dataFood[1].cost[dataRestore.level.food.chicken] ) ) {
+        dataRestore.recipes -= dataFood[1].cost[dataRestore.level.food.chicken];
         dataRestore.level.food.chicken += 1;
-        dataRestore.recipes -= dataFood[1].cost[dataRestore.level.food.chicken]; 
         for (var i = 0; i < foods.length; i++) {
             if (foods[i].name == 'Chicken') {
                 if (foods[i].level < 9) {
                     foods[i].level++;
-                    foods[i].value = dataFood[1].value[dataRestore.level.food.chicken+1];
+                    foods[i].value = dataFood[1].value[dataRestore.level.food.chicken];
                 }
             }
         }  
@@ -200,14 +200,14 @@ function upChicken() {
 
 // Upgrade the dessert's lvl
 function upDessert() {
-    if ( (dataRestore.level.food.dessert < 9 && dataRestore.level.food.dessert < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[2].cost[dataRestore.level.food.dessert+1] ) ) {
-        dataRestore.level.food.dessert += 1;
+    if ( (dataRestore.level.food.dessert < 9 && dataRestore.level.food.dessert < dataRestore.level.resto.resto+1) && (dataRestore.recipes >= dataFood[2].cost[dataRestore.level.food.dessert] ) ) {
         dataRestore.recipes -= dataFood[2].cost[dataRestore.level.food.dessert]; 
+        dataRestore.level.food.dessert += 1;
         for (var i = 0; i < foods.length; i++) {
             if (foods[i].name == 'Dessert') {
                 if (foods[i].level < 9) {
                     foods[i].level++;
-                    foods[i].value = dataFood[2].value[dataRestore.level.food.dessert+1];
+                    foods[i].value = dataFood[2].value[dataRestore.level.food.dessert];
                 }
             }
         }  
@@ -217,14 +217,14 @@ function upDessert() {
 
 // Upgrade the drink's lvl
 function upDrink() {
-    if ( (dataRestore.level.food.drink < 9 && dataRestore.level.food.drink < dataRestore.level.resto.resto) && (dataRestore.recipes >= dataFood[3].cost[dataRestore.level.food.drink+1] ) ) {
-        dataRestore.level.food.drink += 1;
+    if ( (dataRestore.level.food.drink < 9 && dataRestore.level.food.drink < dataRestore.level.resto.resto+1) && (dataRestore.recipes >= dataFood[3].cost[dataRestore.level.food.drink] ) ) {
         dataRestore.recipes -= dataFood[3].cost[dataRestore.level.food.drink];
+        dataRestore.level.food.drink += 1;
         for (var i = 0; i < foods.length; i++) {
             if (foods[i].name == 'Drink') {
                 if (foods[i].level < 9) {
                     foods[i].level++;
-                    foods[i].value = dataFood[3].value[dataRestore.level.food.drink+1];
+                    foods[i].value = dataFood[3].value[dataRestore.level.food.drink];
                 }
             }
         }  
@@ -241,9 +241,9 @@ function newBread() {
     // Resto UPGRADES
 // Upgrade the waitor's lvl
 function upWaiter() {
-    if ( (dataRestore.level.resto.waiter < 9 && dataRestore.level.resto.waiter < dataRestore.level.resto.resto) && (dataRestore.coins >= dataResto[2].cost[dataRestore.level.resto.waiter+1] ) ) { 
-        dataRestore.level.resto.waiter += 1;
+    if ( (dataRestore.level.resto.waiter < 9 && dataRestore.level.resto.waiter < dataRestore.level.resto.resto+1) && (dataRestore.coins >= dataResto[2].cost[dataRestore.level.resto.waiter] ) ) { 
         dataRestore.coins -= dataResto[2].cost[dataRestore.level.resto.waiter];
+        dataRestore.level.resto.waiter += 1;
         for (var i = 0; i < upgrades.length; i++) {
             if (upgrades[i].name == 'Waiter') {
                 if (upgrades[i].level < 9) {
@@ -257,9 +257,9 @@ function upWaiter() {
 }
 // Upgrade the cooker's lvl
 function upCooker() {
-    if ( (dataRestore.level.resto.cooker < 9 && dataRestore.level.resto.cooker < dataRestore.level.resto.resto) && (dataRestore.coins >= dataResto[1].cost[dataRestore.level.resto.cooker+1] ) ) { 
-        dataRestore.level.resto.cooker += 1;
+    if ( (dataRestore.level.resto.cooker < 9 && dataRestore.level.resto.cooker < dataRestore.level.resto.resto+1) && (dataRestore.coins >= dataResto[1].cost[dataRestore.level.resto.cooker] ) ) { 
         dataRestore.coins -= dataResto[1].cost[dataRestore.level.resto.cooker];
+        dataRestore.level.resto.cooker += 1;
         for (var i = 0; i < upgrades.length; i++) {
             if (upgrades[i].name == 'Cooker') {
                 if (upgrades[i].level < 9) {
@@ -273,9 +273,9 @@ function upCooker() {
 }
 // Upgrade the truck's lvl
 function upResto() {
-    if ( (dataRestore.level.resto.resto < 9) && (dataRestore.coins >= dataResto[0].cost[dataRestore.level.resto.resto+1] ) ) { 
-        dataRestore.level.resto.resto += 1;
+    if ( (dataRestore.level.resto.resto < 9) && (dataRestore.coins >= dataResto[0].cost[dataRestore.level.resto.resto] ) ) { 
         dataRestore.coins -= dataResto[0].cost[dataRestore.level.resto.resto];
+         dataRestore.level.resto.resto += 1;
         for (var i = 0; i < upgrades.length; i++) {
             if (upgrades[i].name == 'Resto') {
                 if (upgrades[i].level < 9) {
@@ -291,29 +291,32 @@ function upResto() {
     /* --------> INCOME <-------- */
 // Give food ONCLICK
 $clickBtn.addEventListener('click', function() {
-    giveFood(clickDmg); 
-    // 1st Achievement
-    console.log(dataAchievement.clickCpt);
-    dataAchievement.clickCpt++;
-    if (dataAchievement.clickCpt >= achievements[0].cond[achievements[0].unlocked]) {
-       achievements[0].unlocked++; 
-       // 2nd, 3rd, 4th A
-       if ( $foodChoice.bread.classList.contains('active') ) {
-           dataAchievement.breadCpt++;
-           if (dataAchievement.breadCpt >= achievements[1].cond[achievements[1].unlocked]) achievements[1].unlocked++;
-       }
-       if ( $foodChoice.chicken.classList.contains('active') ) {
-           dataAchievement.chickenCpt++;
-           if (dataAchievement.chickenCpt >= achievements[2].cond[achievements[2].unlocked]) achievements[2].unlocked++;
-       }
-       if ( $foodChoice.dessert.classList.contains('active') ) {
-           dataAchievement.dessertCpt++;
-           if (dataAchievement.dessertCpt >= achievements[3].cond[achievements[3].unlocked]) achievements[3].unlocked++;
-       }
-       if ( $foodChoice.drink.classList.contains('active') ) {
-           dataAchievement.drinkCpt++;
-           if (dataAchievement.drinkCpt >= achievements[8].cond[achievements[8].unlocked]) achievements[8].unlocked++;
-       } 
+    
+    if (timer == 0){
+        giveFood(clickDmg); 
+        // 1st Achievement
+        console.log(dataAchievement.clickCpt);
+        dataAchievement.clickCpt++;
+        if (dataAchievement.clickCpt >= achievements[0].cond[achievements[0].unlocked]) {
+           achievements[0].unlocked++; 
+           // 2nd, 3rd, 4th A
+           if ( $foodChoice.bread.classList.contains('active') ) {
+               dataAchievement.breadCpt++;
+               if (dataAchievement.breadCpt >= achievements[1].cond[achievements[1].unlocked]) achievements[1].unlocked++;
+           }
+           if ( $foodChoice.chicken.classList.contains('active') ) {
+               dataAchievement.chickenCpt++;
+               if (dataAchievement.chickenCpt >= achievements[2].cond[achievements[2].unlocked]) achievements[2].unlocked++;
+           }
+           if ( $foodChoice.dessert.classList.contains('active') ) {
+               dataAchievement.dessertCpt++;
+               if (dataAchievement.dessertCpt >= achievements[3].cond[achievements[3].unlocked]) achievements[3].unlocked++;
+           }
+           if ( $foodChoice.drink.classList.contains('active') ) {
+               dataAchievement.drinkCpt++;
+               if (dataAchievement.drinkCpt >= achievements[8].cond[achievements[8].unlocked]) achievements[8].unlocked++;
+           } 
+        }
     }
 });
 
@@ -338,7 +341,7 @@ function newWaiter() {
 //        _waiter = null;
 //        console.log('Vous n\'avez pas asssez pour votre Serveur de merde !');
 //    }    
-}
+}   
 function newCooker() {
    _cooker = new Cooker();
 //   if (dataRestore.coins >= _waiter.cost) {
@@ -376,18 +379,18 @@ function autoDirect() {
 // function that giveFood
 function giveFood(value) {
     character.currentLife -= value;
-    eatingStep();
+    eatingStep(value);
     // if DEAD
     if(character.currentLife <= 0) {
+        dataRestore.coins += character.value;
+        $character.screenValue.innerHTML = character.value+' $';
+        $coins.innerHTML = dataRestore.coins;
+        console.log('dead');
         clearInterval(loop);
         timer = 4;
         loopBlock = setInterval( function() {
             scriptBlock();
         }, 1000);
-        dataRestore.coins += character.value;
-        $character.screenValue.innerHTML = character.value+' $';
-        $coins.innerHTML = dataRestore.coins;
-        console.log('dead');
     }
 }
 
@@ -431,15 +434,15 @@ newCooker();
 //}
 */
 // Init of the food with JSON
-function foodInit(unlock) {
+function foodInit() {
     // Prices + Levels
     for (var i = 0; i < $food.length; i++) {
         for (var j = 0; j < dataFood.length; j++) {
             if ( $food[i].querySelector('.title .name').innerHTML == dataFood[j].name) {
                 for (var prop in dataRestore.food[1]) {
                     if ( dataRestore.food[1][prop] == dataFood[j].name ) {   
-                        $food[i].querySelector('.levelButton .costRecipe').innerHTML = '<br>'+dataFood[j].cost[dataRestore.level.food[prop]+1];
-                        $food[i].querySelector('.title .lvl').innerHTML = 'Niveau '+(dataRestore.level.food[prop]+1);
+                        $food[i].querySelector('.levelButton .costRecipe').innerHTML = '<br>'+dataFood[j].cost[dataRestore.level.food[prop]];
+                        $food[i].querySelector('.title .lvl').innerHTML = 'Niveau '+(dataRestore.level.food[prop]);
                     }
                 }
             }   
@@ -452,9 +455,20 @@ function upgradeInit() {
         for (var j = 0; j < dataResto.length; j++) {
             if ( $resto[i].querySelector('.title .name').innerHTML == dataResto[j].name ) {
                 for (var prop in dataRestore.upgrades[1]) {
-                    if ( dataRestore.upgrades[1][prop] == dataResto[j].name ) {   
-                        $resto[i].querySelector('.levelButton .costCoin').innerHTML = '<br>'+dataResto[j].cost[dataRestore.level.resto[prop]+1];
-                        $resto[i].querySelector('.title .lvl').innerHTML = 'Niveau '+(dataRestore.level.resto[prop]+1);
+                    if ( dataRestore.upgrades[1][prop] == dataResto[j].name ) {
+                        
+                        
+                        if ( dataRestore.upgrades[1][prop] == "Restaurant") {
+                            $resto[i].querySelector('.levelButton .costCoin').innerHTML = '<br>'+dataResto[j].cost[dataRestore.level.resto[prop]];
+                        $resto[i].querySelector('.title .lvl').innerHTML
+                        = (dataResto[0].niveau[dataRestore.level.resto[prop]]);
+                            
+                        }
+                        else {
+                        $resto[i].querySelector('.levelButton .costCoin').innerHTML = '<br>'+dataResto[j].cost[dataRestore.level.resto[prop]];
+                        $resto[i].querySelector('.title .lvl').innerHTML
+                        = 'Niveau '+(dataRestore.level.resto[prop]);
+                        }
                     }
                 }
             }
@@ -499,7 +513,7 @@ function load(){
 function init(){
     if (!localStorage.getItem('data')) {
         dataRestore = {
-            coins: 0,
+            coins: 1,
             recipes: 0,
             upgrades: [ 
             {
@@ -541,7 +555,7 @@ function init(){
                 resto: {
                     waiter: 0,
                     cooker: 0,
-                    resto: 0,
+                    resto: 1,
                 }  
             }
         };
@@ -569,7 +583,7 @@ function init(){
 function scriptBlock () {
     timer --;
     if (timer == 0) {
-        clearInterval(timerCmd);              
+        clearInterval(loopBlock);              
         loop = setInterval(function() {
             autoFood();
             autoDirect();

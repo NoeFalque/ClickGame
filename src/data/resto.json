@@ -1,27 +1,28 @@
 var initResto = [
     {
    "name": "Restaurant",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 50, 250, 750, 3000, 10000, 25000, 200000, 350000, 750000, 1000000],
    "infos": "Le genre de grec de ma terre que vous rachetez en gagnant au Loto",
-   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "cost": [0, 1000, 4000, 10000, 30000, 150000, 400000, 3000000, 5000000, 10000000],
    "icon": null,
    "valueInfo": null,
-   "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
- },
+   "unlocked": [false, false, false, false, false, false, false, false, false, false, false],
+    "niveau":['titre1', 'titre2', 'titre3', 'titre4', 'titre5', 'titre6', 'titre7', 'titre8', 'titre9', 'titre10']
+ }, 
  {
    "name": "Cuisinier",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 1, 5, 20, 100, 500, 1000, 5000, 10000, 20000, 50000],
    "infos": "Il aime quand c'est cuisiné, il aime quand c'est congelé, il aime quand ça sort du four !",
-   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "cost": [100, 500, 2500, 10000, 50000, 200000, 1000000, 2500000, 5000000, 10000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
  },
  {
    "name": "Serveur",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 1, 5, 20, 100, 500, 1000, 5000, 10000, 20000, 50000],
    "infos": "Le meilleur serveur du conté",
-   "cost": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+   "cost": [250, 2500, 7500, 30000, 100000, 250000, 2000000, 3500000, 7500000, 10000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]

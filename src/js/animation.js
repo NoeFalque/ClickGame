@@ -93,26 +93,30 @@ function createClient(){
 			disabled = false,
 			$eatSound = document.querySelector("#eatSound");
 
-	$client.addEventListener("click", function(){
-		eatingStep(); 
-	});
+    //	$client.addEventListener("click", function(){
+    //		eatingStep(clickDmg); 
+    //	});
     
-    eatingStep = function eatStep() {
-       $eatSound.play();
-		if(disabled) return;
-		if(clicks >= character.totalLife-1){
-			disabled = true;
-			explosionAnim();
-		}
-		else{
-			fatAnim();
-			setTimeout(function(){
-				for(var i in anims){
-					anims[i].stop();
-				}
-			}, step);
-			clicks++;
-		} 
+    eatingStep = function eatStep(value) {
+        
+        for (var j = 0; j < value; j++) {
+            $eatSound.play();
+            if(disabled) return;
+            if(clicks >= character.totalLife-1 || character.currentLife <= 0){
+                disabled = true;
+                explosionAnim();
+            }
+            else{
+                fatAnim();
+                setTimeout(function(){
+                    for(var i in anims){
+                        anims[i].stop();
+                    }
+                }, step);
+                clicks ++;
+            }
+        }
+        
     }
 
 	function fatAnim(){

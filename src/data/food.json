@@ -1,36 +1,36 @@
 var initFood = [
  {
    "name": "Pain",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 2, 5, 50, 100, 500, 1000, 5000, 10000, 20000, 50000],
    "infos": "Du bon pain sorti du four ",
-   "cost": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024],
+   "cost": [0, 100, 500, 5000, 10000, 50000, 10000, 500000, 1000000, 2000000, 5000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
  },
  {
    "name": "Poulet",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 2, 10, 50, 200, 1000, 2000, 10000, 20000, 50000, 100000],
    "infos": "Du bon poulet elevé en plein air respiré à travers les barreaux de sa cage",
-   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "cost": [250, 1000, 5000, 20000, 100000, 200000, 1000000, 2000000, 5000000, 10000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
  },
  {
    "name": "Dessert",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 2, 10, 50, 200, 1000, 2000, 10000, 20000, 50000, 100000],
    "infos": "Gardez un peu de place pour le meilleur !",
-   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "cost": [250, 1000, 5000, 20000, 100000, 200000, 1000000, 2000000, 5000000, 10000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
  },
  {
    "name": "Boisson",
-   "value": [1, 1*2, 1*4, 1*8, 1*16, 1*32, 1*64, 1*128, 1*256, 1*512],
+   "value": [0, 2, 10, 50, 200, 1000, 2000, 10000, 20000, 50000, 100000],
    "infos": "Pour une pateuse",
-   "cost": [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048],
+   "cost": [250, 1000, 5000, 20000, 100000, 200000, 1000000, 2000000, 5000000, 10000000],
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false]
