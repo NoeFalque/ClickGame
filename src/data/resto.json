@@ -4,7 +4,7 @@ var initResto = [
    "value": [0, 50, 250, 750, 3000, 10000, 25000, 200000, 350000, 750000, 1000000],
    "infos": "Le genre de grec de ma terre que vous rachetez en gagnant au Loto",
    "cost": [0, 1000, 4000, 10000, 30000, 150000, 400000, 3000000, 5000000, 10000000],
-   "icon": null,
+   "icon": ['null', './src/images/bg/bgChariot.png', './src/images/bg/bgFoodtruck.png','./src/images/bg/bgFastfood.png','./src/images/bg/bgRestaurant.png','./src/images/bg/bgGastronomique.png'],
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false],
     "niveau":['titre1', 'Chariot', 'Foodtruck', 'Fastfood', 'Brasserie', 'Restaurant', '5 étoiles']

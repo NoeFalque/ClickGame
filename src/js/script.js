@@ -440,6 +440,9 @@ function upgradeInit() {
                         $resto[i].querySelector('.title .lvl').innerHTML
                         = (dataResto[0].niveau[dataRestore.level.resto[prop]]);
                             $nameLevel.innerHTML = (dataResto[0].niveau[dataRestore.level.resto[prop]]);
+                            console.log(dataResto[0].icon[dataRestore.level.resto[prop]]);
+                            document.querySelector('.game .backgroundGame').setAttribute('src',dataResto[0].icon[dataRestore.level.resto[prop]]);
+                            
                             
                         }
                         else {
@@ -494,7 +497,7 @@ function load(){
 function init(){
     if (!localStorage.getItem('data')) {
         dataRestore = {
-            coins: 0,
+            coins: 10000,
             recipes: 100,
             upgrades: [ 
             {
