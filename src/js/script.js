@@ -1,3 +1,10 @@
+// fastclick
+window.addEventListener('load', function() {
+    new FastClick(document.body);
+}, false);
+
+
+
 init();
 /* ----------------> CONSTRUCTORS <---------------- */
 
@@ -745,7 +752,6 @@ player.el.toggle_play   = player.el.controls.querySelector( 'a.toggle-play' );
 console.log(player);
 
 player.el.toggle_play.addEventListener( 'click', function( event ){
-console.log('click');
 	// Toggle play
 	if( player.el.audio.paused )
 		player.el.audio.play();
