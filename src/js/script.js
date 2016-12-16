@@ -89,6 +89,7 @@ var $menu               = {};
     $menu.resto         = document.querySelector('.menuRestaurant'),
     $menu.stat          = document.querySelector('.menuStatistic'),
     $menu.upgrades      = document.querySelectorAll('.menuAmelioration ul li'),
+    $nameLevel          = document.querySelector('.nameLevel'),
     // 3 list
     $menu.listFood      = document.querySelector('.listFood'),
     $menu.listResto     = document.querySelector('.listRestaurant'),
@@ -298,23 +299,9 @@ function upResto() {
     /* --------> INCOME <-------- */
 // Give food ONCLICK
 $clickBtn.addEventListener('click', function() {
-//1 chikn / 2 dessert / 3 
+    
     if (timer == 0){
-        var testLike = ((character.likes-2)+3)%3;
-        if ($foodChoice.foods[testLike+1].classList.contains('active')) giveFood( (clickDmg*2) );
-        else giveFood(clickDmg); 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        giveFood(clickDmg); 
         // 1st Achievement
         console.log(dataAchievement.clickCpt);
         dataAchievement.clickCpt++;
@@ -483,6 +470,7 @@ function upgradeInit() {
                             $resto[i].querySelector('.levelButton .costCoin').innerHTML = '<br>'+dataResto[j].cost[dataRestore.level.resto[prop]];
                         $resto[i].querySelector('.title .lvl').innerHTML
                         = (dataResto[0].niveau[dataRestore.level.resto[prop]]);
+                            $nameLevel.innerHTML = (dataResto[0].niveau[dataRestore.level.resto[prop]]);
                             
                         }
                         else {
@@ -534,8 +522,8 @@ function load(){
 function init(){
     if (!localStorage.getItem('data')) {
         dataRestore = {
-            coins: 1,
-            recipes: 0,
+            coins: 1000,
+            recipes: 1000,
             upgrades: [ 
             {
                 waiter: 0,
@@ -568,7 +556,7 @@ function init(){
             firstGame: new Date(),
             level: {
                 food: {
-                   bread: 0,
+                   bread: 1,
                     chicken: 0,
                     dessert: 0,
                     drink: 0,
@@ -665,7 +653,7 @@ $foodChoice.bread.addEventListener('click', function() {
     } 
 });
 $foodChoice.chicken.addEventListener('click', function() {
-    if ( !$foodChoice.chicken.classList.contains('active') ) {
+    if ( !$foodChoice.chicken.classList.contains('active') && (dataRestore.level.food.chicken > 0)) {
         for (var i = 0; i < $foodChoice.foods.length; i++) {
            $foodChoice.foods[i].classList.remove('active');
         }
@@ -675,7 +663,7 @@ $foodChoice.chicken.addEventListener('click', function() {
     } 
 });
 $foodChoice.dessert.addEventListener('click', function() {
-    if ( !$foodChoice.dessert.classList.contains('active') ) {
+    if ( !$foodChoice.dessert.classList.contains('active') && (dataRestore.level.food.dessert > 0)) {
         for (var i = 0; i < $foodChoice.foods.length; i++) {
            $foodChoice.foods[i].classList.remove('active');
         }
@@ -685,7 +673,7 @@ $foodChoice.dessert.addEventListener('click', function() {
     } 
 });
 $foodChoice.drink.addEventListener('click', function() {
-    if ( !$foodChoice.drink.classList.contains('active') ) {
+    if ( !$foodChoice.drink.classList.contains('active') && (dataRestore.level.food.drink > 0)) {
         for (var i = 0; i < $foodChoice.foods.length; i++) {
            $foodChoice.foods[i].classList.remove('active');
         }
@@ -742,11 +730,43 @@ $gameScreen.addEventListener('mouseover', function() {
     $cursorImg.style.display = 'block';
 });
 
+
+
+//dataRestore.coins
+//dataRestore.recipes
+
+function disableFood() {
+    for (var i = 0; i < $food.length; i++){
+        if ( (dataRestore.recipes < parseInt($food[i].querySelector('.levelButton .costRecipe').innerText)) ) {
+            $food[i].style.opacity = '0.5';   
+        }
+        else {
+            $food[i].style.opacity = '1';
+        }
+    }
+}
+function disableResto() {
+    for (var i = 0; i < $resto.length; i++){
+        if (dataRestore.coins < parseInt($resto[i].querySelector('.levelButton .costCoin').innerText) ) {
+            $resto[i].style.opacity = '0.5';   
+        }
+        else {
+            $resto[i].style.opacity = '1';
+        }
+    }
+}
+
+var disabloop = setInterval(function() {
+   disableFood(); 
+   disableResto(); 
+}, 500);
+
+
 /* ----------------> Achievements Part <---------------- */
 
 
 
-
+dataRestore.level.food.chicken < dataRestore.level.resto.resto
 
 
 

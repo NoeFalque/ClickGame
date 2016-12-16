@@ -7,7 +7,7 @@ var initResto = [
    "icon": null,
    "valueInfo": null,
    "unlocked": [false, false, false, false, false, false, false, false, false, false, false],
-    "niveau":['titre1', 'titre2', 'titre3', 'titre4', 'titre5', 'titre6', 'titre7', 'titre8', 'titre9', 'titre10']
+    "niveau":['titre1', 'Chariot', 'Foodtruck', 'Fastfood', 'Brasserie', 'Restaurant', '5 étoiles']
  }, 
  {
    "name": "Cuisinier",
