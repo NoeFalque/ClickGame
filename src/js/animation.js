@@ -15,7 +15,7 @@ var Character = function() {
 	this.totalLife = rdm(10,50);
 	this.currentLife = this.totalLife;
 	this.likes = rdm(1,3);
-    this.value = rdm(10,20)+(this.totalLife/2);
+	this.value = rdm(10,20)+(this.totalLife/2);
 }
 var character;
 function createClient(){
@@ -28,6 +28,7 @@ function createClient(){
 		s.append(g);
 		var $svg = document.querySelector("svg");
 		initClient();
+		bubbleAnim();
 		//eatingAnim();
 	});
 
@@ -39,8 +40,8 @@ function createClient(){
 
 	function initClient(){
 
-        character = new Character();
-        
+		character = new Character();
+
 		// set hair shapes on svg :
 		var hairs = $client.querySelectorAll("path[id^=hair]");
 		for(var i=0; i<hairs.length; i++){
@@ -83,8 +84,41 @@ function createClient(){
 			}
 
 		}//end for color parts
-        maxClicks = character.totalLife;
+		maxClicks = character.totalLife;
 	}//end initClient
+
+
+	function bubbleAnim(){
+		var $bb0 = $client.querySelector("#bubble_0");
+		var $bb1 = $client.querySelector("#bubble_1");
+		$bb1.style.visibility = "hidden";
+		var $bb2 = $client.querySelector("#bubble_2");
+		$bb2.style.visibility = "hidden";
+
+		var foods = $client.querySelectorAll("[id^=food_");
+		for(var i=0;i<foods.length;i++){ 
+			foods[i].style.visibility = "hidden"; }
+		var liked = foods[character.likes];
+		liked.style.visibility = "visible";
+		liked.style.opacity = 0;
+
+		var snapBb = s.select("#bubble_0");
+		var snapLiked = s.select( "#"+ liked.getAttribute("id") );
+		setTimeout(function(){
+			snapBb.animate({d: $bb1.getAttribute("d")}, 800, mina.ease, function(){//callback
+				snapBb.animate({d: $bb2.getAttribute("d")}, 400, mina.ease, function(){//callback
+					snapLiked.animate({opacity: 1}, 500, mina.ease);
+					setTimeout(function(){
+						snapBb.animate({
+							d: $bb1.getAttribute("d"),
+							opacity: 0
+						}, 1000, mina.easeinout);
+						snapLiked.animate({opacity: 0}, 500, mina.ease);
+					}, 2000);
+				});
+			});
+		}, 800);
+	}
 
 	// detect click
 	var step = duration / maxClicks,
@@ -96,9 +130,9 @@ function createClient(){
 	$client.addEventListener("click", function(){
 		eatingStep(); 
 	});
-    
-    eatingStep = function eatStep() {
-       $eatSound.play();
+
+	eatingStep = function eatStep() {
+		$eatSound.play();
 		if(disabled) return;
 		if(clicks >= character.totalLife-1){
 			disabled = true;
@@ -113,7 +147,7 @@ function createClient(){
 			}, step);
 			clicks++;
 		} 
-    }
+	}
 
 	function fatAnim(){
 		var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right"];
