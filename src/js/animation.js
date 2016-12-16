@@ -127,7 +127,6 @@ function createClient(){
 			disabled = false,
 			$eatSound = document.querySelector("#eatSound");
 
-<<<<<<< HEAD
     //	$client.addEventListener("click", function(){
     //		eatingStep(clickDmg); 
     //	});
@@ -153,29 +152,6 @@ function createClient(){
         }
         
     }
-=======
-	$client.addEventListener("click", function(){
-		eatingStep(); 
-	});
-
-	eatingStep = function eatStep() {
-		$eatSound.play();
-		if(disabled) return;
-		if(clicks >= character.totalLife-1){
-			disabled = true;
-			explosionAnim();
-		}
-		else{
-			fatAnim();
-			setTimeout(function(){
-				for(var i in anims){
-					anims[i].stop();
-				}
-			}, step);
-			clicks++;
-		} 
-	}
->>>>>>> origin/master
 
 	function fatAnim(){
 		var parts = ["#shirt","#jean","#skin", "#skin_body", "#neck", "#neck_shadow", "#arm_left", "#arm_right"];
