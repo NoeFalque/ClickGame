@@ -7,6 +7,8 @@
 
 .game {
 	position: relative;
+	@include prefix(user-select, none, webkit moz ms o);
+	user-select: none;
 }
 
 #client {
@@ -74,7 +76,7 @@ svg {
 	}
 	@media (min-height: 730px){
 		> g {
-			transform: translateY(210px) translateX(100px) scale(0.4);
+			transform: translateY(180px) translateX(50px) scale(0.5);
 		}
 	}
 
