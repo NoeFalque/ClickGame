@@ -463,6 +463,9 @@ var loop = setInterval(function() {
     autoFood();
     autoDirect();
     save();
+    
+    progress = ( (dataRestore.level.food.bread + dataRestore.level.food.chicken + dataRestore.level.food.dessert + dataRestore.level.food.drink ) + (dataRestore.level.resto.resto + dataRestore.level.resto.waiter + dataRestore.level.resto.cooker))*10;
+    
 }, 1000);
 
 /* ----------------> Ressources <---------------- */

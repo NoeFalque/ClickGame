@@ -1,4 +1,4 @@
-
+var progress = 0;
 // function RANDOM
 function rdm(rMin, rMax) {
 	return ~~((Math.random()*(rMax-rMin+1))+rMin);
@@ -12,10 +12,10 @@ var Character = function() {
 	this.colors.skin	= rdm(0,3);
 	this.colors.legs	= rdm(0,3);
 
-	this.totalLife = rdm(10,50);
+	this.totalLife = rdm(10,50)+progress;
 	this.currentLife = this.totalLife;
 	this.likes = rdm(1,3);
-	this.value = rdm(10,20)+(this.totalLife/2);
+	this.value = rdm(10,20)+(this.totalLife/2)+progress;
 }
 var character;
 function createClient(){
